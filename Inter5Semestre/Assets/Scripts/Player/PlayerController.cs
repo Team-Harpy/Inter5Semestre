@@ -18,8 +18,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gravityValue = -9.81f;
 
+    private bool hasFlashlight;
+
+
+    [SerializeField]
+    private GameObject monstro;
+    [SerializeField]
+    private Transform monstroSpawn;
 
     private CharacterController controller;
+    [SerializeField]
+    private LightManager lightManager;
     private InputManager inputManager;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -34,6 +43,7 @@ public class PlayerController : MonoBehaviour
         cameraTransform = Camera.main.transform;
         Cursor.visible = false;
         flashlight = cameraTransform.GetComponentInChildren<Light>();
+        flashlight.enabled = false;
         
     }
 
@@ -84,6 +94,8 @@ public class PlayerController : MonoBehaviour
         //Flashlight Action
         if (inputManager.FlashlightAction())
         {
+            if (!hasFlashlight) return;
+
             flashlight.enabled = !flashlight.enabled;
         }
 
@@ -92,5 +104,30 @@ public class PlayerController : MonoBehaviour
 
 
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+
+    private void OnControllerColliderHit(ControllerColliderHit other)
+    {
+        if (other.gameObject.CompareTag("Flashlight"))
+        {
+            hasFlashlight = true;
+           // lightManager.NightTime();
+            Destroy(other.gameObject);
+        }
+
+        /*if (other.gameObject.CompareTag("MonsterTrigger"))
+        {
+            Debug.Log("Ativou Monstro");
+        }
+        */
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("MonsterTrigger"))
+        {
+            Instantiate(monstro, monstroSpawn.position, Quaternion.identity);
+        }
     }
 }
