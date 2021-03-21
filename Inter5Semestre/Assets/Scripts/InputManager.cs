@@ -53,6 +53,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Sprint.activeControl != null;
     }
 
+    public bool FlashlightAction()
+    {
+        return playerControls.Player.Flashlight.triggered;
+    }
+
     /*
     public Vector2 GetMouseDelta()
     {

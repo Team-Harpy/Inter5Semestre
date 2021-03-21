@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private Transform cameraTransform;
+    private Light flashlight;
 
 
     private void Start()
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
         Cursor.visible = false;
+        flashlight = cameraTransform.GetComponentInChildren<Light>();
         
     }
 
@@ -71,9 +73,18 @@ public class PlayerController : MonoBehaviour
 
 
         // Player Jump
-        if (inputManager.PlayerJumpedInThisFrame() && groundedPlayer)
+
+       /* if (inputManager.PlayerJumpedInThisFrame() && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+        }
+       */
+
+
+        //Flashlight Action
+        if (inputManager.FlashlightAction())
+        {
+            flashlight.enabled = !flashlight.enabled;
         }
 
         // Gravity Adding
