@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController controller;
     [SerializeField]
-    private LightManager lightManager;
+    private LightingManager lightingManager;
     private InputManager inputManager;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Flashlight"))
         {
             hasFlashlight = true;
-           // lightManager.NightTime();
+            lightingManager.NightTime();
             Destroy(other.gameObject);
         }
 
