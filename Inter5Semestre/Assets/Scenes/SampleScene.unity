@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 2138677392}
   Preset: {fileID: 11400000, guid: 83499b1f349b23041a2e1f0ad7abea02, type: 2}
-  TimeOfDay: 0
+  TimeOfDay: 9.3
 --- !u!4 &192203823
 Transform:
   m_ObjectHideFlags: 0
@@ -540,7 +540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430992749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.93, y: 2.66, z: 21.75}
+  m_LocalPosition: {x: 37.51, y: 2.66, z: 21.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1386159162653574, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4944984414320280, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
       propertyPath: m_RootOrder
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   sprintSpeed: 10
   jumpHeight: 1
   gravityValue: -9.81
-  monstro: {fileID: 3232824828703646643, guid: c2b75d03549a8ea4e9ca53a66241d580, type: 3}
+  monstro: {fileID: 8071573443969197863, guid: ac8aad2ab9a240748bbce6e4f8cd14d0, type: 3}
   monstroSpawn: {fileID: 430992750}
   lightingManager: {fileID: 192203822}
 --- !u!4 &900642130 stripped
