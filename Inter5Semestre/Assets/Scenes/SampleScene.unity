@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a185422697907ad4fa4c8a3448945648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 846850580}
 --- !u!65 &9419198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -659,8 +658,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9943806, y: 0.30361843, z: 4.833288}
-  m_Center: {x: 0, y: 0.041900992, z: 1.9260616}
+  m_Size: {x: 0.9943806, y: 0.30361843, z: 8.47901}
+  m_Center: {x: 0, y: 0.041900992, z: 3.7489223}
 --- !u!114 &577565481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,7 +973,7 @@ GameObject:
   - component: {fileID: 846850585}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
