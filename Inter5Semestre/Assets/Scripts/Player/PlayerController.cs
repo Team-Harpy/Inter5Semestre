@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("MonsterTrigger"))
         {
             Instantiate(monstro, monstroSpawn.position, Quaternion.identity);
+            Destroy(other.gameObject);
         }
     }
 }
