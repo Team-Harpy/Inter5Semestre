@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.13296545, g: 0.19145328, b: 0.33962262, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 0ffaa0b7117ba8c47a9d05ae701d4b4d, type: 2}
   m_HaloStrength: 0.5
@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a185422697907ad4fa4c8a3448945648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 846850580}
 --- !u!65 &9419198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -391,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 2138677392}
   Preset: {fileID: 11400000, guid: 83499b1f349b23041a2e1f0ad7abea02, type: 2}
-  TimeOfDay: 9.3
+  TimeOfDay: 0
 --- !u!4 &192203823
 Transform:
   m_ObjectHideFlags: 0
@@ -659,8 +658,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9943806, y: 0.30361843, z: 4.833288}
-  m_Center: {x: 0, y: 0.041900992, z: 1.9260616}
+  m_Size: {x: 0.9943806, y: 0.30361843, z: 8.47901}
+  m_Center: {x: 0, y: 0.041900992, z: 3.7489223}
 --- !u!114 &577565481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,7 +973,7 @@ GameObject:
   - component: {fileID: 846850585}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
