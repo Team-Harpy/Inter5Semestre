@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class TurnMonsterOffOn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    PlayerController playerController;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        playerController = GetComponentInParent<PlayerController>();
     }
 
     private void OnTriggerEnter(Collider other)
      {
-         if (other.tag == "monsterTest")
+         if (other.tag == "monsterTest" && playerController.flashlightOn == true)
          {
              Debug.Log("acertou");
              other.GetComponent<SpriteRenderer>().enabled = true;
@@ -27,9 +22,25 @@ public class TurnMonsterOffOn : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "monsterTest")
+        if (other.tag == "monsterTest" )
         {           
             other.GetComponent<SpriteRenderer>().enabled = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "monsterTest")
+        {
+            if(playerController.flashlightOn == true)
+            {
+                other.GetComponent<SpriteRenderer>().enabled = true;
+            }
+
+            if (playerController.flashlightOn == false)
+            {
+                other.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
     }
 }

@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float gravityValue = -9.81f;
 
     private bool hasFlashlight;
+    public bool flashlightOn;
 
 
     [SerializeField]
@@ -97,6 +98,7 @@ public class PlayerController : MonoBehaviour
             if (!hasFlashlight) return;
 
             flashlight.enabled = !flashlight.enabled;
+            flashlightOn = !flashlightOn;
         }
 
         // Gravity Adding
