@@ -4837,7 +4837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pontoFinal: {fileID: 8071573443969197863}
-  velocidade: 1.5
+  velocidade: 1
 --- !u!1 &8071573443969197863
 GameObject:
   m_ObjectHideFlags: 0
