@@ -558,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1386159162653574, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4944984414320280, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
       propertyPath: m_RootOrder
@@ -1077,6 +1077,7 @@ MonoBehaviour:
   sprintSpeed: 10
   jumpHeight: 1
   gravityValue: -9.81
+  flashlightOn: 0
   monstro: {fileID: 8071573443969197863, guid: ac8aad2ab9a240748bbce6e4f8cd14d0, type: 3}
   monstroSpawn: {fileID: 430992750}
   lightingManager: {fileID: 192203822}
