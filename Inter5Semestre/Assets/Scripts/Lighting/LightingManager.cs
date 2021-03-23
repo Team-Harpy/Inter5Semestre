@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-
+[ExecuteAlways]
 public class LightingManager : MonoBehaviour
 {
     
@@ -10,13 +10,13 @@ public class LightingManager : MonoBehaviour
 
     [SerializeField, Range(0, 24)] private float TimeOfDay;
 
-    private float speed = 0;
+    private float speed = 18;
 
-  
+
+
     private void Start()
     {
-        TimeOfDay = 0;
-        TimeOfDay = 16;
+        
     }
     private void Update()
     {
@@ -26,9 +26,9 @@ public class LightingManager : MonoBehaviour
         if (Application.isPlaying)
         {
             //(Replace with a reference to the game time)
-            if(TimeOfDay <= 20)
+            if(TimeOfDay <= speed)
             {
-                TimeOfDay += Time.deltaTime * speed;
+                TimeOfDay += Time.deltaTime * 100;
             }
          
             TimeOfDay %= 24; //Modulus to ensure always between 0-24
@@ -87,7 +87,7 @@ public class LightingManager : MonoBehaviour
 
     public void NightTime()
     {
-        speed = 4;
+        speed = 23;
     }
 }
 
