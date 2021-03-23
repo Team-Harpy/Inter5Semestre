@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 9419196}
   - component: {fileID: 9419195}
   - component: {fileID: 9419197}
+  - component: {fileID: 9419198}
   m_Layer: 0
   m_Name: Sombra
-  m_TagString: Untagged
+  m_TagString: monsterTest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +149,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9419194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -199,9 +200,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9419194}
-  m_LocalRotation: {x: 0, y: 0.5158606, z: 0, w: 0.8566726}
+  m_LocalRotation: {x: -0, y: 0.5158606, z: -0, w: 0.8566726}
   m_LocalPosition: {x: 7.66, y: 1.56, z: 11.98}
-  m_LocalScale: {x: 0.48813, y: 0.48813, z: 0.48813}
+  m_LocalScale: {x: 0.48813006, y: 0.48813, z: 0.48813006}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -219,6 +220,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 846850580}
+--- !u!65 &9419198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9419194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.2300005, y: 6.71, z: 0.20000015}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &11307075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -555,6 +569,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b9efef89fc1b8f4f984fa521ca2fc95, type: 3}
+--- !u!1 &577565478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 577565479}
+  - component: {fileID: 577565480}
+  - component: {fileID: 577565481}
+  - component: {fileID: 577565482}
+  m_Layer: 0
+  m_Name: showMonster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &577565479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577565478}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.009000063, y: -0.15999985, z: 2.426}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1687258585}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &577565480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577565478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9943806, y: 0.30361843, z: 4.833288}
+  m_Center: {x: 0, y: 0.041900992, z: 1.9260616}
+--- !u!114 &577565481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577565478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d52c0d3172a9564ba16cf195f029d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &577565482
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577565478}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +1859,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1673388596}
+  - {fileID: 577565479}
   m_Father: {fileID: 846850584}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20.146, y: 195.09, z: 0.001}
