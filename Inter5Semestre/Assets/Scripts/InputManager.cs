@@ -58,6 +58,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Flashlight.triggered;
     }
 
+    public bool DiaryUp()
+    {
+        return playerControls.Player.Diary.triggered;
+    }
+
     /*
     public Vector2 GetMouseDelta()
     {
