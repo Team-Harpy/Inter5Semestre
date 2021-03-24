@@ -4882,6 +4882,7 @@ GameObject:
   - component: {fileID: 5488899874800546483}
   - component: {fileID: 752857027126059187}
   - component: {fileID: 2010872438744485296}
+  - component: {fileID: 3756860434435637857}
   m_Layer: 0
   m_Name: Sombra
   m_TagString: monsterTest
@@ -4897,8 +4898,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9139139390666739515}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 4.18, y: 0, z: 0.9}
-  m_LocalScale: {x: 0.48812994, y: 0.48812994, z: 0.48812988}
+  m_LocalPosition: {x: 1.93, y: 0, z: 0.9}
+  m_LocalScale: {x: 0.79764, y: 0.79764, z: 0.79764}
   m_Children: []
   m_Father: {fileID: 8818933105104740817}
   m_RootOrder: 0
@@ -4943,7 +4944,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ffec7d61351eca24f91285a8691cd540, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e789e88cfc76cd4c8720030fb5389c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4977,5 +4978,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.2300005, y: 6.71, z: 0.20000015}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.6983247, y: 3.5, z: 0.41}
+  m_Center: {x: -0.04839991, y: -0.5, z: 0.000000005769711}
+--- !u!95 &3756860434435637857
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9139139390666739515}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91fb0292a09d48d419a17a387557e13b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
