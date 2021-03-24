@@ -25,7 +25,6 @@ public class TurnMonsterOffOn : MonoBehaviour
         if (other.tag == "monsterTest" )
         {           
             other.GetComponent<SpriteRenderer>().enabled = false;
-            Debug.Log("saiu");
         }
     }
 
