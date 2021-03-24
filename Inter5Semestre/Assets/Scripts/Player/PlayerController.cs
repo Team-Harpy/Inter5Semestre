@@ -5,8 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
-{
-
+{   
 
     private float playerSpeed;
     [SerializeField]
@@ -32,7 +31,8 @@ public class PlayerController : MonoBehaviour
     private LightingManager lightingManager;
     private InputManager inputManager;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    [HideInInspector]
+    public bool groundedPlayer;
     private Transform cameraTransform;
     private Light flashlight;
 
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         flashlight = cameraTransform.GetComponentInChildren<Light>();
         flashlight.enabled = false;
-        
+
     }
 
     void Update()
@@ -96,7 +96,8 @@ public class PlayerController : MonoBehaviour
         if (inputManager.FlashlightAction())
         {
             if (!hasFlashlight) return;
-
+           
+            Debug.Log("Tocou");
             flashlight.enabled = !flashlight.enabled;
             flashlightOn = !flashlightOn;
         }
