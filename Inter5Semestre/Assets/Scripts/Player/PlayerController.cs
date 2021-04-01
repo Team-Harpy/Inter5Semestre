@@ -36,8 +36,7 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
     private Light flashlight;
 
-    [SerializeField]
-    private float flashlightTimer;
+    public float flashlightTimer;
     private float flashlightTimerI;
     [SerializeField]
     private float flashlightDepletionRate;
