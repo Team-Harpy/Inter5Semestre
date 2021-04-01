@@ -1277,6 +1277,9 @@ MonoBehaviour:
   monstroSpawn: {fileID: 430992750}
   lightingManager: {fileID: 192203822}
   groundedPlayer: 0
+  flashlightTimer: 5
+  flashlightDepletionRate: 1
+  flashlightRecoveryRate: 0.5
 --- !u!114 &846850586
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,6 +36,14 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
     private Light flashlight;
 
+    [SerializeField]
+    private float flashlightTimer;
+    private float flashlightTimerI;
+    [SerializeField]
+    private float flashlightDepletionRate;
+    [SerializeField]
+    private float flashlightRecoveryRate;
+
 
     private void Start()
     {
@@ -45,6 +53,8 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         flashlight = cameraTransform.GetComponentInChildren<Light>();
         flashlight.enabled = false;
+
+        flashlightTimerI = flashlightTimer;
 
     }
 
@@ -97,10 +107,31 @@ public class PlayerController : MonoBehaviour
         {
             if (!hasFlashlight) return;
            
-            Debug.Log("Tocou");
+            //Debug.Log("Tocou");
             flashlight.enabled = !flashlight.enabled;
             flashlightOn = !flashlightOn;
         }
+
+        //Flashlight Cooldown
+        if (flashlight.enabled == true)
+        {
+            flashlightTimer -= flashlightDepletionRate * Time.deltaTime;
+        }
+
+        if(flashlight.enabled == false)
+        {
+            flashlightTimer += flashlightRecoveryRate * Time.deltaTime;
+            if (flashlightTimer >= flashlightTimerI)
+                flashlightTimer = flashlightTimerI;
+        }
+
+        if(flashlightTimer <= 0)
+        {
+            flashlight.enabled = false;
+            flashlightOn = false;
+        }
+
+        print(flashlightTimer);
 
         // Gravity Adding
         playerVelocity.y += gravityValue * Time.deltaTime;
