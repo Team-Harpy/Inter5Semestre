@@ -63,6 +63,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Diary.triggered;
     }
 
+    public bool OpenMap()
+    {
+        return playerControls.Player.Map.triggered;
+    }
+
     /*
     public Vector2 GetMouseDelta()
     {
