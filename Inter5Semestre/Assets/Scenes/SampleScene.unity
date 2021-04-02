@@ -1461,7 +1461,7 @@ MonoBehaviour:
   lightingManager: {fileID: 192203822}
   groundedPlayer: 0
   flashlightTimer: 5
-  flashlightDepletionRate: 0.7
+  flashlightDepletionRate: 0
   flashlightRecoveryRate: 0.5
 --- !u!114 &846850586
 MonoBehaviour:
