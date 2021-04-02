@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             flashlightOn = false;
         }
 
-        print(flashlightTimer);
+        //print(flashlightTimer);
 
         // Gravity Adding
         playerVelocity.y += gravityValue * Time.deltaTime;
