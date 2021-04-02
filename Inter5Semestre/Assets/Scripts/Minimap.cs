@@ -8,6 +8,7 @@ public class Minimap : MonoBehaviour
     public RectTransform map2dEnd;
     public Transform map3dParent;
     public Transform map3dEnd;
+    public Transform rotationReference;
 
     private Vector3 normalized, mapped;
 
@@ -21,6 +22,7 @@ public class Minimap : MonoBehaviour
         mapped = Multiply(normalized, map2dEnd.localPosition);
         mapped.z = 0;
         playerInMap.localPosition = mapped;
+        playerInMap.localEulerAngles = new Vector3(0, 0, -rotationReference.transform.eulerAngles.y +90);
     }
 
     private static Vector3 Divide(Vector3 a, Vector3 b)
