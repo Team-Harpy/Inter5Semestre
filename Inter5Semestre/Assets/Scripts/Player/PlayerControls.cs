@@ -65,6 +65,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Map"",
+                    ""type"": ""Button"",
+                    ""id"": ""cbe6a3a9-a9b9-4da1-abef-a51339749a10"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -265,6 +273,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Diary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f3517c7-f5c5-4bb9-b09d-75066c986ddc"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Map"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -279,6 +298,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Flashlight = m_Player.FindAction("Flashlight", throwIfNotFound: true);
         m_Player_Diary = m_Player.FindAction("Diary", throwIfNotFound: true);
+        m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -334,6 +354,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Flashlight;
     private readonly InputAction m_Player_Diary;
+    private readonly InputAction m_Player_Map;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -344,6 +365,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Flashlight => m_Wrapper.m_Player_Flashlight;
         public InputAction @Diary => m_Wrapper.m_Player_Diary;
+        public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -371,6 +393,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Diary.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiary;
                 @Diary.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiary;
                 @Diary.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiary;
+                @Map.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
+                @Map.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
+                @Map.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -393,6 +418,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Diary.started += instance.OnDiary;
                 @Diary.performed += instance.OnDiary;
                 @Diary.canceled += instance.OnDiary;
+                @Map.started += instance.OnMap;
+                @Map.performed += instance.OnMap;
+                @Map.canceled += instance.OnMap;
             }
         }
     }
@@ -405,5 +433,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnFlashlight(InputAction.CallbackContext context);
         void OnDiary(InputAction.CallbackContext context);
+        void OnMap(InputAction.CallbackContext context);
     }
 }
