@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Sprint
-        if (inputManager.PlayerSprinting())
+        if (inputManager.PlayerSprinting() && !inputManager.PlayerCrouching()) 
         {
             playerSpeed = sprintSpeed;
         }
