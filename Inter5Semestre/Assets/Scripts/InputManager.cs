@@ -53,6 +53,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Sprint.activeControl != null;
     }
 
+    public bool PlayerCrouching()
+    {
+        return playerControls.Player.Crouch.activeControl != null;
+    }
+
     public bool FlashlightAction()
     {
         return playerControls.Player.Flashlight.triggered;
@@ -66,6 +71,16 @@ public class InputManager : MonoBehaviour
     public bool OpenMap()
     {
         return playerControls.Player.Map.triggered;
+    }
+
+    public bool Interact()
+    {
+        return playerControls.Player.Interact.triggered;
+    }
+
+    public bool NextDialogue()
+    {
+        return playerControls.Player.NextDialogue.triggered;
     }
 
     /*

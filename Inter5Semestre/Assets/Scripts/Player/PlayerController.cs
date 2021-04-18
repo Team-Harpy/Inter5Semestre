@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 
 [RequireComponent(typeof(CharacterController))]
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private float walkSpeed = 5.0f;
     [SerializeField]
     private float sprintSpeed = 10.0f;
+    [SerializeField]
+    private float crouchSpeed = 2.0f;
     [SerializeField]
     private float jumpHeight = 1.0f;
     [SerializeField]
@@ -43,6 +46,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float flashlightRecoveryRate;
 
+    [SerializeField]
+    private CinemachineVirtualCamera normalCamera;
+    [SerializeField]
+    private CinemachineVirtualCamera crouchCamera;
+
+
+    private bool crouchcameraAdjust;
+    private bool normalcameraAdjust;
+
 
     private void Start()
     {
@@ -68,10 +80,39 @@ public class PlayerController : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
+        //Crouch
+        if (inputManager.PlayerCrouching())
+        {
+            if (!crouchcameraAdjust)
+            {
+                crouchCamera.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.Value = normalCamera.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.Value;
+                crouchCamera.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value = normalCamera.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value;
+                crouchcameraAdjust = true;
+                normalcameraAdjust = false;
+            }
 
+            playerSpeed = crouchSpeed;
+            crouchCamera.Priority = 1;
+            normalCamera.Priority = 0;
+
+        }
+        else
+        {
+            if (!normalcameraAdjust)
+            {
+                normalCamera.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.Value = crouchCamera.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.Value;
+                normalCamera.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value = crouchCamera.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.Value;
+                normalcameraAdjust = true;
+                crouchcameraAdjust = false;
+            }
+
+            playerSpeed = walkSpeed;
+            crouchCamera.Priority = 0;
+            normalCamera.Priority = 1;
+        }
 
         //Sprint
-        if (inputManager.PlayerSprinting())
+        if (inputManager.PlayerSprinting() && !inputManager.PlayerCrouching()) 
         {
             playerSpeed = sprintSpeed;
         }
