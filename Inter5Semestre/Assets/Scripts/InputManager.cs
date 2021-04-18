@@ -68,6 +68,16 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Map.triggered;
     }
 
+    public bool Interact()
+    {
+        return playerControls.Player.Interact.triggered;
+    }
+
+    public bool NextDialogue()
+    {
+        return playerControls.Player.NextDialogue.triggered;
+    }
+
     /*
     public Vector2 GetMouseDelta()
     {
