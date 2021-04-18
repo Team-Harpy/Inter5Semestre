@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gravityValue = -9.81f;
 
-    private bool hasFlashlight;
+    private bool hasFlashlight = true;
     public bool flashlightOn;
 
 
@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
     private bool crouchcameraAdjust;
     private bool normalcameraAdjust;
 
+    public LayerMask layerSelecao;
+    SelectHighlight selected;
 
     private void Start()
     {
@@ -178,6 +180,37 @@ public class PlayerController : MonoBehaviour
 
 
         controller.Move(playerVelocity * Time.deltaTime);
+
+        //Raycast
+        Ray raio = Camera.main.ScreenPointToRay(inputManager.MousePosition());
+        RaycastHit hit;
+        SelectHighlight newSelection = null;
+        Debug.DrawRay(raio.origin, raio.direction * 10, Color.red);
+
+        if (Physics.Raycast(raio, out hit, 10, layerSelecao))
+        {
+            newSelection = hit.transform.GetComponent<SelectHighlight>();
+        }
+
+        if (selected)
+        {
+            selected.Off();
+        }
+
+        if (newSelection)
+        {
+            newSelection.On();
+            selected = newSelection;
+
+            Interactable novo = newSelection.GetComponent<Interactable>();
+            if(novo && inputManager.Interact())
+            {
+                novo.Interact();
+            }
+        }
+
+        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
 

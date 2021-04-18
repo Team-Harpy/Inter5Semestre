@@ -97,6 +97,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""09a8a96e-38e0-4028-842f-0edcd614de68"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -323,7 +331,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8de09d65-dbb4-475d-a44e-73b58df3ca55"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -339,6 +347,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9156ab4b-9779-4f99-98af-49ff0c6adaa4"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -359,6 +378,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_NextDialogue = m_Player.FindAction("NextDialogue", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+        m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -418,6 +438,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_NextDialogue;
     private readonly InputAction m_Player_Crouch;
+    private readonly InputAction m_Player_MousePosition;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -432,6 +453,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @NextDialogue => m_Wrapper.m_Player_NextDialogue;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+        public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -471,6 +493,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
                 @Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
                 @Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -505,6 +530,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Crouch.started += instance.OnCrouch;
                 @Crouch.performed += instance.OnCrouch;
                 @Crouch.canceled += instance.OnCrouch;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
             }
         }
     }
@@ -521,5 +549,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnNextDialogue(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
     }
 }

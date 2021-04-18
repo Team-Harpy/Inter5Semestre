@@ -83,6 +83,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.NextDialogue.triggered;
     }
 
+    public Vector2 MousePosition()
+    {
+        return playerControls.Player.MousePosition.ReadValue<Vector2>();
+    }
+
     /*
     public Vector2 GetMouseDelta()
     {
