@@ -1063,7 +1063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11400001, y: 0}
   m_AnchorMax: {x: 1, y: 0.28}
-  m_AnchoredPosition: {x: -8.595581, y: 6.8182373}
+  m_AnchoredPosition: {x: -8.595703, y: 6.8182373}
   m_SizeDelta: {x: -25.540398, y: -14.373596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &156918551
@@ -1586,6 +1586,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &308815780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1547116696582102, guid: f750d5f061e724f4c827ab6b376e2550, type: 3}
+  m_PrefabInstance: {fileID: 596326825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &308815781
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308815780}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.38900003, y: 0.46800002, z: 0.38900003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &316710225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6258,6 +6279,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b0391de1f01e7c3498a2b52e8c634d06, type: 3}
+--- !u!1 &1279004650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1547116696582102, guid: f750d5f061e724f4c827ab6b376e2550, type: 3}
+  m_PrefabInstance: {fileID: 1777343353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1279004651
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279004650}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.38900003, y: 0.46800002, z: 0.38900003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1294322419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6389,7 +6431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.010245008, y: 0.10570631}
   m_AnchorMax: {x: 0.989, y: 0.768}
-  m_AnchoredPosition: {x: 2.9083252, y: 0.019699097}
+  m_AnchoredPosition: {x: 2.9082031, y: 0.019714355}
   m_SizeDelta: {x: -6.5838, y: 0.2084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1345178297
@@ -8472,7 +8514,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 0.38900003, y: 0.46800002, z: 0.38900003}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
@@ -10210,7 +10252,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.010245008, y: 0.768}
   m_AnchorMax: {x: 0.25, y: 0.9372908}
-  m_AnchoredPosition: {x: -2.000122, y: -4.5}
+  m_AnchoredPosition: {x: -2, y: -4.5}
   m_SizeDelta: {x: -4, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2019216138
