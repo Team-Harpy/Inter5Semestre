@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8818933105104740817}
   - component: {fileID: 1504868176000062021}
   - component: {fileID: 7773507618507866810}
-  - component: {fileID: 5043196140599766763}
   m_Layer: 0
   m_Name: Gas
   m_TagString: Untagged
@@ -4825,20 +4824,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &5043196140599766763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528051770985055630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ddc5e81b58c1b947824c4a839d7a9e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontoFinal: {fileID: 8071573443969197863}
-  velocidade: 1
 --- !u!1 &8071573443969197863
 GameObject:
   m_ObjectHideFlags: 0
