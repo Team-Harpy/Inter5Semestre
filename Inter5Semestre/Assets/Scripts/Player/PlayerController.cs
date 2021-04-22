@@ -185,11 +185,13 @@ public class PlayerController : MonoBehaviour
         Ray raio = Camera.main.ScreenPointToRay(inputManager.MousePosition());
         RaycastHit hit;
         SelectHighlight newSelection = null;
+        CommentObject newObject = null;
         Debug.DrawRay(raio.origin, raio.direction * 10, Color.red);
 
         if (Physics.Raycast(raio, out hit, 10, layerSelecao))
         {
             newSelection = hit.transform.GetComponent<SelectHighlight>();
+            newObject = hit.transform.GetComponent<CommentObject>();
         }
 
         if (selected)
@@ -207,6 +209,11 @@ public class PlayerController : MonoBehaviour
             {
                 novo.Interact();
             }
+        }
+
+        if (newObject)
+        {
+            newObject.Comment();
         }
 
         Cursor.lockState = CursorLockMode.Locked;
