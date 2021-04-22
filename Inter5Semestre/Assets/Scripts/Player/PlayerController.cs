@@ -187,12 +187,14 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         SelectHighlight newSelection = null;
         CommentObject newObject = null;
+        ZoomComment newZoom = null;
         Debug.DrawRay(raio.origin, raio.direction * 10, Color.red);
 
         if (Physics.Raycast(raio, out hit, 10, layerSelecao))
         {
             newSelection = hit.transform.GetComponent<SelectHighlight>();
             newObject = hit.transform.GetComponent<CommentObject>();
+            newZoom = hit.transform.GetComponent<ZoomComment>();
         }
 
         if (selected)
@@ -215,6 +217,11 @@ public class PlayerController : MonoBehaviour
         if (newObject)
         {
             newObject.Comment();
+        }
+
+        if (newZoom)
+        {
+            newZoom.ZoomCommentFunction();
         }
 
         

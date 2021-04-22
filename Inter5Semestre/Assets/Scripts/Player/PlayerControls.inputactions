@@ -92,6 +92,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ExitLock",
+                    "type": "Button",
+                    "id": "3ab92e36-00fe-4026-8569-ad9316809c2f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -345,6 +353,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c1000b0-a374-4efe-bde7-aa79632e6e19",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitLock",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

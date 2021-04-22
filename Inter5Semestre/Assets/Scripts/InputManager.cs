@@ -78,6 +78,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Interact.triggered;
     }
 
+    public bool ExitLock()
+    {
+        return playerControls.Player.ExitLock.triggered;
+    }
+
     public bool NextDialogue()
     {
         return playerControls.Player.NextDialogue.triggered;

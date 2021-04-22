@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class NumberLockController : MonoBehaviour
 {
+    public CinemachineVirtualCamera vcam;
+
+    private InputManager inputManager;
     private int[] currentCode, correctCombination;
 
     [SerializeField]
@@ -13,8 +17,16 @@ public class NumberLockController : MonoBehaviour
     {
         currentCode = new int[] { 0, 0, 0 };
         correctCombination = new int[] { firstNumber, secondNumber, thirdNumber };
+        inputManager = InputManager.Instance;
     }
 
+    private void Update()
+    {
+        if (inputManager.ExitLock())
+        {
+            ExitLock();
+        }
+    }
     public void CheckCombination(string wheelName, int number)
     {
         switch (wheelName)
@@ -34,7 +46,18 @@ public class NumberLockController : MonoBehaviour
 
         if(currentCode[0] == correctCombination[0] && currentCode[1] == correctCombination[1] && currentCode[2] == correctCombination[2])
         {
-            Debug.Log("Poggers");
+            ExitLock();
         }
+    }
+
+
+
+    void ExitLock()
+    {
+        this.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        vcam.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = 0.1f;
+        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = 0.1f;
     }
 }

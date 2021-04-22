@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class NumberLock : Interactable
+public class NumberLockInteract : Interactable
 {
     public GameObject numberlockCanvas;
     public CinemachineVirtualCamera camera;
