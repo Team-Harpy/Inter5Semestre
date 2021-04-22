@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
         cameraTransform = Camera.main.transform;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         flashlight = cameraTransform.GetComponentInChildren<Light>();
         flashlight.enabled = false;
 
@@ -216,8 +217,8 @@ public class PlayerController : MonoBehaviour
             newObject.Comment();
         }
 
-        Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        
+       
     }
 
 
