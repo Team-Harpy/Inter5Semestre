@@ -9689,6 +9689,18 @@ PrefabInstance:
       propertyPath: vcam
       value: 
       objectReference: {fileID: 901756446}
+    - target: {fileID: 8245455546216332351, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
+      propertyPath: firstNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245455546216332351, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
+      propertyPath: thirdNumber
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245455546216332351, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
+      propertyPath: secondNumber
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8249208085055973616, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
       propertyPath: m_RootOrder
       value: 0
