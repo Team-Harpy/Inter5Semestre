@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DiarioInteract : Interactable
 {
-    public Diario diary;
+    public PopUpUI diary;
 
     public override void Interact()
     {

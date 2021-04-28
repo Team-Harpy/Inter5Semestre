@@ -10,19 +10,22 @@ public class PopUpUI : MonoBehaviour
 
     private bool diaryOpened;
     private bool mapOpened;
+    [HideInInspector]
+    public bool hasDiary;
 
     private void Start()
     {
         inputManager = InputManager.Instance;
         diaryOpened = false;
         mapOpened = false;
+        hasDiary = false;
     }
 
     private void Update()
     {
         if(diaryOpened == false && mapOpened == false)
         {
-            if (inputManager.DiaryUp())
+            if (inputManager.DiaryUp() && hasDiary)
             {
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = true;
@@ -37,7 +40,7 @@ public class PopUpUI : MonoBehaviour
 
         else if (diaryOpened == true && mapOpened == false)
         {
-            if (inputManager.DiaryUp())
+            if (inputManager.DiaryUp() && hasDiary)
             {
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = false;
