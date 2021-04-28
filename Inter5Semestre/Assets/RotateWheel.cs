@@ -31,12 +31,12 @@ public class RotateWheel : Interactable
     private IEnumerator RotateWheelCoroutine()
     {
         coroutineAllowed = false;
-        for(int i = 0; i <= 8; i++)
-        {
+       // for(int i = 0; i <= 8; i++)
+       // {
             transform.Rotate(0f, -45f, 0f);
             yield return new WaitForSeconds(0.01f);
 
-        }
+        //}
         coroutineAllowed = true;
         numberShown += 1;
         if(numberShown > 7)
