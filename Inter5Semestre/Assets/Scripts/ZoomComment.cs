@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class ZoomComment : MonoBehaviour
+public class ZoomComment : Interactable
 {
     // Start is called before the first frame update
     private float time;
@@ -36,15 +36,14 @@ public class ZoomComment : MonoBehaviour
 
         //Debug.Log(time);
     }
-    public void ZoomCommentFunction()
+    public override void Interact()
     {
+        Debug.Log("go");
         cooldown = true;
         time += Time.deltaTime;
-        if (time >= timeToReact)
-        {
+        
             if(coroutineStart) StartCoroutine("ZoomPlusComment");
-                       
-        }
+                              
     }
 
 

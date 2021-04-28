@@ -219,10 +219,7 @@ public class PlayerController : MonoBehaviour
             newObject.Comment();
         }
 
-        if (newZoom)
-        {
-            newZoom.ZoomCommentFunction();
-        }
+       
 
         
        
