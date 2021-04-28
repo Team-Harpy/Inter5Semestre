@@ -13,6 +13,9 @@ public class PopUpUI : MonoBehaviour
     [HideInInspector]
     public bool hasDiary;
 
+    [SerializeField]
+    private LockCamera lockCamera;
+
     private void Start()
     {
         inputManager = InputManager.Instance;
@@ -23,12 +26,16 @@ public class PopUpUI : MonoBehaviour
 
     private void Update()
     {
+    
+
+
         if(diaryOpened == false && mapOpened == false)
         {
             if (inputManager.DiaryUp() && hasDiary)
             {
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = true;
+                lockCamera.LockPlayerCamera();
             }
 
             if (inputManager.OpenMap())
@@ -44,6 +51,7 @@ public class PopUpUI : MonoBehaviour
             {
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = false;
+                lockCamera.UnlockPlayerCamera();
             }
         }
 

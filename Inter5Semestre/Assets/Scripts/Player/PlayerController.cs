@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
             newObject.Comment();
         }
 
-        Debug.Log(selected);
+        //Debug.Log(selected);
     }
 
 
