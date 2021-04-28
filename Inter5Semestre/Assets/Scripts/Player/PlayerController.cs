@@ -205,6 +205,7 @@ public class PlayerController : MonoBehaviour
             {
                 selected.GetComponent<SelectHighlight>().Off();
             }
+            interactText.SetActive(false);
         }
 
         if (newSelection)
@@ -215,6 +216,7 @@ public class PlayerController : MonoBehaviour
                 highlight.On();
             }
             selected = newSelection;
+            interactText.SetActive(true);
 
             if(inputManager.Interact())
             {
