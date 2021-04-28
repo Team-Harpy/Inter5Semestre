@@ -56,7 +56,8 @@ public class PlayerController : MonoBehaviour
     private bool normalcameraAdjust;
 
     public LayerMask layerSelecao;
-    SelectHighlight selected;
+    Interactable selected;
+    public GameObject interactText;
 
     private void Start()
     {
@@ -185,32 +186,39 @@ public class PlayerController : MonoBehaviour
         //Raycast
         Ray raio = Camera.main.ScreenPointToRay(inputManager.MousePosition());
         RaycastHit hit;
-        SelectHighlight newSelection = null;
+        Interactable newSelection = null;
+        SelectHighlight highlight = null;
         CommentObject newObject = null;
         ZoomComment newZoom = null;
         Debug.DrawRay(raio.origin, raio.direction * 10, Color.red);
 
         if (Physics.Raycast(raio, out hit, 10, layerSelecao))
         {
-            newSelection = hit.transform.GetComponent<SelectHighlight>();
+            newSelection = hit.transform.GetComponent<Interactable>();
             newObject = hit.transform.GetComponent<CommentObject>();
             newZoom = hit.transform.GetComponent<ZoomComment>();
         }
 
         if (selected)
         {
-            selected.Off();
+            if (selected.GetComponent<SelectHighlight>())
+            {
+                selected.GetComponent<SelectHighlight>().Off();
+            }
         }
 
         if (newSelection)
         {
-            newSelection.On();
+            highlight = newSelection.GetComponent<SelectHighlight>();
+            if (highlight)
+            {
+                highlight.On();
+            }
             selected = newSelection;
 
-            Interactable novo = newSelection.GetComponent<Interactable>();
-            if(novo && inputManager.Interact())
+            if(inputManager.Interact())
             {
-                novo.Interact();
+                newSelection.Interact();
             }
         }
 
@@ -219,10 +227,7 @@ public class PlayerController : MonoBehaviour
             newObject.Comment();
         }
 
-       
-
-        
-       
+        Debug.Log(selected);
     }
 
 
