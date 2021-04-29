@@ -14,6 +14,11 @@ public class ZoomComment : Interactable
     private float cooldownReset;
     private bool cooldown = false;
     public DialogueBase dialogue;
+    [SerializeField]
+    private Diario diario;
+    [SerializeField]
+    private GameObject atualizacaoDiario;
+    
 
     private bool coroutineStart = true;
 
