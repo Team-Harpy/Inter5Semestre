@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2f9b4fc16a1d149af43e55240294a2, type: 3}
+  m_Name: "MesaRefeit\xF3rio"
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "Ah, sim\u2026 O refeit\xF3rio. A comida n\xE3o era l\xE1 grande coisa,
+      mas a companhia valia a pena. Nossas conversas eram simples, geralmente sobre
+      o que teria no almo\xE7o ou sobre o \xFAltimo jogo de cricket."
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []

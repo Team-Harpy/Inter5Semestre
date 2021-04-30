@@ -9,6 +9,6 @@ public class DiarioInteract : Interactable
     public override void Interact()
     {
         diary.hasDiary = true;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
