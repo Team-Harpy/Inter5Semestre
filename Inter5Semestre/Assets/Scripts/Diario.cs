@@ -49,10 +49,6 @@ public class Diario : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-
-    }
 
     public void AddPrimaryObjective()
     {
@@ -138,7 +134,7 @@ public class Diario : MonoBehaviour
 
     public void PreviousPage()
     {
-        if (currentPage >= 0)
+        if (currentPage > 0)
         {
             pages[currentPage].SetActive(false);
             pages[currentPage - 1].SetActive(true);
