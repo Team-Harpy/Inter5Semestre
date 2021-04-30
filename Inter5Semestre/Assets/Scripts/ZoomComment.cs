@@ -16,8 +16,7 @@ public class ZoomComment : Interactable
     public DialogueBase dialogue;
     [SerializeField]
     private Diario diario;
-    [SerializeField]
-    private GameObject atualizacaoDiario;
+    
     
 
     private bool coroutineStart = true;
@@ -43,7 +42,8 @@ public class ZoomComment : Interactable
     }
     public override void Interact()
     {
-        Debug.Log("go");
+        // Debug.Log("go");
+        diario.AddSecondaryObjective("Entrar na sala de segurança");
         cooldown = true;
         time += Time.deltaTime;
         
