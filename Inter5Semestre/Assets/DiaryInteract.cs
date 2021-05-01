@@ -7,9 +7,10 @@ public class DiaryInteract : Interactable
     public Diario diary;
     public GameObject atualizacao;
     public DialogueBase dialogo;
+    public bool temDialogo;
     public override void Interact()
     {
         diary.FillPage(atualizacao);
-        DialogueManager.instance.EnqueueDialogue(dialogo);
+       if(temDialogo) DialogueManager.instance.EnqueueDialogue(dialogo);
     }
 }

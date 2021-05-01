@@ -6,48 +6,52 @@ using Cinemachine;
 public class ZoomComment : Interactable
 {
     // Start is called before the first frame update
-    private float time;
-    private float timeReset;
-    [SerializeField]
-    private float timeToReact;
-    [SerializeField]
-    private float cooldownReset;
-    private bool cooldown = false;
-    public DialogueBase dialogue;
+   
+    private bool coroutineStart = true;
+    
     [SerializeField]
     private Diario diario;
-    
-    
 
-    private bool coroutineStart = true;
-
+    [Header("Dialogo")]
     [SerializeField]
-    private CinemachineVirtualCamera vcamNormal, vcamZoom;
+    private bool hasDialogue;
+    [SerializeField]
+    private DialogueBase dialogue;
+
+    [Header("Objetivo")]
+    [SerializeField]
+    private bool hasSecondaryObjective;
+    [SerializeField]
+    private string secondaryObjectiveName;
+
+
+    [Header("Diario")]
+    [SerializeField]
+    private bool hasDiaryUpdate;
+    [SerializeField]
+    private GameObject update;
+
+
+    [Header("CameraTransition")]
+    [SerializeField]
+    private CinemachineVirtualCamera vcamNormal;
+    [SerializeField]
+    private CinemachineVirtualCamera vcamZoom;
     
-    private void Update()
-    {
-        if (cooldown)
-        {
-            timeReset += Time.deltaTime;
-
-            if (timeReset >= cooldownReset)
-            {
-                time = 0;
-                timeReset = 0;
-                cooldown = false;
-            }
-        }
-
-        //Debug.Log(time);
-    }
+ 
     public override void Interact()
     {
-        // Debug.Log("go");
-        diario.AddSecondaryObjective("Entrar na sala de segurança");
-        cooldown = true;
-        time += Time.deltaTime;
+        //Objetivo
+        if(hasSecondaryObjective) diario.AddSecondaryObjective(secondaryObjectiveName);
+
+        //Diario
+        if (hasDiaryUpdate) diario.FillPage(update);
+
+       
         
-            if(coroutineStart) StartCoroutine("ZoomPlusComment");
+              
+       
+       if(coroutineStart) StartCoroutine("ZoomPlusComment");
                               
     }
 
@@ -57,7 +61,7 @@ public class ZoomComment : Interactable
         coroutineStart = false;
         vcamZoom.Priority = 2;
         yield return new WaitForSeconds(1f);
-        DialogueManager.instance.EnqueueDialogue(dialogue);
+        if (hasDialogue) DialogueManager.instance.EnqueueDialogue(dialogue);
         this.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(2f);
         DialogueManager.instance.DequeueDialogue();
