@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool groundedPlayer;
     private Transform cameraTransform;
+    [SerializeField]
     private Light flashlight;
 
     public float flashlightTimer;
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
         cameraTransform = Camera.main.transform;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        flashlight = cameraTransform.GetComponentInChildren<Light>();
+        //flashlight = cameraTransform.GetComponentInChildren<Light>();
         flashlight.enabled = false;
 
         flashlightTimerI = flashlightTimer;
