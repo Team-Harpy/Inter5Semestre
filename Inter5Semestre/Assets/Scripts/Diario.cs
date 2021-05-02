@@ -80,7 +80,7 @@ public class Diario : MonoBehaviour
         if (bothPagesFilled)
         {
             pages[currentPage].SetActive(false);
-            currentPage += 1;
+            currentPage = pages.Count;
             bothPagesFilled = false;
             leftPageFilled = false;
             firstPage = false;
