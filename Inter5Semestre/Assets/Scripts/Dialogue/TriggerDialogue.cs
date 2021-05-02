@@ -31,5 +31,6 @@ public class TriggerDialogue : MonoBehaviour
     public void Trigger()
     {
         DialogueManager.instance.EnqueueDialogue(dialogue);
+        gameObject.SetActive(false);
     }
 }

@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class GatilhoLabA : Interactable
 {
-    public Volume real;
-    public Volume alucinacao;
+    public VolumeManager manager;
+    public float velocidadeTransicao;
+    public DialogueBase dialogo;
 
     public override void Interact()
     {
-        real.priority = 0;
-        alucinacao.priority = 1;
+        manager.Transicao(velocidadeTransicao, dialogo);
         gameObject.SetActive(false);
     }
 }
