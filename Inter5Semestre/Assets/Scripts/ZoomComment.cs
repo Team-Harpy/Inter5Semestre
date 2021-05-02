@@ -12,6 +12,11 @@ public class ZoomComment : Interactable
     [SerializeField]
     private Diario diario;
 
+    InputManager inputManager;
+    [SerializeField]
+    private GameObject flashlight;
+    private bool goBack;
+
     [Header("Dialogo")]
     [SerializeField]
     private bool hasDialogue;
@@ -38,7 +43,15 @@ public class ZoomComment : Interactable
     [SerializeField]
     private CinemachineVirtualCamera vcamZoom;
     
- 
+    private void Start()
+    {
+        inputManager = InputManager.Instance;
+    }
+
+    private void Update()
+    {
+        if (inputManager.NextDialogue() && !coroutineStart) goBack = true;
+    }
     public override void Interact()
     {
         //Objetivo
@@ -59,13 +72,19 @@ public class ZoomComment : Interactable
     IEnumerator ZoomPlusComment()
     {
         coroutineStart = false;
+        flashlight.SetActive(false);
         vcamZoom.Priority = 2;
         yield return new WaitForSeconds(1f);
         if (hasDialogue) DialogueManager.instance.EnqueueDialogue(dialogue);
         this.GetComponent<BoxCollider>().enabled = false;
-        yield return new WaitForSeconds(2f);
+        while (!goBack)
+        {
+            yield return null;
+        }
         DialogueManager.instance.DequeueDialogue();
         vcamZoom.Priority = 0;
+        yield return new WaitForSeconds(1f);
+        flashlight.SetActive(true);
 
     }
 }
