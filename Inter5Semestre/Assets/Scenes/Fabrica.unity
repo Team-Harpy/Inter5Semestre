@@ -2784,7 +2784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diario: {fileID: 517200568}
-  flashlight: {fileID: 0}
+  flashlight: {fileID: 1421102993}
   hasDialogue: 1
   dialogue: {fileID: 11400000, guid: b18625d7f3055e2499b04af41bc140a9, type: 2}
   hasSecondaryObjective: 0
@@ -8535,6 +8535,7 @@ Transform:
   m_Children:
   - {fileID: 1543226463}
   - {fileID: 476503032}
+  - {fileID: 1421102992}
   m_Father: {fileID: 129308040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20.146, y: 195.09, z: 0.001}
@@ -12311,6 +12312,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0391de1f01e7c3498a2b52e8c634d06, type: 3}
+--- !u!1001 &1421102991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 898866799}
+    m_Modifications:
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0014769564
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0014769565
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0014769564
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.41599947
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.286
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.45000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.52398777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.47480163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.36814544
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6037128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -3.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 73.832
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -100.374
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132999177227419672, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+      propertyPath: m_Name
+      value: Lanterna
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+--- !u!4 &1421102992 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6816652495069971081, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+  m_PrefabInstance: {fileID: 1421102991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1421102993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8132999177227419672, guid: c4bfa1d0256ef57418b915c4d30a8c0f, type: 3}
+  m_PrefabInstance: {fileID: 1421102991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1433091290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18896,7 +18976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diario: {fileID: 517200568}
-  flashlight: {fileID: 0}
+  flashlight: {fileID: 1421102993}
   hasDialogue: 1
   dialogue: {fileID: 11400000, guid: f2700991c3cc7ae4ead0bfa47631457e, type: 2}
   hasSecondaryObjective: 1
