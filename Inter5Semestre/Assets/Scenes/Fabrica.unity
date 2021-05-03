@@ -19886,7 +19886,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 0
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 683164558}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
@@ -19910,14 +19910,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870695747}
-  m_LocalRotation: {x: 0.17905723, y: 0.22815607, z: -0.042730417, w: 0.9560635}
-  m_LocalPosition: {x: -10.64, y: 1.572, z: -5.376}
+  m_LocalRotation: {x: 0.13764948, y: 0.22610047, z: -0.05253248, w: 0.9628975}
+  m_LocalPosition: {x: -10.64, y: 1.249, z: -5.173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 69735669}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.789, y: 26.085, z: -2.33}
 --- !u!1001 &1872253456
 PrefabInstance:
   m_ObjectHideFlags: 0
