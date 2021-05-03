@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     Interactable selected;
     public GameObject interactText;
 
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
