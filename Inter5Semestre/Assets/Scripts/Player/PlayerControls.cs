@@ -121,6 +121,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MovingObject"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad4e20b5-dda8-465c-ace5-27d38f9df742"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
                 }
             ],
             ""bindings"": [
@@ -398,6 +406,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""594965d8-baca-489e-b62b-77597d6c9006"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovingObject"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -419,6 +438,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_ExitLock = m_Player.FindAction("ExitLock", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_MovingObject = m_Player.FindAction("MovingObject", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -481,6 +501,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_ExitLock;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_MovingObject;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -498,6 +519,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @ExitLock => m_Wrapper.m_Player_ExitLock;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @MovingObject => m_Wrapper.m_Player_MovingObject;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -546,6 +568,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @MovingObject.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovingObject;
+                @MovingObject.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovingObject;
+                @MovingObject.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovingObject;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -589,6 +614,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @MovingObject.started += instance.OnMovingObject;
+                @MovingObject.performed += instance.OnMovingObject;
+                @MovingObject.canceled += instance.OnMovingObject;
             }
         }
     }
@@ -608,5 +636,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMousePosition(InputAction.CallbackContext context);
         void OnExitLock(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnMovingObject(InputAction.CallbackContext context);
     }
 }

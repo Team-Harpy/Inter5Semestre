@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 
+
 public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControls;
@@ -93,12 +94,16 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.MousePosition.ReadValue<Vector2>();
     }
 
-    /*
+    
     public Vector2 GetMouseDelta()
     {
-        return playerControls.Land.Look.ReadValue<Vector2>();
+        return playerControls.Player.CameraMovement.ReadValue<Vector2>();
     }
-    */
+    
+    public bool PlayerMovingObject()
+    {
+        return playerControls.Player.MovingObject.activeControl != null;
+    }
 
     public bool PlayerPause()
     {
