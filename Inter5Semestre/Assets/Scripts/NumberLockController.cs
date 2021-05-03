@@ -7,6 +7,19 @@ public class NumberLockController : MonoBehaviour
 {
     public CinemachineVirtualCamera vcam;
 
+   
+    private AnimationInteract animationInteractScript;
+
+    [Header("Door")]
+    [SerializeField]
+    private GameObject cadeado;
+    [SerializeField]
+    private GameObject doorToOpen;
+    [SerializeField]
+    private Animator doorAnimator;
+    [SerializeField]
+    private string boolName;
+
     private InputManager inputManager;
     private int[] currentCode, correctCombination;
 
@@ -19,6 +32,7 @@ public class NumberLockController : MonoBehaviour
         currentCode = new int[] { 0, 0, 0 };
         correctCombination = new int[] { firstNumber, secondNumber, thirdNumber };
         inputManager = InputManager.Instance;
+        doorAnimator = doorToOpen.GetComponent<Animator>();
     }
 
     private void Update()
@@ -47,7 +61,7 @@ public class NumberLockController : MonoBehaviour
 
         if(currentCode[0] == correctCombination[0] && currentCode[1] == correctCombination[1] && currentCode[2] == correctCombination[2])
         {
-            ExitLock();
+            UnlockDoor();
         }
     }
 
@@ -60,5 +74,17 @@ public class NumberLockController : MonoBehaviour
         Cursor.visible = false;
         vcam.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = 0.1f;
         vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = 0.1f;
+    }
+
+
+    void UnlockDoor()
+    {
+        ExitLock();
+        doorAnimator.SetBool("Open", true);
+        doorToOpen.AddComponent<AnimationInteract>();
+        animationInteractScript = doorToOpen.GetComponent<AnimationInteract>();
+        animationInteractScript.animator = doorToOpen.GetComponent<Animator>();
+        animationInteractScript.boolAnimationName = boolName;
+        Destroy(cadeado);
     }
 }

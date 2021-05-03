@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AnimationInteract : Interactable
 {   [SerializeField]
-    Animator animator;
+    public Animator animator;
     [SerializeField]
-    string boolAnimationName;
+    public string boolAnimationName;
     public override void Interact()
     {
         animator.SetBool(boolAnimationName, !animator.GetBool(boolAnimationName));
