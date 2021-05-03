@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gravityValue = -9.81f;
 
-    private bool hasFlashlight = true;
+    [HideInInspector]
+    public bool hasFlashlight = true;
     public bool flashlightOn;
 
 
@@ -37,8 +38,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool groundedPlayer;
     private Transform cameraTransform;
-    [SerializeField]
-    private Light flashlight;
+    public Light flashlight;
 
     public float flashlightTimer;
     private float flashlightTimerI;
