@@ -9,6 +9,7 @@ public class VolumeManager : MonoBehaviour
     public Volume alucinacao;
     private float transitionSpeed;
     private bool transiciona;
+    private bool transicionaOut;
     private DialogueBase dialogo;
 
     private void Start()
@@ -33,6 +34,18 @@ public class VolumeManager : MonoBehaviour
                 transiciona = false;
             }
         }
+
+        if (transicionaOut)
+        {
+            alucinacao.priority = 0;
+            real.priority = 1;
+            real.weight += transitionSpeed * Time.deltaTime;
+
+            if(real.weight >= 1)
+            {
+                transicionaOut = false;
+            }
+        }
     }
 
     public void Transicao(float speed)
@@ -48,6 +61,13 @@ public class VolumeManager : MonoBehaviour
         alucinacao.weight = 0;
         transitionSpeed = speed;
         transiciona = true;
+    }
+
+    public void TransicaoOut(float speed)
+    {
+        real.weight = 0;
+        transitionSpeed = speed;
+        transicionaOut = true;
     }
 
     IEnumerator WaitForDialogue()

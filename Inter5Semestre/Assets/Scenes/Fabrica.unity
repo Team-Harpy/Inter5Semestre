@@ -7653,7 +7653,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.30599058, y: 0.66375804, z: 0.13675272}
   m_Center: {x: -0.027467426, y: 0.021330845, z: -0.008561067}
---- !u!114 &731894570
+--- !u!114 &731894573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7662,12 +7662,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 731894568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17aaa31ec7b8e6f46ba82d12fe4ce902, type: 3}
+  m_Script: {fileID: 11500000, guid: be57ebd6d5ac1df41a130bd8642a91ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doorToUnlock: {fileID: 1340665688}
   animator: {fileID: 1340665689}
   boolName: Open
+  velocidadeTransicao: 0.8
+  puzzleNormal: {fileID: 593647408}
+  puzzleSombra: {fileID: 449752567}
 --- !u!1001 &749055259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8324,6 +8327,7 @@ Transform:
   - {fileID: 18671539}
   - {fileID: 1957639989}
   - {fileID: 2060087260}
+  - {fileID: 1786619823}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19003,8 +19007,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 111148689}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 790664797}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20641,7 +20645,7 @@ GameObject:
   - component: {fileID: 1932604920}
   m_Layer: 0
   m_Name: VolumeManager
-  m_TagString: Untagged
+  m_TagString: VolumeManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22097,7 +22101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97bb41ae17236e418e0dddba3401e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1932604920}
   velocidadeTransicao: 0.1
   dialogo: {fileID: 11400000, guid: dca36f8ffa47ae44b8f336518f1ca9bb, type: 2}
   puzzleNormal: {fileID: 593647408}
