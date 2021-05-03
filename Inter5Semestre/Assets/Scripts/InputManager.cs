@@ -100,6 +100,11 @@ public class InputManager : MonoBehaviour
     }
     */
 
+    public bool PlayerPause()
+    {
+        return playerControls.Player.Pause.triggered;
+    }
+
 
 }
 

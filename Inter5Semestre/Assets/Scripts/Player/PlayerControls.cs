@@ -113,6 +113,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""a91303a1-ed7d-4dad-86e7-b2d34cd254c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -379,6 +387,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""ExitLock"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e55aa557-1ba5-4f46-857f-43798e8dcbb1"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -399,6 +418,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_ExitLock = m_Player.FindAction("ExitLock", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -460,6 +480,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_ExitLock;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -476,6 +497,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @ExitLock => m_Wrapper.m_Player_ExitLock;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -521,6 +543,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ExitLock.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExitLock;
                 @ExitLock.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExitLock;
                 @ExitLock.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExitLock;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -561,6 +586,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ExitLock.started += instance.OnExitLock;
                 @ExitLock.performed += instance.OnExitLock;
                 @ExitLock.canceled += instance.OnExitLock;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -579,5 +607,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnExitLock(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
