@@ -82,6 +82,7 @@ public class TelefoneInteract : Interactable
         {
             yield return null;
         }
+        audioSource.volume = 0.3f;
         audioSource.clip = telefoneCaindo;
         audioSource.Play();
         yield return new WaitForSeconds(2.7f);

@@ -8679,8 +8679,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogoChave: {fileID: 11400000, guid: b85732465c917184aa5c39809a757cc1, type: 2}
   dialogoPortaTrancada: {fileID: 11400000, guid: 9387a898c64896049bfd4c51448242d7, type: 2}
-  chavePickupSound: {fileID: 0}
-  quickSE: {fileID: 0}
+  chavePickupSound: {fileID: 8300000, guid: bcb40c8d60bc7fc44884dfbfcc12306f, type: 3}
+  quickSE: {fileID: 1192908511}
   phone: {fileID: 330307102}
   doorToUnlock: {fileID: 1340665690}
 --- !u!1001 &749055259
