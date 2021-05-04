@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2f9b4fc16a1d149af43e55240294a2, type: 3}
   m_Name: AdminKey
   m_EditorClassIdentifier: 
-  dialogueInfo: []
+  dialogueInfo:
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "Com isso posso entrar na sala de administra\xE7\xE3o"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
