@@ -12,4 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2f9b4fc16a1d149af43e55240294a2, type: 3}
   m_Name: TelefoneEvento
   m_EditorClassIdentifier: 
-  dialogueInfo: []
+  dialogueInfo:
+  - profile: {fileID: 11400000, guid: 2bdf83473c958c64e8d3c5b2def701ac, type: 2}
+    myText: "Radesh...! \xC9 o beb\xEA...! Minha bolsa estourou... Eu... eu preciso
+      ir ao hospital\u2026\r\n"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "Pelos deuses! O beb\xEA se adiantou em um m\xEAs?! N-n\xE3o se preocupe,
+      querida. Fique calma, vou ver se meu irm\xE3o consegue nos dar uma carona at\xE9
+      o hospital."
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: 2bdf83473c958c64e8d3c5b2def701ac, type: 2}
+    myText: "N\xE3o se preocupe com a minha carona, a Daru e seu marido v\xE3o me
+      levar. Apenas, por favor... esteja aqui!"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "N\xE3o se preocupe... N\xE3o se preocupe. Vou voando para a\xED!"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: 2bdf83473c958c64e8d3c5b2def701ac, type: 2}
+    myText: Radesh...
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "Nayana\u2026O que\u2026? Tudo est\xE1\u2026 normal?"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
