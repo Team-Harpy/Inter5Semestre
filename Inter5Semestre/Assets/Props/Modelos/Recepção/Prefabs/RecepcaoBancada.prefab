@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 6186559736174313453}
   - component: {fileID: 7094516143698243656}
   - component: {fileID: 5012576280696620162}
+  - component: {fileID: 3325496583993653646}
+  - component: {fileID: 1495344396667867147}
   m_Layer: 0
   m_Name: RecepcaoBancada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6186559736174313453
 Transform:
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3325496583993653646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814161611555022167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 409.48215, y: 118.92201, z: 52.99619}
+  m_Center: {x: -154.74107, y: 9.461013, z: -28.217443}
+--- !u!65 &1495344396667867147
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814161611555022167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 109.40397, y: 118.92201, z: 50.120132}
+  m_Center: {x: -4.7020197, y: 9.461013, z: 24.939873}
