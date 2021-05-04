@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeyInteract : Interactable
 {
     public DialogueBase dialogoChave;
-    public DialogueBase dialogoTelefone;
+    
 
     [SerializeField]
     private GameObject phone;
@@ -34,8 +34,7 @@ public class KeyInteract : Interactable
     public override void Interact()
     {
         DialogueManager.instance.EnqueueDialogue(dialogoChave);
-        phone.GetComponent<DiaryInteract>().temDialogo = true;
-        phone.GetComponent<DiaryInteract>().dialogo = dialogoTelefone;
+        phone.GetComponent<TelefoneInteract>().hasKey = true;    
         Destroy(doorToUnlock.GetComponent<DialogueInteract>());
         doorToUnlock.AddComponent<AnimationInteract>();
         animator = doorToUnlock.GetComponent<Animator>();
