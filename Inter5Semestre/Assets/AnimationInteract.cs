@@ -11,4 +11,9 @@ public class AnimationInteract : Interactable
     {
         animator.SetBool(boolAnimationName, !animator.GetBool(boolAnimationName));
     }
+
+    public void PlaySound()
+    {
+        this.gameObject.GetComponent<AudioSource>().Play();
+    }
 }

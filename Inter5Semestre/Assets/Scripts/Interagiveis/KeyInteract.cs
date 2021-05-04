@@ -6,6 +6,11 @@ public class KeyInteract : Interactable
 {
     public DialogueBase dialogoChave;
     public DialogueBase dialogoPortaTrancada;
+
+    [SerializeField]
+    private AudioClip chavePickupSound;
+    [SerializeField]
+    private GameObject quickSE;
    
     [SerializeField]
     private GameObject phone;
@@ -18,6 +23,8 @@ public class KeyInteract : Interactable
         DialogueManager.instance.EnqueueDialogue(dialogoChave);
         phone.GetComponent<TelefoneInteract>().hasKey = true;
         doorToUnlock.dialogo = dialogoPortaTrancada;
+        quickSE.GetComponent<AudioSource>().clip = chavePickupSound;
+        quickSE.GetComponent<AudioSource>().Play();
         gameObject.SetActive(false);
     }
 
