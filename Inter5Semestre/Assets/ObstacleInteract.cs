@@ -8,6 +8,9 @@ public class ObstacleInteract : Interactable
     GameObject doorToUnlock;
 
     [SerializeField]
+    DialogueBase dialogo;
+
+    [SerializeField]
     Animator animator;
     [SerializeField]
     string boolName;
@@ -21,6 +24,7 @@ public class ObstacleInteract : Interactable
         doorToUnlock.GetComponent<AnimationInteract>().animator = this.animator;
         doorToUnlock.GetComponent<AnimationInteract>().boolAnimationName = boolName;
         Destroy(this.gameObject);
+        DialogueManager.instance.EnqueueDialogue(dialogo);
     }
 
 }
