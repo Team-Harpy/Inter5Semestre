@@ -24,6 +24,8 @@ public class TelefoneInteract : Interactable
     [SerializeField]
     private GameObject monitor;
     [SerializeField]
+    private GameObject telaMonitor;
+    [SerializeField]
     private GameObject administracaoReminder;
 
     private VolumeManager volumeManager;
@@ -102,5 +104,6 @@ public class TelefoneInteract : Interactable
         monitor.GetComponent<BoxCollider>().enabled = true;
         monitor.GetComponentInChildren<Light>().enabled = false;
         administracaoReminder.GetComponent<BoxCollider>().enabled = true;
+        telaMonitor.SetActive(false);
     }
 }
