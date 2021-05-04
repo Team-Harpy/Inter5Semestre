@@ -11,6 +11,11 @@ public class GatilhoLabA : Interactable
     public GameObject puzzleSombra;
     public GameObject cctvCamera;
 
+    [SerializeField]
+    private AudioSource quickSE;
+    [SerializeField]
+    private AudioClip heavyBreathing;
+
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("VolumeManager").GetComponent<VolumeManager>();
@@ -22,6 +27,8 @@ public class GatilhoLabA : Interactable
         cctvCamera.SetActive(true);
         puzzleSombra.SetActive(true);
         manager.Transicao(velocidadeTransicao, dialogo);
+        quickSE.clip = heavyBreathing;
+        quickSE.Play();
         gameObject.SetActive(false);
     }
 }

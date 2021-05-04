@@ -13,13 +13,18 @@ public class TelefoneInteract : Interactable
     public DialogueBase dialogo;
     private bool coroutineStart = true;
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
     [SerializeField]
     private AudioClip telefoneCaindo;
 
     private int dialogoNumeracao = 1;
 
     InputManager inputManager;
+
+    [SerializeField]
+    private GameObject monitor;
+    [SerializeField]
+    private GameObject administracaoReminder;
 
     private VolumeManager volumeManager;
     [SerializeField]
@@ -77,6 +82,7 @@ public class TelefoneInteract : Interactable
         {
             yield return null;
         }
+        audioSource.volume = 0.3f;
         audioSource.clip = telefoneCaindo;
         audioSource.Play();
         yield return new WaitForSeconds(2.7f);
@@ -93,5 +99,7 @@ public class TelefoneInteract : Interactable
         animator = doorToUnlock.GetComponent<Animator>();
         doorToUnlock.GetComponent<AnimationInteract>().animator = this.animator;
         doorToUnlock.GetComponent<AnimationInteract>().boolAnimationName = boolName;
+        monitor.GetComponent<BoxCollider>().enabled = true;
+        administracaoReminder.GetComponent<BoxCollider>().enabled = true;
     }
 }
