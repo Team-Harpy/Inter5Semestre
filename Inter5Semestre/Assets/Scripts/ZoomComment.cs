@@ -37,6 +37,8 @@ public class ZoomComment : Interactable
     private bool hasDiaryUpdate;
     [SerializeField]
     private GameObject update;
+    [SerializeField]
+    private AudioClip[] desenharSons;
 
 
     [Header("CameraTransition")]
@@ -91,6 +93,12 @@ public class ZoomComment : Interactable
         {
             gameObject.GetComponent<ZoomComment>().enabled = false;
         }
+        if (hasDiaryUpdate)
+        {
+            diario.GetComponent<AudioSource>().clip = desenharSons[Random.Range(0, 2)];
+            diario.GetComponent<AudioSource>().Play();
+        }
 
+        
     }
 }

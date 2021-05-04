@@ -6,12 +6,14 @@ public class TelefoneInteract : Interactable
 {
     public bool hasKey;
     public Diario diary;
+    [SerializeField]
+    private AudioClip[] desenharSons;
     public GameObject atualizacaoSemChave;
     public GameObject atualizacaoComChave;
     public DialogueBase dialogo;
     private bool coroutineStart = true;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     [SerializeField]
     private AudioClip telefoneCaindo;
 
@@ -44,13 +46,15 @@ public class TelefoneInteract : Interactable
 
     private void Update()
     {
-        if (inputManager.NextDialogue()) dialogoNumeracao += 1;
+        if (inputManager.NextDialogue() && coroutineStart == false) dialogoNumeracao += 1;
     }
     public override void Interact()
     {
         if (!hasKey)
         {
             diary.FillPage(atualizacaoSemChave);
+            diary.GetComponent<AudioSource>().clip = desenharSons[Random.Range(0, 2)];
+            diary.GetComponent<AudioSource>().Play();
         }
 
         else
@@ -63,7 +67,8 @@ public class TelefoneInteract : Interactable
     IEnumerator EventoTelefone()
     {
         coroutineStart = false;
-        audioSource.Stop();      
+        audioSource.Stop();
+        audioSource.loop = false;
         DialogueManager.instance.EnqueueDialogue(dialogo);
         puzzleNormal.SetActive(true);
         puzzleSombra.SetActive(false);
@@ -76,7 +81,13 @@ public class TelefoneInteract : Interactable
         audioSource.Play();
         yield return new WaitForSeconds(2.7f);
         audioSource.Stop();
+        while (dialogoNumeracao < 6)
+        {
+            yield return null;
+        }
         diary.FillPage(atualizacaoComChave);
+        diary.GetComponent<AudioSource>().clip = desenharSons[Random.Range(0, 2)];
+        diary.GetComponent<AudioSource>().Play();
         Destroy(doorToUnlock.GetComponent<DialogueInteract>());
         doorToUnlock.AddComponent<AnimationInteract>();
         animator = doorToUnlock.GetComponent<Animator>();

@@ -80,6 +80,7 @@ public class NumberLockController : MonoBehaviour
     void UnlockDoor()
     {
         ExitLock();
+        doorToOpen.GetComponent<AudioSource>().Play();
         doorAnimator.SetBool("Open", true);
         doorToOpen.AddComponent<AnimationInteract>();
         animationInteractScript = doorToOpen.GetComponent<AnimationInteract>();
