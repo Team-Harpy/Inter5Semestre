@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class KeyInteract : Interactable
 {
+    public DialogueBase dialogoChave;
+    public DialogueBase dialogoTelefone;
+
+    [SerializeField]
+    private GameObject phone;
+
     [SerializeField]
     GameObject doorToUnlock;
 
@@ -27,9 +33,9 @@ public class KeyInteract : Interactable
 
     public override void Interact()
     {
-        puzzleNormal.SetActive(true);
-        puzzleSombra.SetActive(false);
-        volumeManager.TransicaoOut(velocidadeTransicao);
+        DialogueManager.instance.EnqueueDialogue(dialogoChave);
+        phone.GetComponent<DiaryInteract>().temDialogo = true;
+        phone.GetComponent<DiaryInteract>().dialogo = dialogoTelefone;
         Destroy(doorToUnlock.GetComponent<DialogueInteract>());
         doorToUnlock.AddComponent<AnimationInteract>();
         animator = doorToUnlock.GetComponent<Animator>();
@@ -37,4 +43,11 @@ public class KeyInteract : Interactable
         doorToUnlock.GetComponent<AnimationInteract>().boolAnimationName = boolName;
         gameObject.SetActive(false);
     }
+
+    /*
+     *  puzzleNormal.SetActive(true);
+        puzzleSombra.SetActive(false);
+        volumeManager.TransicaoOut(velocidadeTransicao);
+        */
+
 }

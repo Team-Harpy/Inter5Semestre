@@ -9,6 +9,7 @@ public class GatilhoLabA : Interactable
     public DialogueBase dialogo;
     public GameObject puzzleNormal;
     public GameObject puzzleSombra;
+    public GameObject cctvCamera;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class GatilhoLabA : Interactable
     public override void Interact()
     {
         puzzleNormal.SetActive(false);
+        cctvCamera.SetActive(true);
         puzzleSombra.SetActive(true);
         manager.Transicao(velocidadeTransicao, dialogo);
         gameObject.SetActive(false);
