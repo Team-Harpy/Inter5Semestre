@@ -8,7 +8,8 @@ public class PopUpUI : MonoBehaviour
     public Animator mapAnim;
     InputManager inputManager;
 
-    private bool diaryOpened;
+    [HideInInspector]
+    public bool diaryOpened;
     private bool mapOpened;
     [HideInInspector]
     public bool hasDiary;
@@ -66,5 +67,19 @@ public class PopUpUI : MonoBehaviour
                 mapOpened = false;
             }
         }
+    }
+
+
+
+    public void OpenDiaryStart()
+    {
+        diaryAnim.SetTrigger("popUp");
+        diaryOpened = true;
+        lockCamera.LockPlayerCamera();
+    }
+    public void OpenMapStart()
+    {
+        mapAnim.SetTrigger("popUp");
+        mapOpened = true;
     }
 }
