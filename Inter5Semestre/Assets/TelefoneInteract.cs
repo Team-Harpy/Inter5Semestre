@@ -19,10 +19,27 @@ public class TelefoneInteract : Interactable
 
     InputManager inputManager;
 
+    private VolumeManager volumeManager;
+    [SerializeField]
+    private float velocidadeTransicao;
+    [SerializeField]
+    private GameObject puzzleNormal;
+    [SerializeField]
+    private GameObject puzzleSombra;
+
+    [SerializeField]
+    GameObject doorToUnlock;
+
+    [SerializeField]
+    Animator animator;
+    [SerializeField]
+    string boolName;
+
     private void Start()
     {
         inputManager = InputManager.Instance;
         audioSource = GetComponent<AudioSource>();
+        volumeManager = GameObject.FindGameObjectWithTag("VolumeManager").GetComponent<VolumeManager>();
     }
 
     private void Update()
@@ -48,6 +65,9 @@ public class TelefoneInteract : Interactable
         coroutineStart = false;
         audioSource.Stop();      
         DialogueManager.instance.EnqueueDialogue(dialogo);
+        puzzleNormal.SetActive(true);
+        puzzleSombra.SetActive(false);
+        volumeManager.TransicaoOut(velocidadeTransicao);
         while (dialogoNumeracao < 5)
         {
             yield return null;
@@ -57,6 +77,10 @@ public class TelefoneInteract : Interactable
         yield return new WaitForSeconds(2.7f);
         audioSource.Stop();
         diary.FillPage(atualizacaoComChave);
-
+        Destroy(doorToUnlock.GetComponent<DialogueInteract>());
+        doorToUnlock.AddComponent<AnimationInteract>();
+        animator = doorToUnlock.GetComponent<Animator>();
+        doorToUnlock.GetComponent<AnimationInteract>().animator = this.animator;
+        doorToUnlock.GetComponent<AnimationInteract>().boolAnimationName = boolName;
     }
 }

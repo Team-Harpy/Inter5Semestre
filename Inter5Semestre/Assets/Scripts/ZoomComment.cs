@@ -22,6 +22,8 @@ public class ZoomComment : Interactable
     private bool hasDialogue;
     [SerializeField]
     private DialogueBase dialogue;
+    [SerializeField]
+    private bool runOnlyOnce;
 
     [Header("Objetivo")]
     [SerializeField]
@@ -85,6 +87,10 @@ public class ZoomComment : Interactable
         vcamZoom.Priority = 0;
         yield return new WaitForSeconds(1f);
         flashlight.SetActive(true);
+        if (runOnlyOnce)
+        {
+            gameObject.GetComponent<ZoomComment>().enabled = false;
+        }
 
     }
 }
