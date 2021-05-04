@@ -100,6 +100,7 @@ public class TelefoneInteract : Interactable
         doorToUnlock.GetComponent<AnimationInteract>().animator = this.animator;
         doorToUnlock.GetComponent<AnimationInteract>().boolAnimationName = boolName;
         monitor.GetComponent<BoxCollider>().enabled = true;
+        monitor.GetComponent<Light>().enabled = false;
         administracaoReminder.GetComponent<BoxCollider>().enabled = true;
     }
 }
