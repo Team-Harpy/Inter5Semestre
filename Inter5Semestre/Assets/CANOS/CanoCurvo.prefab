@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4109242116925687506}
   - component: {fileID: 1056426690279967095}
   - component: {fileID: 2976273744771808701}
+  - component: {fileID: 5089741664896146531}
   m_Layer: 0
   m_Name: CanoCurvo
   m_TagString: Untagged
@@ -81,3 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5089741664896146531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624594247377640552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d068ea91f3678384a8697a6b58db8769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curto: 0
+  longo: 0
+  curvo: 1
+  halfPower: 0

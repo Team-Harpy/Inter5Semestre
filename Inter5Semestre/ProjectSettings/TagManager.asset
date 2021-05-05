@@ -8,6 +8,9 @@ TagManager:
   - MonsterTrigger
   - monsterTest
   - VolumeManager
+  - Master
+  - Master2
+  - Master3
   layers:
   - Default
   - TransparentFX

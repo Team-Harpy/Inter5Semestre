@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5035028557726946799}
   - component: {fileID: 8237040144663452234}
   - component: {fileID: 6173079491235868288}
+  - component: {fileID: 9136180034432918184}
   m_Layer: 0
   m_Name: CanoLongo
   m_TagString: Untagged
@@ -82,3 +83,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9136180034432918184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668856997256318805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d068ea91f3678384a8697a6b58db8769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curto: 0
+  longo: 1
+  curvo: 0
+  halfPower: 0

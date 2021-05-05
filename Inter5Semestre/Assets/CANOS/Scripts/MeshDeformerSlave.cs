@@ -8,9 +8,12 @@ using System.Collections;
 /// Only use if master has the same mesh (at least the same vertex count)
 /// </summary>
 public class MeshDeformerSlave : MonoBehaviour {
+    public bool curto = false;
+    public bool longo = false;
+    public bool curvo = false;
 
     public bool halfPower;
-    public MeshDeformer m_master;
+    private MeshDeformer m_master;
 
     private Mesh m_mesh;
     private Vector3[] m_oVertices, m_tVertices;
@@ -18,6 +21,19 @@ public class MeshDeformerSlave : MonoBehaviour {
 
     #region unity callbacks
     private void Start () {
+        if (curto)
+        {
+            m_master = GameObject.FindGameObjectWithTag("Master").GetComponent<MeshDeformer>();
+        }
+        else if (longo)
+        {
+            m_master = GameObject.FindGameObjectWithTag("Master2").GetComponent<MeshDeformer>();
+        }
+        else if (curto)
+        {
+            m_master = GameObject.FindGameObjectWithTag("Master3").GetComponent<MeshDeformer>();
+        }
+
         m_mesh = GetComponent<MeshFilter>().mesh;
         m_mesh.MarkDynamic();
 

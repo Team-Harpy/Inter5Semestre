@@ -11,6 +11,7 @@ public class VolumeManager : MonoBehaviour
     private bool transiciona;
     private bool transicionaOut;
     private DialogueBase dialogo;
+    public CanosManager canos;
 
     private void Start()
     {
@@ -52,6 +53,10 @@ public class VolumeManager : MonoBehaviour
     {
         alucinacao.weight = 0;
         transitionSpeed = speed;
+        if (canos != null)
+        {
+            canos.Pulsa();
+        }
         transiciona = true;
     }
     public void Transicao(float speed, DialogueBase dialogo2)
@@ -60,6 +65,10 @@ public class VolumeManager : MonoBehaviour
         StartCoroutine("WaitForDialogue");
         alucinacao.weight = 0;
         transitionSpeed = speed;
+        if (canos != null)
+        {
+            canos.Pulsa();
+        }
         transiciona = true;
     }
 
@@ -67,6 +76,10 @@ public class VolumeManager : MonoBehaviour
     {
         real.weight = 0;
         transitionSpeed = speed;
+        if (canos != null)
+        {
+            canos.PulsaOff();
+        }
         transicionaOut = true;
     }
 

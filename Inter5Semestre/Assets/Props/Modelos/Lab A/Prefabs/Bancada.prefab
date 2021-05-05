@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5985803978065396959}
   - component: {fileID: 7259242491457194874}
   - component: {fileID: 4853461875090440112}
+  - component: {fileID: 3194073913999000159}
   m_Layer: 0
   m_Name: Bancada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5985803978065396959
 Transform:
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3194073913999000159
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6366411659275476581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 252.20306, y: 94.88814, z: 133.7826}
+  m_Center: {x: 0, y: 0, z: 0}
