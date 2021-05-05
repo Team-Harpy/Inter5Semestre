@@ -15025,7 +15025,7 @@ PrefabInstance:
     - target: {fileID: 8245455546216332351, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
       propertyPath: doorToOpen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1356954767}
     - target: {fileID: 8245455546216332351, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
       propertyPath: firstNumber
       value: 0
@@ -15037,7 +15037,7 @@ PrefabInstance:
     - target: {fileID: 8245455546216332351, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
       propertyPath: doorAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1356954768}
     - target: {fileID: 8245455546216332351, guid: 49b359ea3d6b1a242971da9811ff734a, type: 3}
       propertyPath: secondNumber
       value: 3
@@ -35157,7 +35157,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 898866804}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
