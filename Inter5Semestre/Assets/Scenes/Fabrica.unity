@@ -14406,6 +14406,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7911431, y: 0.31013945, z: 0.16472694}
   m_Center: {x: 0.070477925, y: 0.02571173, z: 0.008828856}
+--- !u!95 &883307659
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883307655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75a3c6da08bb8ff44af365ecab59efd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &886138558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28813,11 +28832,11 @@ PrefabInstance:
     - target: {fileID: 6933193515012133819, guid: c96ee93a058dccf459d4b4f2d28bbf0f, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 2135441431}
+      objectReference: {fileID: 883307659}
     - target: {fileID: 6933193515012133819, guid: c96ee93a058dccf459d4b4f2d28bbf0f, type: 3}
       propertyPath: doorToUnlock
       value: 
-      objectReference: {fileID: 2135441428}
+      objectReference: {fileID: 883307655}
     - target: {fileID: 7395236235986926776, guid: c96ee93a058dccf459d4b4f2d28bbf0f, type: 3}
       propertyPath: m_Name
       value: ADMINKEYS
