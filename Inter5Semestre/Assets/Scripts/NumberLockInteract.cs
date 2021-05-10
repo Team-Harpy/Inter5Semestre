@@ -12,6 +12,7 @@ public class NumberLockInteract : Interactable
     public override void Interact()
     {
         numberlockCanvas.SetActive(true);
+        lockCamera.LockPlayerMovement();
         lockCamera.LockPlayerCamera();
     }
 }

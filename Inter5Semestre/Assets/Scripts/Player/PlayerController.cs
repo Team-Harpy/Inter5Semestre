@@ -6,7 +6,10 @@ using Cinemachine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
-{   
+{
+    [HideInInspector]
+    public bool interacting;
+
 
     private float playerSpeed;
     [SerializeField]
@@ -131,12 +134,16 @@ public class PlayerController : MonoBehaviour
 
 
         // Player Move (WASD or ArrowKeys)
-        Vector2 movement = inputManager.GetPlayerMovement();
-        Vector3 move = new Vector3(movement.x, 0f, movement.y);
-        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
-        move.y = 0f;
-     
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        if (!interacting)
+        {
+            Vector2 movement = inputManager.GetPlayerMovement();
+            Vector3 move = new Vector3(movement.x, 0f, movement.y);
+            move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
+            move.y = 0f;
+
+            controller.Move(move * Time.deltaTime * playerSpeed);
+        }
+        
 
 
         // Player Jump

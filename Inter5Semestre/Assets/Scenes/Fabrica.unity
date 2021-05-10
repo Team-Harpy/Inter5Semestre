@@ -1795,6 +1795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e0f2f1f4773474199be109545e0919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interacting: 0
   walkSpeed: 2.2
   sprintSpeed: 4.5
   crouchSpeed: 2
@@ -34851,6 +34852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vcam: {fileID: 901756446}
+  pc: {fileID: 129308036}
 --- !u!4 &1933589100
 Transform:
   m_ObjectHideFlags: 0

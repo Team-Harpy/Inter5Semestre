@@ -6,6 +6,7 @@ using Cinemachine;
 public class NumberLockController : MonoBehaviour
 {
     public CinemachineVirtualCamera vcam;
+    private LockCamera lockCamera;
 
    
     private AnimationInteract animationInteractScript;
@@ -29,6 +30,7 @@ public class NumberLockController : MonoBehaviour
 
     private void Start()
     {
+        lockCamera = FindObjectOfType<LockCamera>().GetComponent<LockCamera>();
         currentCode = new int[] { 0, 0, 0 };
         correctCombination = new int[] { firstNumber, secondNumber, thirdNumber };
         inputManager = InputManager.Instance;
@@ -65,16 +67,14 @@ public class NumberLockController : MonoBehaviour
         }
     }
 
-
-
     void ExitLock()
     {
         this.gameObject.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = 0.1f;
-        vcam.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = 0.1f;
+        lockCamera.UnlockPlayerCamera();
+        lockCamera.UnlockPlayerMovement();
     }
+
+   
 
 
     void UnlockDoor()
