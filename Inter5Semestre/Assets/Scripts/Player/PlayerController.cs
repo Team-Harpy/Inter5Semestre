@@ -197,6 +197,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         Interactable newSelection = null;
         SelectHighlight highlight = null;
+        Outline outline = null;
         CommentObject newObject = null;
         ZoomComment newZoom = null;
         Debug.DrawRay(raio.origin, raio.direction * 10, Color.red);
@@ -214,6 +215,12 @@ public class PlayerController : MonoBehaviour
             {
                 selected.GetComponent<SelectHighlight>().Off();
             }
+
+            if (selected.GetComponent<Outline>())
+            {
+                selected.GetComponent<Outline>().enabled = false;
+            }
+
             interactText.SetActive(false);
         }
 
@@ -224,6 +231,13 @@ public class PlayerController : MonoBehaviour
             {
                 highlight.On();
             }
+
+            outline = newSelection.GetComponent<Outline>();
+            if (outline)
+            {
+                outline.enabled = true;
+            }
+
             selected = newSelection;
             interactText.SetActive(true);
 
