@@ -27,6 +27,7 @@ public class RotateObjectInView : MonoBehaviour
         if (input_.ExitLock())
         {
             lockCamera.UnlockPlayerCamera();
+            lockCamera.UnlockPlayerMovement();
             this.gameObject.transform.localRotation = Quaternion.identity;
             this.gameObject.SetActive(false);
 
