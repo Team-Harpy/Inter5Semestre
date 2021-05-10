@@ -11,6 +11,8 @@ public class VolumeManager : MonoBehaviour
     private bool transiciona;
     private bool transicionaOut;
     private DialogueBase dialogo;
+    public GameObject objetosFlutuantes;
+    public GameObject objetosEstaticos;
 
     private void Start()
     {
@@ -50,12 +52,16 @@ public class VolumeManager : MonoBehaviour
 
     public void Transicao(float speed)
     {
+        objetosEstaticos.SetActive(false);
+        objetosFlutuantes.SetActive(true);
         alucinacao.weight = 0;
         transitionSpeed = speed;
         transiciona = true;
     }
     public void Transicao(float speed, DialogueBase dialogo2)
     {
+        objetosEstaticos.SetActive(false);
+        objetosFlutuantes.SetActive(true);
         dialogo = dialogo2;
         StartCoroutine("WaitForDialogue");
         alucinacao.weight = 0;
@@ -65,6 +71,8 @@ public class VolumeManager : MonoBehaviour
 
     public void TransicaoOut(float speed)
     {
+        objetosEstaticos.SetActive(true);
+        objetosFlutuantes.SetActive(false);
         real.weight = 0;
         transitionSpeed = speed;
         transicionaOut = true;
