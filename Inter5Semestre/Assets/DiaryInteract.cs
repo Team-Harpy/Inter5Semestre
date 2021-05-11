@@ -8,13 +8,16 @@ public class DiaryInteract : Interactable
     public GameObject atualizacao;
     public DialogueBase dialogo;
     public bool temDialogo;
-    [SerializeField]
-    private AudioClip[] desenharSons;
+    bool once;
+    
     public override void Interact()
     {
-        diary.FillPage(atualizacao);
-        diary.GetComponent<AudioSource>().clip = desenharSons[Random.Range(0, 2)];
-        diary.GetComponent<AudioSource>().Play();
-       if(temDialogo) DialogueManager.instance.EnqueueDialogue(dialogo);
+        if (!once)
+        {
+            diary.FillPage(atualizacao);
+            if (temDialogo) DialogueManager.instance.EnqueueDialogue(dialogo);
+            once = true;
+        }
+      
     }
 }

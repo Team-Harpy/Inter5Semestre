@@ -8,6 +8,9 @@ public class KeyInteract : Interactable
     public DialogueBase dialogoPortaTrancada;
 
     [SerializeField]
+    private Diario diario;
+
+    [SerializeField]
     private AudioClip chavePickupSound;
     [SerializeField]
     private GameObject quickSE;
@@ -25,6 +28,7 @@ public class KeyInteract : Interactable
         doorToUnlock.dialogo = dialogoPortaTrancada;
         quickSE.GetComponent<AudioSource>().clip = chavePickupSound;
         quickSE.GetComponent<AudioSource>().Play();
+        diario.ConcludeSecondaryObjective("Entrar sala de segurança");
         gameObject.SetActive(false);
     }
 

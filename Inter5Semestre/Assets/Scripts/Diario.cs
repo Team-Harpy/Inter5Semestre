@@ -11,11 +11,18 @@ public class Diario : MonoBehaviour
     private bool firstPage = true;
 
     [SerializeField]
+    private AudioClip[] desenharSons;
+
+
+    [SerializeField]
     GameObject objectivesPage;
 
     [SerializeField]
     private TMP_Text[] objetivosSecundarios;
     private int objetivoSecundarioIndex;
+
+    private GameObject novaAnotacaoAdicionada;
+    private GameObject novoObjetivoAdicionado;
 
     [SerializeField]
     private GameObject newPageSet;
@@ -23,15 +30,16 @@ public class Diario : MonoBehaviour
     [SerializeField]
     private List<GameObject> pages = new List<GameObject>();
 
-    [SerializeField]
+    
     private int currentPage; // 1 = 1/2 ; 3 = 3/4 ...
 
-    [SerializeField]
+   
     private bool leftPageFilled;
-    [SerializeField]
+   
     private bool bothPagesFilled;
 
-    [SerializeField]
+    private AudioSource audiosource;
+   
     private GameObject lastUpdate, lastUpdate2;
 
 
@@ -46,6 +54,11 @@ public class Diario : MonoBehaviour
         currentPage = 0;
         pages.Add(objectivesPage);
         bothPagesFilled = true;
+        novaAnotacaoAdicionada = GameObject.Find("NovaAnotacaoAdicionada");
+        novoObjetivoAdicionado = GameObject.Find("NovoObjetivoAdicionado");
+        novoObjetivoAdicionado.SetActive(false);
+        novaAnotacaoAdicionada.SetActive(false);
+        audiosource = GetComponent<AudioSource>();
         
     }
 
@@ -58,7 +71,9 @@ public class Diario : MonoBehaviour
     {
         objetivosSecundarios[objetivoSecundarioIndex].text = nomeObjetivo;
         objetivoSecundarioIndex += 1;
-        
+        novoObjetivoAdicionado.SetActive(true);
+        PlaySound();
+
     }
 
     public void ConcludeSecondaryObjective(string nomeObjetivo)
@@ -107,12 +122,20 @@ public class Diario : MonoBehaviour
         if (lastUpdate != null) lastUpdate2 = lastUpdate;
 
         lastUpdate = atualizacao;
+        novaAnotacaoAdicionada.SetActive(true);
+        PlaySound();
+        
+
 
     }
 
 
 
-
+    void PlaySound()
+    {
+        audiosource.clip = desenharSons[Random.Range(0, 3)];
+        audiosource.Play();
+    }
 
 
     public void NextPage()
@@ -131,6 +154,9 @@ public class Diario : MonoBehaviour
         }
 
     }
+
+
+   
 
     public void PreviousPage()
     {

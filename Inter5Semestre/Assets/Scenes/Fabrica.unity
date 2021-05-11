@@ -691,10 +691,6 @@ MonoBehaviour:
   atualizacao: {fileID: 581535152}
   dialogo: {fileID: 11400000, guid: 4831708ec1490e141a04b997cf061b85, type: 2}
   temDialogo: 1
-  desenharSons:
-  - {fileID: 8300000, guid: d32506daca0fba64a92f15d199d5493a, type: 3}
-  - {fileID: 8300000, guid: 6e2f3c7dc39eabf43b633ff6d2ec0995, type: 3}
-  - {fileID: 8300000, guid: 4769517a310c1e347a2019dce4d0895d, type: 3}
 --- !u!65 &60376576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10153,12 +10149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diary: {fileID: 517200568}
   atualizacao: {fileID: 581535152}
-  dialogo: {fileID: 11400000, guid: 4831708ec1490e141a04b997cf061b85, type: 2}
-  temDialogo: 1
-  desenharSons:
-  - {fileID: 8300000, guid: d32506daca0fba64a92f15d199d5493a, type: 3}
-  - {fileID: 8300000, guid: 6e2f3c7dc39eabf43b633ff6d2ec0995, type: 3}
-  - {fileID: 8300000, guid: 4769517a310c1e347a2019dce4d0895d, type: 3}
+  dialogo: {fileID: 0}
+  temDialogo: 0
 --- !u!65 &322291441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20160,6 +20152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ab568c102553d478c17236ad6e08d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desenharSons:
+  - {fileID: 8300000, guid: d32506daca0fba64a92f15d199d5493a, type: 3}
+  - {fileID: 8300000, guid: 6e2f3c7dc39eabf43b633ff6d2ec0995, type: 3}
+  - {fileID: 8300000, guid: 4769517a310c1e347a2019dce4d0895d, type: 3}
   objectivesPage: {fileID: 5112659523342364946}
   objetivosSecundarios:
   - {fileID: 5112659524944860309}
@@ -20169,11 +20165,6 @@ MonoBehaviour:
   - {fileID: 5112659524950698919}
   newPageSet: {fileID: 0}
   pages: []
-  currentPage: 0
-  leftPageFilled: 0
-  bothPagesFilled: 0
-  lastUpdate: {fileID: 0}
-  lastUpdate2: {fileID: 0}
   leftPosition: {fileID: 795054773}
   rightPosition: {fileID: 1858722177}
 --- !u!95 &517200569
@@ -25824,6 +25815,118 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f750d5f061e724f4c827ab6b376e2550, type: 3}
+--- !u!1 &597865898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597865899}
+  - component: {fileID: 597865902}
+  - component: {fileID: 597865901}
+  - component: {fileID: 597865900}
+  - component: {fileID: 597865903}
+  m_Layer: 5
+  m_Name: NovoObjetivoAdicionado
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &597865899
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597865898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1957639989}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 328.3, y: 201}
+  m_SizeDelta: {x: 204.05, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &597865900
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597865898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d71db55db10f1749849f5f9bafaa3a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &597865901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597865898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 8
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Novo objetivo adicionado ao di\xE1rio. \nPressione TAB para v\xEA-lo."
+--- !u!222 &597865902
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597865898}
+  m_CullTransparentMesh: 1
+--- !u!114 &597865903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597865898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc5c18ba6bd8ba43a366ac233d70328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &605460842
 GameObject:
   m_ObjectHideFlags: 0
@@ -28168,6 +28271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogoChave: {fileID: 11400000, guid: b85732465c917184aa5c39809a757cc1, type: 2}
   dialogoPortaTrancada: {fileID: 11400000, guid: 9387a898c64896049bfd4c51448242d7, type: 2}
+  diario: {fileID: 517200568}
   chavePickupSound: {fileID: 8300000, guid: bcb40c8d60bc7fc44884dfbfcc12306f, type: 3}
   quickSE: {fileID: 1192908511}
   phone: {fileID: 2073184711}
@@ -29860,6 +29964,118 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811758615}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &815505171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815505172}
+  - component: {fileID: 815505175}
+  - component: {fileID: 815505174}
+  - component: {fileID: 815505173}
+  - component: {fileID: 815505176}
+  m_Layer: 5
+  m_Name: NovaAnotacaoAdicionada
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &815505172
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815505171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1957639989}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -327, y: 201}
+  m_SizeDelta: {x: 204.05, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &815505173
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815505171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d71db55db10f1749849f5f9bafaa3a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &815505174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815505171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 8
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Nova anota\xE7\xE3o adicionada ao di\xE1rio. \nPressione TAB para v\xEA-la."
+--- !u!222 &815505175
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815505171}
+  m_CullTransparentMesh: 1
+--- !u!114 &815505176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815505171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc5c18ba6bd8ba43a366ac233d70328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &821019792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34935,7 +35151,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1957639989}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.35777774}
   m_AnchorMax: {x: 0.5, y: 0.35777774}
@@ -74074,6 +74290,8 @@ RectTransform:
   - {fileID: 103130108}
   - {fileID: 145567914}
   - {fileID: 1509386293}
+  - {fileID: 815505172}
+  - {fileID: 597865899}
   - {fileID: 1011302639}
   m_Father: {fileID: 790664797}
   m_RootOrder: 1
@@ -76787,10 +77005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasKey: 0
   diary: {fileID: 517200568}
-  desenharSons:
-  - {fileID: 8300000, guid: d32506daca0fba64a92f15d199d5493a, type: 3}
-  - {fileID: 8300000, guid: 6e2f3c7dc39eabf43b633ff6d2ec0995, type: 3}
-  - {fileID: 8300000, guid: 4769517a310c1e347a2019dce4d0895d, type: 3}
   atualizacaoSemChave: {fileID: 724988484}
   atualizacaoComChave: {fileID: 753254591}
   dialogo: {fileID: 11400000, guid: 1c3522dff595ac64e949634a13e87271, type: 2}
@@ -84011,10 +84225,6 @@ MonoBehaviour:
   atualizacao: {fileID: 419890532}
   dialogo: {fileID: 11400000, guid: 7cc725f13fc6a094bb8a83f7968c096e, type: 2}
   temDialogo: 1
-  desenharSons:
-  - {fileID: 8300000, guid: d32506daca0fba64a92f15d199d5493a, type: 3}
-  - {fileID: 8300000, guid: 6e2f3c7dc39eabf43b633ff6d2ec0995, type: 3}
-  - {fileID: 8300000, guid: 4769517a310c1e347a2019dce4d0895d, type: 3}
 --- !u!65 &8540873061840661428
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -5,9 +5,7 @@ using UnityEngine;
 public class TelefoneInteract : Interactable
 {
     public bool hasKey;
-    public Diario diary;
-    [SerializeField]
-    private AudioClip[] desenharSons;
+    public Diario diary;   
     public GameObject atualizacaoSemChave;
     public GameObject atualizacaoComChave;
     public DialogueBase dialogo;
@@ -44,6 +42,8 @@ public class TelefoneInteract : Interactable
     [SerializeField]
     string boolName;
 
+    bool once;
+
     private void Start()
     {
         inputManager = InputManager.Instance;
@@ -57,14 +57,14 @@ public class TelefoneInteract : Interactable
     }
     public override void Interact()
     {
-        if (!hasKey)
+        if (!hasKey && !once)
         {
             diary.FillPage(atualizacaoSemChave);
-            diary.GetComponent<AudioSource>().clip = desenharSons[Random.Range(0, 2)];
-            diary.GetComponent<AudioSource>().Play();
+            once = true;
+    
         }
 
-        else
+        else if(hasKey)
         {
             if (coroutineStart) StartCoroutine("EventoTelefone");
         }
@@ -93,9 +93,6 @@ public class TelefoneInteract : Interactable
         {
             yield return null;
         }
-        diary.FillPage(atualizacaoComChave);
-        diary.GetComponent<AudioSource>().clip = desenharSons[Random.Range(0, 2)];
-        diary.GetComponent<AudioSource>().Play();
         Destroy(doorToUnlock.GetComponent<DialogueInteract>());
         doorToUnlock.AddComponent<AnimationInteract>();
         animator = doorToUnlock.GetComponent<Animator>();
@@ -105,5 +102,6 @@ public class TelefoneInteract : Interactable
         monitor.GetComponentInChildren<Light>().enabled = false;
         administracaoReminder.GetComponent<BoxCollider>().enabled = true;
         telaMonitor.SetActive(false);
+        diary.FillPage(atualizacaoComChave);
     }
 }
