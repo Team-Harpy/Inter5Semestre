@@ -70,6 +70,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "PullBox",
+                    "type": "Button",
+                    "id": "3393c4e3-a861-46b0-8fd4-1da7338632ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "NextDialogue",
                     "type": "Button",
                     "id": "70402ad3-d918-43d1-978c-581ec2bd4042",
@@ -402,6 +410,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MovingObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cad2696e-c043-480f-8447-b795f498fa89",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PullBox",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

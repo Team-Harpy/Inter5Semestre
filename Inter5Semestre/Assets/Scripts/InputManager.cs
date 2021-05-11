@@ -79,6 +79,11 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Interact.triggered;
     }
 
+    public bool PullBox()
+    {
+        return playerControls.Player.PullBox.triggered;
+    }
+
     public bool ExitLock()
     {
         return playerControls.Player.ExitLock.triggered;

@@ -11,6 +11,7 @@ TagManager:
   - Master
   - Master2
   - Master3
+  - Caixa
   layers:
   - Default
   - TransparentFX

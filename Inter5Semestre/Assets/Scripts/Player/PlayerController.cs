@@ -200,6 +200,7 @@ public class PlayerController : MonoBehaviour
         Outline outline = null;
         CommentObject newObject = null;
         ZoomComment newZoom = null;
+        CaixaEmpurra newBox = null;
         Debug.DrawRay(raio.origin, raio.direction * 10, Color.red);
 
         if (Physics.Raycast(raio, out hit, 10, layerSelecao))
@@ -207,6 +208,7 @@ public class PlayerController : MonoBehaviour
             newSelection = hit.transform.GetComponent<Interactable>();
             newObject = hit.transform.GetComponent<CommentObject>();
             newZoom = hit.transform.GetComponent<ZoomComment>();
+            newBox = hit.transform.GetComponent<CaixaEmpurra>();
         }
 
         if (selected)
@@ -250,6 +252,19 @@ public class PlayerController : MonoBehaviour
         if (newObject)
         {
             newObject.Comment();
+        }
+
+        if (newBox)
+        {
+            if (inputManager.Interact())
+            {
+                newBox.Empurra();
+            }
+
+            if (inputManager.PullBox())
+            {
+                newBox.Puxa();
+            }
         }
 
         //Debug.Log(selected);

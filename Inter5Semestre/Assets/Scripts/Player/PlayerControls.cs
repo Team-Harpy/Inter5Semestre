@@ -83,6 +83,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""PullBox"",
+                    ""type"": ""Button"",
+                    ""id"": ""3393c4e3-a861-46b0-8fd4-1da7338632ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""NextDialogue"",
                     ""type"": ""Button"",
                     ""id"": ""70402ad3-d918-43d1-978c-581ec2bd4042"",
@@ -417,6 +425,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MovingObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cad2696e-c043-480f-8447-b795f498fa89"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PullBox"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -433,6 +452,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Diary = m_Player.FindAction("Diary", throwIfNotFound: true);
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_PullBox = m_Player.FindAction("PullBox", throwIfNotFound: true);
         m_Player_NextDialogue = m_Player.FindAction("NextDialogue", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
@@ -496,6 +516,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Diary;
     private readonly InputAction m_Player_Map;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_PullBox;
     private readonly InputAction m_Player_NextDialogue;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_MousePosition;
@@ -514,6 +535,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Diary => m_Wrapper.m_Player_Diary;
         public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @PullBox => m_Wrapper.m_Player_PullBox;
         public InputAction @NextDialogue => m_Wrapper.m_Player_NextDialogue;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
@@ -553,6 +575,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @PullBox.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPullBox;
+                @PullBox.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPullBox;
+                @PullBox.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPullBox;
                 @NextDialogue.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextDialogue;
                 @NextDialogue.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextDialogue;
                 @NextDialogue.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNextDialogue;
@@ -599,6 +624,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @PullBox.started += instance.OnPullBox;
+                @PullBox.performed += instance.OnPullBox;
+                @PullBox.canceled += instance.OnPullBox;
                 @NextDialogue.started += instance.OnNextDialogue;
                 @NextDialogue.performed += instance.OnNextDialogue;
                 @NextDialogue.canceled += instance.OnNextDialogue;
@@ -631,6 +659,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnDiary(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPullBox(InputAction.CallbackContext context);
         void OnNextDialogue(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
