@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class CaixaEmpurra : MonoBehaviour
 {
-    public Transform caixa;
+    public Caixa caixa;
     public bool north = false;
     public bool east = false;
     public bool south = false;
     public bool west = false;
     public float velocidade;
-    private Vector3 end;
-    private bool empurra = false;
-    private bool bloqueia = false;
-    private bool puxa = false;
+
     public Transform target;
 
     private void Update()
@@ -25,49 +22,38 @@ public class CaixaEmpurra : MonoBehaviour
         {
             if (hit.collider.CompareTag("Caixa") || hit.collider.CompareTag("Parede"))
             {
-                bloqueia = true;
+                caixa.bloqueia = true;
             }
         }
         else
-            bloqueia = false;
-
-        if (empurra && !bloqueia)
-            caixa.position = Vector3.MoveTowards(caixa.position, end, velocidade * Time.deltaTime);
-
-        if (puxa)
-            caixa.position = Vector3.MoveTowards(caixa.position, end, velocidade * Time.deltaTime);
-
-        if (caixa.position == end)
-            empurra = false;
-
-        //Debug.Log(bloqueia);
+            caixa.bloqueia = false;
     }
 
     public void Empurra()
     {
         if (north)
-            end = new Vector3(caixa.position.x, caixa.position.y, caixa.position.z - 1);
+            caixa.end = new Vector3(caixa.transform.position.x, caixa.transform.position.y, caixa.transform.position.z - 1);
         else if (east)
-            end = new Vector3(caixa.position.x - 1, caixa.position.y, caixa.position.z);
+            caixa.end = new Vector3(caixa.transform.position.x - 1, caixa.transform.position.y, caixa.transform.position.z);
         else if (south)
-            end = new Vector3(caixa.position.x, caixa.position.y, caixa.position.z + 1);
+            caixa.end = new Vector3(caixa.transform.position.x, caixa.transform.position.y, caixa.transform.position.z + 1);
         else if (west)
-            end = new Vector3(caixa.position.x + 1, caixa.position.y, caixa.position.z);
+            caixa.end = new Vector3(caixa.transform.position.x + 1, caixa.transform.position.y, caixa.transform.position.z);
 
-        empurra = true;
+        caixa.empurra = true;
     }
 
     public void Puxa()
     {
         if (north)
-            end = new Vector3(caixa.position.x, caixa.position.y, caixa.position.z + 1);
+            caixa.end = new Vector3(caixa.transform.position.x, caixa.transform.position.y, caixa.transform.position.z + 1);
         else if (east)
-            end = new Vector3(caixa.position.x + 1, caixa.position.y, caixa.position.z);
+            caixa.end = new Vector3(caixa.transform.position.x + 1, caixa.transform.position.y, caixa.transform.position.z);
         else if (south)
-            end = new Vector3(caixa.position.x, caixa.position.y, caixa.position.z - 1);
+            caixa.end = new Vector3(caixa.transform.position.x, caixa.transform.position.y, caixa.transform.position.z - 1);
         else if (west)
-            end = new Vector3(caixa.position.x - 1, caixa.position.y, caixa.position.z);
+            caixa.end = new Vector3(caixa.transform.position.x - 1, caixa.transform.position.y, caixa.transform.position.z);
 
-        puxa = true;
+        caixa.puxa = true;
     }
 }

@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 3628347363531694429}
   - component: {fileID: 3628347363531694428}
   - component: {fileID: 3628347363531694424}
+  - component: {fileID: 8167737239967275104}
   m_Layer: 0
   m_Name: Caixa
   m_TagString: Caixa
@@ -176,6 +177,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8167737239967275104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628347363531694403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139a19bc98546f042ae0b628e5038a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  end: {x: 0, y: 0, z: 0}
+  empurra: 0
+  bloqueia: 0
+  puxa: 0
+  velocidade: 1
 --- !u!1 &3628347363646539664
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30a0d2b9afefa24c91b59b23b42676b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caixa: {fileID: 3628347363531694431}
+  caixa: {fileID: 8167737239967275104}
   north: 1
   east: 0
   south: 0
@@ -317,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30a0d2b9afefa24c91b59b23b42676b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caixa: {fileID: 3628347363531694431}
+  caixa: {fileID: 8167737239967275104}
   north: 0
   east: 0
   south: 1
@@ -399,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30a0d2b9afefa24c91b59b23b42676b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caixa: {fileID: 3628347363531694431}
+  caixa: {fileID: 8167737239967275104}
   north: 0
   east: 0
   south: 0
@@ -481,7 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30a0d2b9afefa24c91b59b23b42676b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caixa: {fileID: 3628347363531694431}
+  caixa: {fileID: 8167737239967275104}
   north: 0
   east: 1
   south: 0
