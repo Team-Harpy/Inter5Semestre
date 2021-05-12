@@ -38218,7 +38218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1050011985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74707,6 +74707,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7840201195993936750, guid: 44b2fb24686934d4db66dac99601c73e, type: 3}
   m_PrefabInstance: {fileID: 1773393163}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1773475504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 279743127318861833, guid: f6b1b356d73eb5042a0ff1fdccd6be36, type: 3}
+  m_PrefabInstance: {fileID: 879418301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773475505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773475504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d77fd863f36f14bbb06aa227e835ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diario: {fileID: 517200568}
+  efeitoVisual: {fileID: 1937154919}
+  dialogue: {fileID: 11400000, guid: 0d75d17410876664fbf2cabe8a6c2511, type: 2}
+  update: {fileID: 641272738}
 --- !u!1001 &1773518820
 PrefabInstance:
   m_ObjectHideFlags: 0
