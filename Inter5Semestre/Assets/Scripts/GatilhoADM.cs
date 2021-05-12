@@ -9,6 +9,7 @@ public class GatilhoADM : Interactable
 
     private VolumeManager volume;
     public float velocidadeTransicao;
+    private GameObject falasFlutuantes;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class GatilhoADM : Interactable
             monstro.SetActive(false);
             obstaculos.SetActive(false);
             volume.TransicaoOut(velocidadeTransicao);
+            falasFlutuantes.SetActive(false);
         }
            
 

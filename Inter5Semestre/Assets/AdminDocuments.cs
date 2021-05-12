@@ -14,6 +14,16 @@ public class AdminDocuments : Interactable
     GameObject document;
     [SerializeField]
     DialogueBase dialogo;
+    [SerializeField]
+    GameObject falasEscapar;
+
+    [SerializeField]
+    GameObject obstaculos;
+
+    [SerializeField]
+    GameObject monstro;
+    [SerializeField]
+    GameObject gas;
 
     [SerializeField]
     GameObject floatingDialogue;
@@ -50,7 +60,12 @@ public class AdminDocuments : Interactable
     public override void Interact()
    {
         if(startCoroutine)StartCoroutine("LOL");
-   }
+        if (!monstro.activeInHierarchy)
+        {          
+            obstaculos.SetActive(true);            
+        }
+     
+    }
 
     IEnumerator LOL()
     {        
@@ -76,10 +91,15 @@ public class AdminDocuments : Interactable
         yield return new WaitForSeconds(3f);       
         lookVcamRight.Priority = 3;
         lookVcamLeft.Priority = 0;
-        yield return new WaitForSeconds(3f);       
+        yield return new WaitForSeconds(3f);
+        gas.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        monstro.SetActive(true);      
+        gas.SetActive(false);
         lookVcamRight.Priority = 0;
-        lockCamera.LockPlayerMovement();
-        lockCamera.LockPlayerCamera();
+        falasEscapar.SetActive(true);
+        lockCamera.UnlockPlayerMovement();
+        lockCamera.UnlockPlayerCamera();
 
 
 
