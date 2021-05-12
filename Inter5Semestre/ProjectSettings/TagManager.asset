@@ -12,6 +12,7 @@ TagManager:
   - Master2
   - Master3
   - Caixa
+  - Parede
   layers:
   - Default
   - TransparentFX
