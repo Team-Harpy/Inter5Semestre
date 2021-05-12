@@ -10509,7 +10509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284505288}
   m_LocalRotation: {x: -0.058983553, y: 0.932319, z: -0.17775483, w: -0.30936313}
-  m_LocalPosition: {x: -26.12, y: 1.8879468, z: 0.93520683}
+  m_LocalPosition: {x: -26.12, y: 1.8879468, z: 0.8152068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 290315268}
@@ -16940,7 +16940,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432500992}
   m_LocalRotation: {x: 0, y: 0.58555603, z: 0, w: 0.81063193}
-  m_LocalPosition: {x: -26.12, y: 2.437611, z: 0.99520683}
+  m_LocalPosition: {x: -26.12, y: 2.437611, z: 0.81520677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 743639293}
@@ -47432,7 +47432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 796f38e395d865d4d91774af07561c7a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 796f38e395d865d4d91774af07561c7a, type: 3}
       propertyPath: m_RootOrder
@@ -48518,8 +48518,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433640649}
-  m_LocalRotation: {x: -0.018460209, y: 0.48211923, z: 0.010161556, w: 0.87585217}
-  m_LocalPosition: {x: -26.12, y: 2.437611, z: 1.0652068}
+  m_LocalRotation: {x: -0.018411623, y: 0.47894043, z: 0.010047974, w: 0.8775968}
+  m_LocalPosition: {x: -26.12, y: 2.437611, z: 0.81520677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 773390230}
@@ -52396,8 +52396,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584608077}
-  m_LocalRotation: {x: 0, y: -0.65127325, z: -0, w: 0.7588433}
-  m_LocalPosition: {x: -26.12, y: 2.437611, z: 1.2252069}
+  m_LocalRotation: {x: 0, y: -0.63815266, z: -0, w: 0.76990986}
+  m_LocalPosition: {x: -26.12, y: 2.437611, z: 0.81520677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 390722547}
@@ -75753,9 +75753,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907d5aac201833f49b99c93f6207e3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monstro: {fileID: 41088782}
+  monstro: {fileID: 1958606521}
   obstaculos: {fileID: 1958658216}
-  velocidadeTransicao: 0
+  velocidadeTransicao: 0.5
+  falasFlutuantes: {fileID: 1050011984}
 --- !u!114 &1814601206
 MonoBehaviour:
   m_ObjectHideFlags: 0

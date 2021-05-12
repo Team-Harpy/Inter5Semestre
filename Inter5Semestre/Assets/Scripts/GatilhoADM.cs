@@ -9,6 +9,7 @@ public class GatilhoADM : Interactable
 
     private VolumeManager volume;
     public float velocidadeTransicao;
+    [SerializeField]
     private GameObject falasFlutuantes;
 
     private void Start()
