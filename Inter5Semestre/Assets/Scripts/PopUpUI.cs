@@ -13,6 +13,13 @@ public class PopUpUI : MonoBehaviour
     private bool mapOpened;
     [HideInInspector]
     public bool hasDiary;
+    [SerializeField]
+    private AudioClip abreDiario;
+    [SerializeField]
+    private AudioClip fechaDiario;
+
+    private AudioSource audiosource;
+
 
    
     public bool hasMap;
@@ -26,6 +33,8 @@ public class PopUpUI : MonoBehaviour
         diaryOpened = false;
         mapOpened = false;
         hasDiary = false;
+        audiosource = GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -40,6 +49,7 @@ public class PopUpUI : MonoBehaviour
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = true;
                 lockCamera.LockPlayerCamera();
+                OpenDiarySound();
             }
 
             if (inputManager.OpenMap() && hasMap)
@@ -56,6 +66,7 @@ public class PopUpUI : MonoBehaviour
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = false;
                 lockCamera.UnlockPlayerCamera();
+                ClosedDiarySound();
             }
         }
 
@@ -76,10 +87,25 @@ public class PopUpUI : MonoBehaviour
         diaryAnim.SetTrigger("popUp");
         diaryOpened = true;
         lockCamera.LockPlayerCamera();
+        OpenDiarySound();
     }
     public void OpenMapStart()
     {
         mapAnim.SetTrigger("popUp");
         mapOpened = true;
+    }
+
+
+
+    private void OpenDiarySound()
+    {
+        audiosource.clip = abreDiario;
+        audiosource.Play();
+    }
+
+    private void ClosedDiarySound()
+    {
+        audiosource.clip = fechaDiario;
+        audiosource.Play();
     }
 }
