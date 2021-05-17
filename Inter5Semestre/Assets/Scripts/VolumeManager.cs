@@ -15,6 +15,8 @@ public class VolumeManager : MonoBehaviour
     public GameObject objetosEstaticos;
     [SerializeField]
     private AudioSource backgroundSound;
+    [SerializeField]
+    private AudioSource musicSound;
 
     private void Start()
     {
@@ -32,6 +34,11 @@ public class VolumeManager : MonoBehaviour
             real.priority = 0;
             alucinacao.priority = 1;
             alucinacao.weight += transitionSpeed * Time.deltaTime;
+            if(backgroundSound.volume <= 1f)
+            {
+                backgroundSound.volume += transitionSpeed * Time.deltaTime;
+            }
+            
 
             if (alucinacao.weight >= 1)
             {
@@ -59,6 +66,9 @@ public class VolumeManager : MonoBehaviour
         alucinacao.weight = 0;
         transitionSpeed = speed;
         transiciona = true;
+        musicSound.volume = 0.01f;
+        backgroundSound.Play();
+        
     }
     public void Transicao(float speed, DialogueBase dialogo2)
     {
@@ -69,6 +79,8 @@ public class VolumeManager : MonoBehaviour
         alucinacao.weight = 0;
         transitionSpeed = speed;
         transiciona = true;
+        musicSound.volume = 0.01f;
+        backgroundSound.Play();
     }
 
     public void TransicaoOut(float speed)
@@ -78,6 +90,9 @@ public class VolumeManager : MonoBehaviour
         real.weight = 0;
         transitionSpeed = speed;
         transicionaOut = true;
+        musicSound.volume = 0.05f;
+        backgroundSound.Stop();
+        backgroundSound.volume = 0f;
     }
 
     IEnumerator WaitForDialogue()
