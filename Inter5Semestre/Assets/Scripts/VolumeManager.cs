@@ -13,6 +13,8 @@ public class VolumeManager : MonoBehaviour
     private DialogueBase dialogo;
     public GameObject objetosFlutuantes;
     public GameObject objetosEstaticos;
+    [SerializeField]
+    private AudioSource backgroundSound;
 
     private void Start()
     {
