@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 768150739}
-  m_IndirectSpecularColor: {r: 0.2811428, g: 0.3665127, b: 0.49889988, a: 1}
+  m_Sun: {fileID: 2115517275}
+  m_IndirectSpecularColor: {r: 0.019899666, g: 0.013113366, b: 0.008261087, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: cd3e22de6659b1849bdcfb0620bba83b, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 477cc4148fad3449482a3bc3178594e2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   groundedPlayer: 0
   flashlight: {fileID: 1421102994}
   flashlightTimer: 5
-  flashlightDepletionRate: 0.1
+  flashlightDepletionRate: 0
   flashlightRecoveryRate: 0.5
   normalCamera: {fileID: 901756446}
   crouchCamera: {fileID: 284505290}
@@ -19338,7 +19338,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449773145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -31119,7 +31119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672237489}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
