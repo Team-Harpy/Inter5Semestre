@@ -36,8 +36,8 @@ public class AdminDocuments : Interactable
     [HideInInspector]
     public bool dialogoFlutua;
 
-
-    bool startCoroutine = true;
+    [HideInInspector]
+    public bool startCoroutine = true;
 
     private void Start()
     {
