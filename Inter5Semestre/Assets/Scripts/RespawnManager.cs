@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class RespawnManager : MonoBehaviour
 {
     private GameObject player;
-    private GameObject camera;
+    private GameObject myCam;
     private VolumeManager volume;
+    public Volume stress;
 
     [Header("Respawn 1")]
     public Transform respawnPoint1;
@@ -21,7 +23,7 @@ public class RespawnManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        myCam = GameObject.FindGameObjectWithTag("MainCamera");
         volume = GameObject.FindGameObjectWithTag("VolumeManager").GetComponent<VolumeManager>();
 
         monstroPosI = monstro1.transform.position;
@@ -30,7 +32,7 @@ public class RespawnManager : MonoBehaviour
     public void Respawn1()
     {
         player.transform.position = respawnPoint1.position;
-        camera.transform.rotation = respawnPoint1.rotation;
+        myCam.transform.rotation = respawnPoint1.rotation;
         portaADM.SetBool("Open", false);
         monstro1.transform.position = monstroPosI;
         monstro1.SetActive(false);
@@ -38,6 +40,7 @@ public class RespawnManager : MonoBehaviour
         falasFlutuantes.SetActive(false);
         obstaculos.SetActive(false);
         doc.startCoroutine = true;
+        stress.weight = 0;
         volume.TransicaoOut(1);
     }
 }
