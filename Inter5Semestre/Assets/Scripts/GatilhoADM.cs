@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GatilhoADM : Interactable
 {
@@ -11,6 +12,8 @@ public class GatilhoADM : Interactable
     public float velocidadeTransicao;
     [SerializeField]
     private GameObject falasFlutuantes;
+
+    public Volume stress;
 
     private void Start()
     {
@@ -31,6 +34,7 @@ public class GatilhoADM : Interactable
             monstro.SetActive(false);
             obstaculos.SetActive(false);
             volume.TransicaoOut(velocidadeTransicao);
+            stress.weight = 0;
             falasFlutuantes.SetActive(false);
         }
            

@@ -82479,6 +82479,7 @@ MonoBehaviour:
   obstaculos: {fileID: 1958658216}
   velocidadeTransicao: 0.5
   falasFlutuantes: {fileID: 1050011984}
+  stress: {fileID: 1428060532}
 --- !u!114 &1814601206
 MonoBehaviour:
   m_ObjectHideFlags: 0
