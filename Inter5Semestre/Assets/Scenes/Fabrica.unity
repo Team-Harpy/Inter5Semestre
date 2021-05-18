@@ -44751,6 +44751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280c1c662ac94354d8739e8b3bc02369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stress: {fileID: 1428060532}
   respawnPoint1: {fileID: 1503181053}
   portaADM: {fileID: 883307659}
   monstro1: {fileID: 1958606521}
