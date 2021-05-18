@@ -45,7 +45,5 @@ public class MonstroADM : MonoBehaviour
         {
             respawnManager.Respawn1();
         }
-
-        Debug.Log(distance);
     }
 }
