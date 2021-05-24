@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool interacting;
 
-
-    private float playerSpeed;
+    [Header("Movimentação")]
     [SerializeField]
     private float walkSpeed = 5.0f;
+    private float playerSpeed;
     [SerializeField]
     private float sprintSpeed = 10.0f;
     [SerializeField]
@@ -23,32 +23,34 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float gravityValue = -9.81f;
 
+    [Header("Flashlight")]
+    public bool flashlightOn;
     [HideInInspector]
     public bool hasFlashlight = true;
-    public bool flashlightOn;
-
-
-    [SerializeField]
-    private GameObject monstro;
-    [SerializeField]
-    private Transform monstroSpawn;
-
-    private CharacterController controller;
-    [SerializeField]
-    private LightingManager lightingManager;
-    private InputManager inputManager;
-    private Vector3 playerVelocity;
-    [HideInInspector]
-    public bool groundedPlayer;
-    private Transform cameraTransform;
-    public Light flashlight;
-
     public float flashlightTimer;
     private float flashlightTimerI;
     [SerializeField]
     private float flashlightDepletionRate;
     [SerializeField]
     private float flashlightRecoveryRate;
+    public Light flashlight;
+
+    [Header("Monstro")]
+    [SerializeField]
+    private GameObject monstro;
+    [SerializeField]
+    private Transform monstroSpawn;
+
+    [Header("Outros")]
+    public float rangeIteracao;
+    [SerializeField]
+    private LightingManager lightingManager;
+    private CharacterController controller;
+    private InputManager inputManager;
+    private Vector3 playerVelocity;
+    [HideInInspector]
+    public bool groundedPlayer;
+    private Transform cameraTransform;
 
     [SerializeField]
     private CinemachineVirtualCamera normalCamera;
@@ -203,7 +205,7 @@ public class PlayerController : MonoBehaviour
         CaixaEmpurra newBox = null;
         Debug.DrawRay(raio.origin, raio.direction * 10, Color.red);
 
-        if (Physics.Raycast(raio, out hit, 10, layerSelecao))
+        if (Physics.Raycast(raio, out hit, rangeIteracao, layerSelecao))
         {
             newSelection = hit.transform.GetComponent<Interactable>();
             newObject = hit.transform.GetComponent<CommentObject>();
