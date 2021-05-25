@@ -18,15 +18,26 @@ public class PuzzleDoor : Interactable
     public bool opened;
     public override void Interact()
     {
-        if (correctLocker)
+        if (puzzleStarted)
         {
-            correctLocker = false;
-            opened = true;
-            animator.SetBool("Open", true);
-            if (!vestiarioPuzzle.AllLockersOpened()) vestiarioPuzzle.RandomizeNewLocker();
+            if (correctLocker)
+            {
+                Debug.Log("Acertou");
+                opened = true;
+                animator.SetBool("Open", true);
+
+                if (!vestiarioPuzzle.AllLockersOpened()) vestiarioPuzzle.RandomizeNewLocker();
+                correctLocker = false;
+            }
+
+            else
+            {
+                Debug.Log("Morreu");
+            }
+
         }
 
-        if (!animator.GetBool("GoCrazy")) animator.SetBool("Open", !animator.GetBool("Open"));
+        else if (!animator.GetBool("GoCrazy")) animator.SetBool("Open", !animator.GetBool("Open"));
 
 
     }
