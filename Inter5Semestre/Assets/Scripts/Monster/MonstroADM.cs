@@ -43,7 +43,7 @@ public class MonstroADM : MonoBehaviour
 
         if (distance <= distanceToDie)
         {
-            respawnManager.Respawn1();
+            respawnManager.RespawnADM();
         }
     }
 }

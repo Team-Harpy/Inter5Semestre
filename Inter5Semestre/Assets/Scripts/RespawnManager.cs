@@ -11,7 +11,7 @@ public class RespawnManager : MonoBehaviour
     private VolumeManager volume;
     public Volume stress;
 
-    [Header("Respawn 1")]
+    [Header("Respawn ADM")]
     public Transform respawnPoint1;
     public Animator portaADM;
     public GameObject monstro1;
@@ -29,7 +29,7 @@ public class RespawnManager : MonoBehaviour
         monstroPosI = monstro1.transform.position;
     }
 
-    public void Respawn1()
+    public void RespawnADM()
     {
         player.transform.position = respawnPoint1.position;
         myCam.transform.rotation = respawnPoint1.rotation;
