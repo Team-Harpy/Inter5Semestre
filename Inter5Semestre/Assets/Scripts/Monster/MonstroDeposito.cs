@@ -61,6 +61,7 @@ public class MonstroDeposito : MonoBehaviour
 
         if (distance <= distanceToDie)
         {
+            Debug.Log("morreu");
             respawn.RespawnDeposito();
         }
     }

@@ -26,6 +26,8 @@ public class RespawnManager : MonoBehaviour
     private Vector3 monstroOlhoPosI;
     public GameObject portaDeposito;
     public GameObject trancaDeposito;
+    private PuzzleDepositoManager depositoManager;
+    public GameObject objetoInicial;
 
     private void Start()
     {
@@ -36,6 +38,7 @@ public class RespawnManager : MonoBehaviour
         monstroPosI = monstro1.transform.position;
 
         monstroOlhoPosI = monstroOlho.transform.position;
+        depositoManager = GameObject.FindGameObjectWithTag("DepositoManager").GetComponent<PuzzleDepositoManager>();
     }
 
     public void RespawnADM()
@@ -64,6 +67,8 @@ public class RespawnManager : MonoBehaviour
             portaDeposito.GetComponent<BoxCollider>().enabled = true;
         }
         trancaDeposito.SetActive(false);
+        depositoManager.progressao = 0;
+        objetoInicial.SetActive(true);
         stress.weight = 0;
         volume.TransicaoOut(1);
     }
