@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GatilhoDeposito : MonoBehaviour
+public class GatilhoDeposito : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    private PuzzleDepositoManager manager;
+
+    private void Start()
     {
-        
+        manager = GameObject.FindGameObjectWithTag("DepositoManager").GetComponent<PuzzleDepositoManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Interact()
     {
-        
+        manager.progressao += 1;
+        manager.go = true;
+        gameObject.SetActive(false);
     }
 }
