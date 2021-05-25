@@ -20,6 +20,13 @@ public class RespawnManager : MonoBehaviour
     public GameObject obstaculos;
     public AdminDocuments doc;
 
+    [Header("Respawn Deposito")]
+    public Transform respawnPointDeposito;
+    public GameObject monstroOlho;
+    private Vector3 monstroOlhoPosI;
+    public GameObject portaDeposito;
+    public GameObject trancaDeposito;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -27,6 +34,8 @@ public class RespawnManager : MonoBehaviour
         volume = GameObject.FindGameObjectWithTag("VolumeManager").GetComponent<VolumeManager>();
 
         monstroPosI = monstro1.transform.position;
+
+        monstroOlhoPosI = monstroOlho.transform.position;
     }
 
     public void RespawnADM()
@@ -40,6 +49,21 @@ public class RespawnManager : MonoBehaviour
         falasFlutuantes.SetActive(false);
         obstaculos.SetActive(false);
         doc.startCoroutine = true;
+        stress.weight = 0;
+        volume.TransicaoOut(1);
+    }
+
+    public void RespawnDeposito()
+    {
+        player.transform.position = respawnPointDeposito.position;
+        myCam.transform.rotation = respawnPointDeposito.rotation;
+        monstroOlho.SetActive(false);
+        monstroOlho.transform.position = monstroOlhoPosI;
+        if (portaDeposito)
+        {
+            portaDeposito.GetComponent<BoxCollider>().enabled = true;
+        }
+        trancaDeposito.SetActive(false);
         stress.weight = 0;
         volume.TransicaoOut(1);
     }

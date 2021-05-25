@@ -12,6 +12,7 @@ public class PuzzleDepositoManager : MonoBehaviour
 
     public GameObject monstroOlho;
     public Animator portaDeposito;
+    public GameObject tranca;
 
     public Transform[] spawnPoints;
     [HideInInspector]
@@ -56,7 +57,12 @@ public class PuzzleDepositoManager : MonoBehaviour
     private void GatilhoInicial()
     {
         monstroOlho.SetActive(true);
-        if (portaDeposito) portaDeposito.SetBool("Open", false);
+        if (portaDeposito)
+        {
+            portaDeposito.SetBool("Open", false);
+            portaDeposito.GetComponent<BoxCollider>().enabled = false;
+        }
+        tranca.SetActive(true);
         volume.Transicao(velocidadeTransicao);
         SorteiaSpawn(objetivos[0]);
         go = false;
@@ -76,7 +82,12 @@ public class PuzzleDepositoManager : MonoBehaviour
     {
         volume.TransicaoOut(velocidadeTransicao);
         monstroOlho.SetActive(false);
-        if (portaDeposito) portaDeposito.SetBool("Open", true);
+        if (portaDeposito)
+        {
+            portaDeposito.SetBool("Open", true);
+            portaDeposito.GetComponent<BoxCollider>().enabled = true;
+        }
+        tranca.SetActive(false);
         go = false;
     }
 }
