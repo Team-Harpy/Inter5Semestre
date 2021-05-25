@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LockerDoorSound : MonoBehaviour
 {
+    [SerializeField]
     private AudioSource audiosource;
     [SerializeField]
     private AudioClip openSound;
@@ -12,10 +13,7 @@ public class LockerDoorSound : MonoBehaviour
     [SerializeField]
     private AudioClip slamSound;
 
-    void Start()
-    {
-        audiosource = GetComponent<AudioSource>();
-    }
+ 
 
 
     public void PlayOpenSound()

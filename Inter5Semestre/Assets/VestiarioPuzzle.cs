@@ -7,26 +7,38 @@ public class VestiarioPuzzle : Interactable
     [SerializeField]
     bool puzzleCanStart;
     [SerializeField]
-    private GameObject[] vestiarioDoor;
+    private PuzzleDoor[] vestiarioDoor;
+
+    
+
+  
+
+  
 
     public override void Interact()
     {
-        foreach (GameObject item in vestiarioDoor)
+
+        for (int i = 0; i < vestiarioDoor.Length; i++)
         {
-            Animator animator = item.GetComponent<Animator>();
-            animator.SetBool("GoCrazy", false);
-            animator.speed = 1f;
+            puzzleCanStart = false;
+            vestiarioDoor[i].puzzleStarted = true;
+            vestiarioDoor[i].animator.SetBool("GoCrazy", false);
+            vestiarioDoor[i].animator.speed = 1f;
+            
         }
 
-      
+        RandomizeNewLocker();
+
+
+
     }
     private void Update()
     {
         if (puzzleCanStart)
         {
-            foreach (GameObject item in vestiarioDoor)
+            for (int i = 0; i < vestiarioDoor.Length; i++)
             {
-                Animator animator = item.GetComponent<Animator>();
+                Animator animator = vestiarioDoor[i].GetComponent<Animator>();
                 animator.SetBool("GoCrazy", true);
                 animator.speed = Random.Range(1f, 2.5f);
             }
@@ -34,6 +46,36 @@ public class VestiarioPuzzle : Interactable
         }
 
 
+    }
+
+    public void RandomizeNewLocker()
+    {
+        PuzzleDoor newCorrectLocker = vestiarioDoor[Random.Range(0, vestiarioDoor.Length)];
+      
+
+
+        while (newCorrectLocker.opened)
+        {
+            newCorrectLocker = vestiarioDoor[Random.Range(0, vestiarioDoor.Length)];
+        }
+
+        newCorrectLocker.correctLocker = true;
+        
+    }
+
+
+    public bool AllLockersOpened()
+    {
+        for (int i = 0; i < vestiarioDoor.Length; i++)
+        {
+            if(vestiarioDoor[i].opened == false)
+            {
+                return false;
+            }
+        }
+
+        
+        return true;
     }
      
 
