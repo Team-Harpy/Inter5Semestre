@@ -29,6 +29,15 @@ public class RespawnManager : MonoBehaviour
     private PuzzleDepositoManager depositoManager;
     public GameObject objetoInicial;
 
+    [Header("Respawn Refeitorio")]
+    public Transform respawnPointRefeitorio;
+    public GameObject objetoInicialRefeitorio;
+    public GameObject objetoFinalrefeitorio;
+    public GameObject gas;
+    private Vector3 gasPosI;
+    public GameObject sombras;
+    public GameObject grades;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -39,6 +48,8 @@ public class RespawnManager : MonoBehaviour
 
         monstroOlhoPosI = monstroOlho.transform.position;
         depositoManager = GameObject.FindGameObjectWithTag("DepositoManager").GetComponent<PuzzleDepositoManager>();
+
+        gasPosI = gas.transform.position;
     }
 
     public void RespawnADM()
@@ -70,6 +81,19 @@ public class RespawnManager : MonoBehaviour
         depositoManager.progressao = 0;
         objetoInicial.SetActive(true);
         stress.weight = 0;
+        volume.TransicaoOut(1);
+    }
+
+    public void RespawnRefeitorio()
+    {
+        player.transform.position = respawnPointRefeitorio.position;
+        myCam.transform.rotation = respawnPointRefeitorio.rotation;
+        objetoInicialRefeitorio.SetActive(true);
+        objetoFinalrefeitorio.SetActive(false);
+        gas.SetActive(false);
+        gas.transform.position = gasPosI;
+        grades.SetActive(false);
+        sombras.SetActive(false);
         volume.TransicaoOut(1);
     }
 }
