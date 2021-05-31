@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DeixaLanterna : Interactable
 {
-    private bool lanternaDown;
+    [HideInInspector]
+    public bool lanternaDown;
     private PlayerController player;
     public GameObject lanternaMesa;
     public MeshRenderer lanternaPlayerMesh;

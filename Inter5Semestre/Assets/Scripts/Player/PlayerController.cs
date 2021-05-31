@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float flashlightRecoveryRate;
     public Light flashlight;
+    public float chanceToFail;
+    [HideInInspector]
+    public bool flashlightCanFail = false;
 
     [Header("Monstro")]
     [SerializeField]
@@ -184,6 +187,18 @@ public class PlayerController : MonoBehaviour
         {
             flashlight.enabled = false;
             flashlightOn = false;
+        }
+
+        if (flashlightCanFail)
+        {
+            if (flashlight.enabled)
+            {
+                int sorteio = Random.Range(0, 100);
+                if (sorteio <= chanceToFail)
+                {
+                    flashlight.enabled = false;
+                }
+            }
         }
 
         //print(flashlightTimer);

@@ -17,9 +17,12 @@ public class VolumeManager : MonoBehaviour
     private AudioSource backgroundSound;
     [SerializeField]
     private AudioSource musicSound;
+    private PlayerController player;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
         real.priority = 1;
         alucinacao.priority = 0;
 
@@ -63,6 +66,7 @@ public class VolumeManager : MonoBehaviour
     {
         objetosEstaticos.SetActive(false);
         objetosFlutuantes.SetActive(true);
+        player.flashlightCanFail = true;
         alucinacao.weight = 0;
         transitionSpeed = speed;
         transiciona = true;
@@ -74,6 +78,7 @@ public class VolumeManager : MonoBehaviour
     {
         objetosEstaticos.SetActive(false);
         objetosFlutuantes.SetActive(true);
+        player.flashlightCanFail = true;
         dialogo = dialogo2;
         StartCoroutine("WaitForDialogue");
         alucinacao.weight = 0;
@@ -87,6 +92,7 @@ public class VolumeManager : MonoBehaviour
     {
         objetosEstaticos.SetActive(true);
         objetosFlutuantes.SetActive(false);
+        player.flashlightCanFail = false;
         real.weight = 0;
         transitionSpeed = speed;
         transicionaOut = true;
