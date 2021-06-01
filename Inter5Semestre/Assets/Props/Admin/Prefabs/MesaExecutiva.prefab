@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 5147714599655878216}
   - component: {fileID: 8133360957597131245}
   - component: {fileID: 6285749625811588391}
+  - component: {fileID: 7800144984361937548}
+  - component: {fileID: 8945227471103277580}
   m_Layer: 0
   m_Name: MesaExecutiva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5147714599655878216
 Transform:
@@ -81,3 +83,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7800144984361937548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493137599879247090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0836618, y: 1.125, z: 1.0561309}
+  m_Center: {x: 0, y: 0, z: -0.5222256}
+--- !u!65 &8945227471103277580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493137599879247090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.69797975, y: 1.125, z: 2.1005824}
+  m_Center: {x: 1.1928409, y: 0, z: 0}

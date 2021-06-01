@@ -19,6 +19,7 @@ public class Macaneta : Interactable
     public GameObject dialogoADM;
     public GameObject obstaculos;
     public Volume stress;
+    public GameObject luzVermelha;
 
     [Header("Textos")]
     public GameObject textosBox;
@@ -69,6 +70,7 @@ public class Macaneta : Interactable
         yield return new WaitForSeconds(1f);
         player.interacting = false;
         volumeManager.TransicaoOut(velocidadeTransicao);
+        luzVermelha.SetActive(false);
         lookAtHandle.Priority = 0;
         diary.FillPage(atualizacaoMacaneta);
         dialogoADM.SetActive(true);
