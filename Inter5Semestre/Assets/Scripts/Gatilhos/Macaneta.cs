@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Rendering;
 
 public class Macaneta : Interactable
 {
@@ -17,6 +18,7 @@ public class Macaneta : Interactable
     public GameObject falasFuga;
     public GameObject dialogoADM;
     public GameObject obstaculos;
+    public Volume stress;
 
     [Header("Textos")]
     public GameObject textosBox;
@@ -42,6 +44,7 @@ public class Macaneta : Interactable
         bc.enabled = false;
         lookAtHandle.Priority = 2;
         monstro.SetActive(false);
+        stress.weight = 0;
         yield return new WaitForSeconds(3f);
 
         textosBox.SetActive(true);
