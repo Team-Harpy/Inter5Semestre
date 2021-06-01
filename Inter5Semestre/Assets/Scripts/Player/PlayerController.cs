@@ -148,9 +148,18 @@ public class PlayerController : MonoBehaviour
 
             controller.Move(move * Time.deltaTime * playerSpeed);
         }
+
+        if (interacting)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (!interacting)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         
-
-
         // Player Jump
 
        /* if (inputManager.PlayerJumpedInThisFrame() && groundedPlayer)

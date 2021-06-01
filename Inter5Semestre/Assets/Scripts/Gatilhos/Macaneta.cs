@@ -20,6 +20,10 @@ public class Macaneta : Interactable
     public GameObject obstaculos;
     public Volume stress;
     public GameObject luzVermelha;
+    public GameObject documentosLucidos1;
+    public GameObject documentosLucidos2;
+    public GameObject documentosLucidos3;
+    public GameObject chaveDeposito;
 
     [Header("Textos")]
     public GameObject textosBox;
@@ -42,6 +46,10 @@ public class Macaneta : Interactable
         player.interacting = true;
         falasFuga.SetActive(false);
         obstaculos.SetActive(false);
+        documentosLucidos1.SetActive(true);
+        documentosLucidos2.SetActive(true);
+        documentosLucidos3.SetActive(true);
+        chaveDeposito.SetActive(true);
         bc.enabled = false;
         lookAtHandle.Priority = 2;
         monstro.SetActive(false);

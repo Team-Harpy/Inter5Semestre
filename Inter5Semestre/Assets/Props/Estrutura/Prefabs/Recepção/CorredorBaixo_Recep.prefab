@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6304606356661834922}
   - component: {fileID: 6087562814692828596}
   - component: {fileID: 7959816696948530723}
+  - component: {fileID: 6909157249266193902}
   m_Layer: 0
   m_Name: CorredorBaixo_Recep
   m_TagString: Untagged
@@ -163,5 +164,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.494556, y: 0.66931325, z: 5.0000033}
-  m_Center: {x: -5.6246123, y: 1.6880846, z: 2.5287566}
+  m_Size: {x: 8.353433, y: 0.66931325, z: 5.0000033}
+  m_Center: {x: -6.1951747, y: 1.6880846, z: 2.5287566}
+--- !u!65 &6909157249266193902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179430536681702288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.587931, y: 0.66931325, z: 5.0000033}
+  m_Center: {x: 2.2891612, y: 1.6880846, z: 2.5287566}

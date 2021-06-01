@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5258654003167285970}
   - component: {fileID: 9175422751538142583}
   - component: {fileID: 6390978582271175101}
-  - component: {fileID: 3239139167281399542}
+  - component: {fileID: 585425939645804611}
   m_Layer: 0
   m_Name: GavetaMesaExecutiva
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3239139167281399542
+--- !u!65 &585425939645804611
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,8 +90,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4877870468474374248}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37764344, y: 0.12755592, z: 0.6963374}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.08950625, y: 0.18650523, z: 1.0445061}
+  m_Center: {x: -0.23847944, y: -0.002414316, z: 0}

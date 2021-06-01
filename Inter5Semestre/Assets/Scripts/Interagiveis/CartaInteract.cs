@@ -12,16 +12,19 @@ public class CartaInteract : Interactable
     public Diario diary;
     public GameObject atualizacaoDiario;
     private bool interagindo = false;
+    private PlayerController player;
 
     private void Start()
     {
         input = InputManager.Instance;
         bc = GetComponent<BoxCollider>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     public override void Interact()
     {
         carta.SetActive(true);
+        player.interacting = true;
         interagindo = true;
 
         if (runOnlyOnce)
@@ -36,6 +39,7 @@ public class CartaInteract : Interactable
         {
             if(dialogo) DialogueManager.instance.EnqueueDialogue(dialogo);
             if (atualizacaoDiario) diary.FillPage(atualizacaoDiario);
+            player.interacting = false;
             interagindo = false;
             carta.SetActive(false);
         }
