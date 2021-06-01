@@ -16,6 +16,7 @@ public class Macaneta : Interactable
     public GameObject atualizacaoMacaneta;
     public GameObject falasFuga;
     public GameObject dialogoADM;
+    public GameObject obstaculos;
 
     [Header("Textos")]
     public GameObject textosBox;
@@ -37,6 +38,7 @@ public class Macaneta : Interactable
     {
         player.interacting = true;
         falasFuga.SetActive(false);
+        obstaculos.SetActive(false);
         bc.enabled = false;
         lookAtHandle.Priority = 2;
         monstro.SetActive(false);

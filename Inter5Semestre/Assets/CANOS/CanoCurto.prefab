@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1279100192712899889}
-  - component: {fileID: 2769605247424148116}
   - component: {fileID: 5124920150061398118}
   m_Layer: 0
   m_Name: CanoCurto
@@ -33,14 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2769605247424148116
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912787898964993931}
-  m_Mesh: {fileID: -2082970317222003979, guid: 2d4a968c8b20d4142ae3deb4a02939d1, type: 3}
 --- !u!65 &5124920150061398118
 BoxCollider:
   m_ObjectHideFlags: 0

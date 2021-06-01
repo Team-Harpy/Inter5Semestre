@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4109242116925687506}
-  - component: {fileID: 1056426690279967095}
   - component: {fileID: 5725910279308889959}
   m_Layer: 0
   m_Name: CanoCurvo
@@ -33,14 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1056426690279967095
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3624594247377640552}
-  m_Mesh: {fileID: 2534964839176971238, guid: fcf0b9f515ae14842b2fd4295927c301, type: 3}
 --- !u!65 &5725910279308889959
 BoxCollider:
   m_ObjectHideFlags: 0

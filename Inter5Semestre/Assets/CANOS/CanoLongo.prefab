@@ -78,7 +78,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -2082970317222003979, guid: aa03eab0b68039f47be172cc04bccac9, type: 3}
+  m_Mesh: {fileID: -2082970317222003979, guid: ce64b435b25afb6408a5e88721f8163a, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
   - 0
@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5035028557726946799}
-  - component: {fileID: 8237040144663452234}
   - component: {fileID: 8896156974586925205}
   m_Layer: 0
   m_Name: CanoLongo
@@ -152,14 +151,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8237040144663452234
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5668856997256318805}
-  m_Mesh: {fileID: -2082970317222003979, guid: 7c4b1c1fa2f58d74cbdb6cd2cc3bd981, type: 3}
 --- !u!65 &8896156974586925205
 BoxCollider:
   m_ObjectHideFlags: 0
