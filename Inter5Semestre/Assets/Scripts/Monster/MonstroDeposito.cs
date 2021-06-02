@@ -16,6 +16,7 @@ public class MonstroDeposito : MonoBehaviour
     public float distanceToDie;
     private float distance;
     public Volume stress;
+    public float velocidadeStress;
     private float weightValue;
 
     void Start()
@@ -50,12 +51,12 @@ public class MonstroDeposito : MonoBehaviour
 
         if (weightValue < stress.weight)
         {
-            stress.weight -= 0.1f * Time.deltaTime;
+            stress.weight -= velocidadeStress * Time.deltaTime;
             if (stress.weight < weightValue) stress.weight = weightValue;
         }
         if (weightValue > stress.weight)
         {
-            stress.weight += 0.1f * Time.deltaTime;
+            stress.weight += velocidadeStress * Time.deltaTime;
             if (stress.weight > weightValue) stress.weight = weightValue;
         }
 

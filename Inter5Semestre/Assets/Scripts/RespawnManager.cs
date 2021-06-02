@@ -38,6 +38,11 @@ public class RespawnManager : MonoBehaviour
     public GameObject sombras;
     public GameObject grades;
 
+    [Header("Respawn Segunda Fuga")]
+    public GameObject monstroTelefone;
+    public Transform respawnFugaDois;
+    private Vector3 monstro2PosI;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -50,6 +55,8 @@ public class RespawnManager : MonoBehaviour
         depositoManager = GameObject.FindGameObjectWithTag("DepositoManager").GetComponent<PuzzleDepositoManager>();
 
         gasPosI = gas.transform.position;
+
+        monstro2PosI = monstroTelefone.transform.position;
     }
 
     public void RespawnADM()
@@ -95,5 +102,13 @@ public class RespawnManager : MonoBehaviour
         grades.SetActive(false);
         sombras.SetActive(false);
         //volume.TransicaoOut(1);
+    }
+
+    public void RespawnSegundaFuga()
+    {
+        player.transform.position = respawnFugaDois.position;
+        myCam.transform.rotation = respawnFugaDois.rotation;
+        monstroTelefone.transform.position = monstro2PosI;
+        stress.weight = 0;
     }
 }

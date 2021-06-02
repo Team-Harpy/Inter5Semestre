@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2f9b4fc16a1d149af43e55240294a2, type: 3}
+  m_Name: "Liga\xE7\xE3o"
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - profile: {fileID: 11400000, guid: 2bdf83473c958c64e8d3c5b2def701ac, type: 2}
+    myText: "Parab\xE9ns, vov\xF4! \xC9 uma menina!"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "O que? J\xE1 nasceu? Nossa menininha... Como elas est\xE3o?"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: 2bdf83473c958c64e8d3c5b2def701ac, type: 2}
+    myText: "Est\xE3o perfeitas! Ela \xE9 t\xE3o linda, Radesh... Espere... tem um
+      problema... tem... tem algo de errado"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "H\xE3? Querida...? O que aconteceu?"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: 2bdf83473c958c64e8d3c5b2def701ac, type: 2}
+    myText: "Ela \xE9... horr\xEDvel. Por que...? Por que? Foi aquela maldi\xE7\xE3o,
+      aquela maldi\xE7\xE3o que voc\xEA lan\xE7ou sobre n\xF3s!"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "N\xE3o! N\xE3o ouse falar uma cois..."
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: 2bdf83473c958c64e8d3c5b2def701ac, type: 2}
+    myText: "\xC9 TUDO A SUA CULPA"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: ...
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: c4ea0e15c2bc58f4f8f61c33c2d82ac6, type: 2}
+    myText: "Repulsiva\u2026 Sua apar\xEAncia \xE9 t\xE3o repulsiva."
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: c4ea0e15c2bc58f4f8f61c33c2d82ac6, type: 2}
+    myText: "COMO EU PODERIA ACEITAR UMA NETA ASSIM? VOC\xCA A ESTRAGOU QUANDO DECIDIU
+      ENTRAR NAQUELA SALA"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "Ela\u2026 Amala \xE9 a MINHA neta! Voc\xEA n\xE3o tem direito nenhum\u2026"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: c4ea0e15c2bc58f4f8f61c33c2d82ac6, type: 2}
+    myText: "Ah, Radesh\u2026 O que \xE9 seu \xE9 meu! Inclusive essa culpa, esse
+      rancor que paralisa nossas entranhas. Eu sei o que voc\xEA pensa, o que sente\u2026
+      Ambos temos consci\xEAncia que esse seu livrinho n\xE3o vai adiantar."
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: c4ea0e15c2bc58f4f8f61c33c2d82ac6, type: 2}
+    myText: "Contar a sua perspectiva da trag\xE9dia? HA HA. Como se mudasse o que
+      aconteceu. Os mortos v\xE3o continuar mortos e ela vai conti\u2026"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - profile: {fileID: 11400000, guid: b4677f5ce698aef4ab90b560b815182c, type: 2}
+    myText: "CHEGA! Eu vou acabar com tudo isso\u2026"
+    myEvent:
+      m_PersistentCalls:
+        m_Calls: []

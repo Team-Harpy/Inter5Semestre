@@ -13,6 +13,8 @@ public class MonstroADM : MonoBehaviour
     [SerializeField]
     private Volume stress;
     private float weightValue;
+    public float velocidadeStress;
+    public bool adm = true;
 
     private void Start()
     {
@@ -32,18 +34,25 @@ public class MonstroADM : MonoBehaviour
 
         if(weightValue < stress.weight)
         {
-            stress.weight -= 0.1f * Time.deltaTime;
+            stress.weight -= velocidadeStress * Time.deltaTime;
             if (stress.weight < weightValue) stress.weight = weightValue;
         }
         if (weightValue > stress.weight)
         {
-            stress.weight += 0.1f * Time.deltaTime;
+            stress.weight += velocidadeStress * Time.deltaTime;
             if (stress.weight > weightValue) stress.weight = weightValue;
         }
 
         if (distance <= distanceToDie)
         {
-            respawnManager.RespawnADM();
+            if (adm)
+            {
+                respawnManager.RespawnADM();
+            }
+            else
+            {
+                respawnManager.RespawnSegundaFuga();
+            }
         }
     }
 }

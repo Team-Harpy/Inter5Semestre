@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5355880568542284989}
   - component: {fileID: 9078186565971100440}
   - component: {fileID: 6492156414616582098}
+  - component: {fileID: 5404021283827788613}
   m_Layer: 0
   m_Name: PainelControle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5355880568542284989
 Transform:
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5404021283827788613
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690562424981493255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1395158, y: 1.0664972, z: 0.7396034}
+  m_Center: {x: 0, y: 0, z: -0.000000029802322}
