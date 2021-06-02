@@ -20,7 +20,6 @@ public class VultoCorredorD : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine("SequenciaVulto");
-            gameObject.SetActive(false);
         }
     }
 
@@ -28,14 +27,16 @@ public class VultoCorredorD : MonoBehaviour
     {
         player.interacting = true;
         lookAtDoor.Priority = 2;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         porta.SetBool("Open", true);
         vulto.SetActive(true);
-
         yield return new WaitForSeconds(2.5f);
+
         porta.SetBool("Open", false);
+        vulto.SetActive(false);
         player.interacting = false;
         lookAtDoor.Priority = 0;
+        gameObject.SetActive(false);
     }
 }
