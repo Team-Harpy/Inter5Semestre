@@ -13,11 +13,14 @@ public class VestiarioPuzzle : Interactable
     [SerializeField]
     private DesafiosFinaisManager desafiosManager;
 
-    
 
-  
 
-  
+
+
+    private void Start()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+    }
 
     public override void Interact()
     {

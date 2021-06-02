@@ -10,8 +10,7 @@ public class LockerDoorSound : MonoBehaviour
     private AudioClip openSound;
     [SerializeField]
     private AudioClip closeSound;
-    [SerializeField]
-    private AudioClip slamSound;
+   
 
  
 
@@ -28,11 +27,7 @@ public class LockerDoorSound : MonoBehaviour
         audiosource.Play();
     }
 
-    public void PlaySlamSound()
-    {
-        audiosource.clip = slamSound;
-        audiosource.Play();
-    }
+    
 
 
 }

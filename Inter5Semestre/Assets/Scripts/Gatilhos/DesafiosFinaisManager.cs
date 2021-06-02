@@ -71,6 +71,7 @@ public class DesafiosFinaisManager : MonoBehaviour
             if (!iniciouV)
             {
                 vestiarioPuzzle.puzzleSetup = true;
+                vestiarioPuzzle.GetComponent<BoxCollider>().enabled = true;
             }
 
             objeto1.enabled = true;
