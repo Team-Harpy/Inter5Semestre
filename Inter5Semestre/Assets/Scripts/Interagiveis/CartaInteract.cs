@@ -11,9 +11,14 @@ public class CartaInteract : Interactable
     public DialogueBase dialogo;
     public Diario diary;
     public GameObject atualizacaoDiario;
+    public bool hasObjective;
     private bool interagindo = false;
     private PlayerController player;
     private LockCamera lockCamera;
+
+    
+
+    
 
     private void Start()
     {
@@ -42,10 +47,16 @@ public class CartaInteract : Interactable
         {
             if(dialogo) DialogueManager.instance.EnqueueDialogue(dialogo);
             if (atualizacaoDiario) diary.FillPage(atualizacaoDiario);
+            if (hasObjective)
+            {
+                diary.AddPrimaryObjective("Acessar a sala de controle");
+                diary.ConcludePrimaryObjective("Ler e coletar de maneira lúcida os documentos da Administração");
+            }
             player.interacting = false;
             lockCamera.UnlockPlayerCamera();
             interagindo = false;
             carta.SetActive(false);
+            
         }
     }
 }

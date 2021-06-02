@@ -81,6 +81,9 @@ public class Macaneta : Interactable
         luzVermelha.SetActive(false);
         lookAtHandle.Priority = 0;
         diary.FillPage(atualizacaoMacaneta);
+        
         dialogoADM.SetActive(true);
+        diary.AddPrimaryObjective("Ler e coletar de maneira lúcida os documentos da Administração");
+        diary.AddPrimaryObjective("TERMINAR O LIVRO");
     }
 }

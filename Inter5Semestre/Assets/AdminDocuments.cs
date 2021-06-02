@@ -17,6 +17,8 @@ public class AdminDocuments : Interactable
     [SerializeField]
     GameObject falasEscapar;
 
+    Diario diary;
+
     [SerializeField]
     GameObject obstaculos;
 
@@ -45,6 +47,7 @@ public class AdminDocuments : Interactable
     {
         inputManager = InputManager.Instance;
         lockCamera = GameObject.FindObjectOfType<LockCamera>();
+        diary = GameObject.FindObjectOfType<Diario>().GetComponent<Diario>();
     }
 
     private void Update()
@@ -70,7 +73,8 @@ public class AdminDocuments : Interactable
     }
 
     IEnumerator LOL()
-    {        
+    {
+        diary.ConcludePrimaryObjective("Chegar a administração");
         startCoroutine = false;
         document.GetComponent<Animator>().SetTrigger("popUp");
         lockCamera.LockPlayerMovement();

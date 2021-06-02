@@ -21,6 +21,10 @@ public class Diario : MonoBehaviour
     private TMP_Text[] objetivosSecundarios;
     private int objetivoSecundarioIndex;
 
+    [SerializeField]
+    private TMP_Text[] objetivosPrimarios;
+    private int objetivoPrimarioIndex = 2;
+
     private GameObject novaAnotacaoAdicionada;
     private GameObject novoObjetivoAdicionado;
 
@@ -65,9 +69,24 @@ public class Diario : MonoBehaviour
     }
 
 
-    public void AddPrimaryObjective()
+    public void AddPrimaryObjective(string nomeObjetivo)
     {
+        objetivosPrimarios[objetivoPrimarioIndex].text = nomeObjetivo;
+        objetivoPrimarioIndex += 1;
+        novoObjetivoAdicionado.SetActive(true);
+        PlaySound();
+    }
 
+    public void ConcludePrimaryObjective(string nomeObjetivo)
+    {
+        for (int i = 0; i < objetivosPrimarios.Length; i++)
+        {
+            if (nomeObjetivo == objetivosPrimarios[i].text)
+            {
+                objetivosPrimarios[i].fontStyle = FontStyles.Strikethrough;
+                return;
+            }
+        }
     }
     public void AddSecondaryObjective(string nomeObjetivo)
     {
