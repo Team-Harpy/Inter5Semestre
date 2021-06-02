@@ -81,7 +81,7 @@ public class RespawnManager : MonoBehaviour
         depositoManager.progressao = 0;
         objetoInicial.SetActive(true);
         stress.weight = 0;
-        volume.TransicaoOut(1);
+        //volume.TransicaoOut(1);
     }
 
     public void RespawnRefeitorio()
@@ -94,6 +94,6 @@ public class RespawnManager : MonoBehaviour
         gas.transform.position = gasPosI;
         grades.SetActive(false);
         sombras.SetActive(false);
-        volume.TransicaoOut(1);
+        //volume.TransicaoOut(1);
     }
 }

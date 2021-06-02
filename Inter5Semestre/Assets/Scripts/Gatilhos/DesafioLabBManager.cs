@@ -11,8 +11,13 @@ public class DesafioLabBManager : MonoBehaviour
 
     public DeixaLanterna lanterna;
     public TriggerCaixasLabB[] triggers;
-    public BoxCollider portaBC;
-    public GameObject tranca;
+    public DesafiosFinaisManager desafioFinal;
+
+    private bool fim = false;
+
+    public DialogueBase dialogo;
+    public Diario diary;
+    public GameObject atualizacaoDesafioLabB;
 
     private void Update()
     {
@@ -28,10 +33,12 @@ public class DesafioLabBManager : MonoBehaviour
         if (lanterna.lanternaDown) lanternaON = true;
         else if (!lanterna.lanternaDown) lanternaON = false;
 
-        if(lanternaON && caixa1ON && caixa2ON && caixa3ON)
+        if(lanternaON && caixa1ON && caixa2ON && caixa3ON && !fim)
         {
-            portaBC.enabled = true;
-            tranca.SetActive(false);
+            desafioFinal.progressao++;
+            DialogueManager.instance.EnqueueDialogue(dialogo);
+            diary.FillPage(atualizacaoDesafioLabB);
+            fim = true;
         }
     }
 }

@@ -24,6 +24,12 @@ public class PuzzleDepositoManager : MonoBehaviour
     private int sorteio;
     private int ultimoSorteio;
 
+    public DesafiosFinaisManager desafioFinal;
+
+    public DialogueBase dialogoInicial;
+    public Diario diary;
+    public GameObject atualizacaoDesafioDeposito;
+
     private void Start()
     {
         progressao = 0;
@@ -57,13 +63,14 @@ public class PuzzleDepositoManager : MonoBehaviour
     private void GatilhoInicial()
     {
         monstroOlho.SetActive(true);
+        DialogueManager.instance.EnqueueDialogue(dialogoInicial);
         if (portaDeposito)
         {
             portaDeposito.SetBool("Open", false);
             portaDeposito.GetComponent<BoxCollider>().enabled = false;
         }
         tranca.SetActive(true);
-        volume.Transicao(velocidadeTransicao);
+        //volume.Transicao(velocidadeTransicao);
         SorteiaSpawn(objetivos[0]);
         go = false;
     }
@@ -80,14 +87,16 @@ public class PuzzleDepositoManager : MonoBehaviour
 
     private void Fim()
     {
-        volume.TransicaoOut(velocidadeTransicao);
+        //volume.TransicaoOut(velocidadeTransicao);
         monstroOlho.SetActive(false);
+        diary.FillPage(atualizacaoDesafioDeposito);
         if (portaDeposito)
         {
             portaDeposito.SetBool("Open", true);
             portaDeposito.GetComponent<BoxCollider>().enabled = true;
         }
         tranca.SetActive(false);
+        desafioFinal.progressao++;
         go = false;
     }
 }

@@ -11,6 +11,10 @@ public class GatilhoRefeitorio : Interactable
     public GameObject gas;
     public GameObject objetoFinal;
     public bool final = false;
+    public DesafiosFinaisManager desafioFinal;
+    public DialogueBase dialogoInicial;
+    public Diario diary;
+    public GameObject atualizacaoDesafioRefeitorio;
 
     private void Start()
     {
@@ -20,7 +24,8 @@ public class GatilhoRefeitorio : Interactable
     {
         if (!final)
         {
-            volume.Transicao(velocidadeTransicao);
+            //volume.Transicao(velocidadeTransicao);
+            DialogueManager.instance.EnqueueDialogue(dialogoInicial);
             sombras.SetActive(true);
             grades.SetActive(true);
             gas.SetActive(true);
@@ -29,7 +34,9 @@ public class GatilhoRefeitorio : Interactable
         }
         else if (final)
         {
-            volume.TransicaoOut(velocidadeTransicao);
+            //volume.TransicaoOut(velocidadeTransicao);
+            diary.FillPage(atualizacaoDesafioRefeitorio);
+            desafioFinal.progressao++;
             sombras.SetActive(false);
             grades.SetActive(false);
             gas.SetActive(false);
