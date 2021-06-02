@@ -15,6 +15,7 @@ TagManager:
   - Parede
   - RespawnManager
   - DepositoManager
+  - LockCamera
   layers:
   - Default
   - TransparentFX

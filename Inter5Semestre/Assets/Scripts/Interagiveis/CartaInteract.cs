@@ -13,17 +13,20 @@ public class CartaInteract : Interactable
     public GameObject atualizacaoDiario;
     private bool interagindo = false;
     private PlayerController player;
+    private LockCamera lockCamera;
 
     private void Start()
     {
         input = InputManager.Instance;
         bc = GetComponent<BoxCollider>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        lockCamera = GameObject.FindGameObjectWithTag("LockCamera").GetComponent<LockCamera>();
     }
 
     public override void Interact()
     {
         carta.SetActive(true);
+        lockCamera.LockPlayerCamera();
         player.interacting = true;
         interagindo = true;
 
@@ -40,6 +43,7 @@ public class CartaInteract : Interactable
             if(dialogo) DialogueManager.instance.EnqueueDialogue(dialogo);
             if (atualizacaoDiario) diary.FillPage(atualizacaoDiario);
             player.interacting = false;
+            lockCamera.UnlockPlayerCamera();
             interagindo = false;
             carta.SetActive(false);
         }

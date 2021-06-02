@@ -20,12 +20,12 @@ public class PopUpUI : MonoBehaviour
 
     private AudioSource audiosource;
 
-
-   
     public bool hasMap;
 
     [SerializeField]
     private LockCamera lockCamera;
+
+    private PlayerController player;
 
     private void Start()
     {
@@ -34,7 +34,7 @@ public class PopUpUI : MonoBehaviour
         mapOpened = false;
         hasDiary = false;
         audiosource = GetComponent<AudioSource>();
-
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -46,6 +46,7 @@ public class PopUpUI : MonoBehaviour
         {
             if (inputManager.DiaryUp() && hasDiary)
             {
+                player.interacting = true;
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = true;
                 lockCamera.LockPlayerCamera();
@@ -54,6 +55,7 @@ public class PopUpUI : MonoBehaviour
 
             if (inputManager.OpenMap() && hasMap)
             {
+                player.interacting = true;
                 mapAnim.SetTrigger("popUp");
                 mapOpened = true;
             }
@@ -63,6 +65,7 @@ public class PopUpUI : MonoBehaviour
         {
             if (inputManager.DiaryUp() && hasDiary)
             {
+                player.interacting = false;
                 diaryAnim.SetTrigger("popUp");
                 diaryOpened = false;
                 lockCamera.UnlockPlayerCamera();
@@ -74,6 +77,7 @@ public class PopUpUI : MonoBehaviour
         {
             if (inputManager.OpenMap()&& hasMap)
             {
+                player.interacting = false;
                 mapAnim.SetTrigger("popUp");
                 mapOpened = false;
             }

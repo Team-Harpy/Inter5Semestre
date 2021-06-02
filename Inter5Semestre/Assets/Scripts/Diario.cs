@@ -46,7 +46,8 @@ public class Diario : MonoBehaviour
     [SerializeField]
     private Transform leftPosition, rightPosition;
 
-
+    [SerializeField]
+    GameObject anotacaoNeta;
 
     private void Start()
     {
@@ -59,7 +60,8 @@ public class Diario : MonoBehaviour
         novoObjetivoAdicionado.SetActive(false);
         novaAnotacaoAdicionada.SetActive(false);
         audiosource = GetComponent<AudioSource>();
-        
+        FillPage(anotacaoNeta);
+        PreviousPage();
     }
 
 
