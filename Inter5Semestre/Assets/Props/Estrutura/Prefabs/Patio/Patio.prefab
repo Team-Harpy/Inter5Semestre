@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2281717767519828229}
   - component: {fileID: 6990547939484747005}
   - component: {fileID: 4613955045330441826}
+  - component: {fileID: 1403702947308987319}
   m_Layer: 0
   m_Name: Patio
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7e73a5f69671b184d86bf21ad911f59a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,3 +124,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5293655, y: 0.59206676, z: 5}
   m_Center: {x: -1.7858796, y: -9.265303, z: 2.5073853}
+--- !u!114 &1403702947308987319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6098962653795337674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273ef7c0577c1844c9bd97f8becab5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mundoReal: {fileID: 2100000, guid: 7e73a5f69671b184d86bf21ad911f59a, type: 2}
+  alucinacao: {fileID: 2100000, guid: 03b306ae84131f94ba7adeddfcbc8e20, type: 2}

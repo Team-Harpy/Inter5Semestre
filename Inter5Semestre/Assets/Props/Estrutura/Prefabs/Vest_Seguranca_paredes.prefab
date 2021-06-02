@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3857523593018728536}
   - component: {fileID: 4047489004586815443}
   - component: {fileID: 6404504825398449016}
+  - component: {fileID: 2188443541045213789}
   m_Layer: 0
   m_Name: Vest_Seguranca_paredes
   m_TagString: Untagged
@@ -123,3 +124,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 0.5119413, z: 5.0000014}
   m_Center: {x: 0, y: -6.4552402, z: 2.5000005}
+--- !u!114 &2188443541045213789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3351981905498429515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273ef7c0577c1844c9bd97f8becab5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mundoReal: {fileID: 2100000, guid: 952ab5cdb9f630141a2e751761e76da6, type: 2}
+  alucinacao: {fileID: 2100000, guid: 9367ff296d5f2c24da26eb4d5ad426e2, type: 2}
