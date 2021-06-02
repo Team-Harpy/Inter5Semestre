@@ -91,7 +91,8 @@ public class ZoomComment : Interactable
         flashlight.SetActive(true);
         if (runOnlyOnce)
         {
-            gameObject.GetComponent<ZoomComment>().enabled = false;
+            Destroy(GetComponent<ZoomComment>());
+            
         }
         if (hasDiaryUpdate)
         {

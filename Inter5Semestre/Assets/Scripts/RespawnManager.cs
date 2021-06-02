@@ -29,6 +29,15 @@ public class RespawnManager : MonoBehaviour
     private PuzzleDepositoManager depositoManager;
     public GameObject objetoInicial;
 
+    [Header("Respawn Vestiario")]
+    [SerializeField]
+    private PuzzleDoor[] puzzleDoors;
+    [SerializeField]
+    private VestiarioPuzzle vestiarioPuzzle;
+    [SerializeField]
+    private Transform respawnPointVestiario;
+
+
     [Header("Respawn Refeitorio")]
     public Transform respawnPointRefeitorio;
     public GameObject objetoInicialRefeitorio;
@@ -72,6 +81,18 @@ public class RespawnManager : MonoBehaviour
         doc.startCoroutine = true;
         stress.weight = 0;
         volume.TransicaoOut(1);
+    }
+
+    public void RespawnVestiario()
+    {
+        player.transform.position = respawnPointVestiario.position;
+        for (int i = 0; i < puzzleDoors.Length; i++)
+        {
+            puzzleDoors[i].correctLocker = false;
+            puzzleDoors[i].opened = false;
+            puzzleDoors[i].animator.SetBool("Open", false);
+        }
+        vestiarioPuzzle.RandomizeNewLocker();
     }
 
     public void RespawnDeposito()

@@ -29,6 +29,8 @@ public class DesafiosFinaisManager : MonoBehaviour
 
     [Header("Desafio Vestiário")]
     private bool iniciouV = false;
+    public VestiarioPuzzle vestiarioPuzzle;
+
 
     [Header("Desafio Lab B")]
     public Caixa objeto1;
@@ -64,6 +66,11 @@ public class DesafiosFinaisManager : MonoBehaviour
             {
                 gatilhoRefeitorio.SetActive(true);
                 iniciouR = true;
+            }
+
+            if (!iniciouV)
+            {
+                vestiarioPuzzle.puzzleSetup = true;
             }
 
             objeto1.enabled = true;
