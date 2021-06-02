@@ -96,6 +96,7 @@ Transform:
   - {fileID: 3628347364906001365}
   - {fileID: 3628347363993122924}
   - {fileID: 3628347364322099139}
+  - {fileID: 2667344868561591972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,7 +115,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3628347363531694403}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -582,3 +583,69 @@ Transform:
   m_Father: {fileID: 3628347364906001365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3815409083789362405
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3628347363531694431}
+    m_Modifications:
+    - target: {fileID: 125100796560580910, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b972bcb6af72de04cbfff0f3425ac3ec, type: 2}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.577
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1926571914041688315, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+      propertyPath: m_Name
+      value: Caixa empurravel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+--- !u!4 &2667344868561591972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1294607177054640705, guid: cba7611b5cb15d041b89af6c1a2e7c53, type: 3}
+  m_PrefabInstance: {fileID: 3815409083789362405}
+  m_PrefabAsset: {fileID: 0}

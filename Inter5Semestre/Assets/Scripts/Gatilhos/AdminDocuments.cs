@@ -25,7 +25,7 @@ public class AdminDocuments : Interactable
     [SerializeField]
     GameObject monstro;
     [SerializeField]
-    GameObject macaneta;
+    BoxCollider macaneta;
     [SerializeField]
     GameObject gas;
 
@@ -101,7 +101,7 @@ public class AdminDocuments : Interactable
         gas.SetActive(true);
         yield return new WaitForSeconds(2f);
         monstro.SetActive(true);
-        macaneta.SetActive(true);
+        macaneta.enabled = true;
         gas.SetActive(false);
         lookVcamRight.Priority = 0;
         falasEscapar.SetActive(true);
