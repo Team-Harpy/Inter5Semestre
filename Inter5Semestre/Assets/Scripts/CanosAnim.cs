@@ -15,11 +15,11 @@ public class CanosAnim : MonoBehaviour
 
     private void Update()
     {
-        if (volume.canosAnim)
+        if (volume.emAlucinacao)
         {
             anim.SetBool("surto", true);
         }
-        else if (!volume.canosAnim)
+        else if (!volume.emAlucinacao)
         {
             anim.SetBool("surto", false);
         }

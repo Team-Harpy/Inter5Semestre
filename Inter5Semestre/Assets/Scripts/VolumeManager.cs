@@ -19,7 +19,7 @@ public class VolumeManager : MonoBehaviour
     private AudioSource musicSound;
     private PlayerController player;
     [HideInInspector]
-    public bool canosAnim = false;
+    public bool emAlucinacao = false;
 
     private void Start()
     {
@@ -69,7 +69,7 @@ public class VolumeManager : MonoBehaviour
         objetosEstaticos.SetActive(false);
         objetosFlutuantes.SetActive(true);
         player.flashlightCanFail = true;
-        canosAnim = true;
+        emAlucinacao = true;
         alucinacao.weight = 0;
         transitionSpeed = speed;
         transiciona = true;
@@ -82,7 +82,7 @@ public class VolumeManager : MonoBehaviour
         objetosEstaticos.SetActive(false);
         objetosFlutuantes.SetActive(true);
         player.flashlightCanFail = true;
-        canosAnim = true;
+        emAlucinacao = true;
         dialogo = dialogo2;
         StartCoroutine("WaitForDialogue");
         alucinacao.weight = 0;
@@ -97,7 +97,7 @@ public class VolumeManager : MonoBehaviour
         objetosEstaticos.SetActive(true);
         objetosFlutuantes.SetActive(false);
         player.flashlightCanFail = false;
-        canosAnim = false;
+        emAlucinacao = false;
         real.weight = 0;
         transitionSpeed = speed;
         transicionaOut = true;
