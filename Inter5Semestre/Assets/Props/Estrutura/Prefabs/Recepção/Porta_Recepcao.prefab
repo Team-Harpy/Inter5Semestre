@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6820842460958814089}
   - component: {fileID: 7568118309306425388}
   - component: {fileID: 5684577133394269414}
+  - component: {fileID: 5182577291610774600}
   m_Layer: 0
   m_Name: Porta_Recepcao
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 76a847dac5da45d4cb347b8ad2bbe13d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5182577291610774600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188879068049028403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273ef7c0577c1844c9bd97f8becab5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mundoReal: {fileID: 2100000, guid: 76a847dac5da45d4cb347b8ad2bbe13d, type: 2}
+  alucinacao: {fileID: 2100000, guid: 2e4ec2aafc45dd14c96d325487b27089, type: 2}

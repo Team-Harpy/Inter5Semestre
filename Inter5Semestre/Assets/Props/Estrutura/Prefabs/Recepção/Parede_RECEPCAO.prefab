@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7697980250229390927}
   - component: {fileID: 4865187906256829303}
   - component: {fileID: 3673283620204306827}
+  - component: {fileID: 1446476306692647824}
   m_Layer: 0
   m_Name: Parede_RECEPCAO
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 912557634a0ecb240ae447dc6c48868e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,3 +166,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.984715, y: 5.056152, z: 0.6710575}
   m_Center: {x: -3.1158695, y: -0.16101313, z: 3.1633148}
+--- !u!114 &1446476306692647824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640930238833417825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273ef7c0577c1844c9bd97f8becab5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mundoReal: {fileID: 2100000, guid: 912557634a0ecb240ae447dc6c48868e, type: 2}
+  alucinacao: {fileID: 2100000, guid: 19765ad4463e2a7428a28b46c4e377b7, type: 2}

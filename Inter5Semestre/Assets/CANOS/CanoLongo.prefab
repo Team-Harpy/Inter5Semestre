@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5115545655030179441
+--- !u!1 &3117216410833666626
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5599593947965799627}
-  - component: {fileID: 14225200399270706}
-  - component: {fileID: 8778970160788450229}
-  - component: {fileID: 4761764421455047179}
+  - component: {fileID: 2308450379931719928}
+  - component: {fileID: 7894260228952680193}
+  - component: {fileID: 3729868590609370803}
+  - component: {fileID: 6138847467889088968}
   m_Layer: 0
-  m_Name: Cano_Longo_Anim
+  m_Name: Longo_Nerfado_Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
---- !u!4 &5599593947965799627
+--- !u!4 &2308450379931719928
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5115545655030179441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 3117216410833666626}
+  m_LocalRotation: {x: 8.941104e-16, y: 1, z: -0.000000021855694, w: 0.00000004371139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5035028557726946799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &14225200399270706
+--- !u!137 &7894260228952680193
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5115545655030179441}
+  m_GameObject: {fileID: 3117216410833666626}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -78,27 +78,37 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -2082970317222003979, guid: ce64b435b25afb6408a5e88721f8163a, type: 3}
+  m_Mesh: {fileID: -2082970317222003979, guid: 1e705152c0550ad40a8560ebe3110388, type: 3}
   m_Bones: []
-  m_BlendShapeWeights:
-  - 0
-  - 0
+  m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.17618656, y: 0.47761428, z: 0.00000047683716}
-    m_Extent: {x: 2.0980713, y: 2.1596408, z: 5}
+    m_Center: {x: -0.12712836, y: 0.45073068, z: 0}
+    m_Extent: {x: 1.8533056, y: 2.0044045, z: 4.9999995}
   m_DirtyAABB: 0
---- !u!95 &8778970160788450229
+--- !u!114 &3729868590609370803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117216410833666626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5adb762fb15e3564d9a16aabe0254a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &6138847467889088968
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5115545655030179441}
+  m_GameObject: {fileID: 3117216410833666626}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2d36f620132a0646b856f36ac7c7ce7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0cc84e5d045d4c84ab9ae5726bcb9422, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,18 +117,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4761764421455047179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5115545655030179441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5adb762fb15e3564d9a16aabe0254a9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5668856997256318805
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +132,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &5035028557726946799
 Transform:
@@ -147,7 +145,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5599593947965799627}
+  - {fileID: 2308450379931719928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

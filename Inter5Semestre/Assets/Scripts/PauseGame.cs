@@ -33,10 +33,18 @@ public class PauseGame : MonoBehaviour
                 Pause();
             }
         }
+
+        if (pausado)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     void Resume()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         lockCamera_.UnlockPlayerCamera();
         pauseUI.SetActive(false);
         Time.timeScale = 1f;

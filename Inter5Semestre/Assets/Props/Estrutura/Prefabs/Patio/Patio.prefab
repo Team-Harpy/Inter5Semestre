@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7e73a5f69671b184d86bf21ad911f59a, type: 2}
+  - {fileID: 2100000, guid: 73126dfd7e3f47747b8a24ca86e6a388, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,5 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273ef7c0577c1844c9bd97f8becab5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mundoReal: {fileID: 2100000, guid: 7e73a5f69671b184d86bf21ad911f59a, type: 2}
+  mundoReal: {fileID: 2100000, guid: 73126dfd7e3f47747b8a24ca86e6a388, type: 2}
   alucinacao: {fileID: 2100000, guid: 03b306ae84131f94ba7adeddfcbc8e20, type: 2}
