@@ -10,6 +10,8 @@ public class PuzzleDoor : Interactable
     VestiarioPuzzle vestiarioPuzzle;
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private RespawnManager respawnManager;
     
 
     public bool puzzleStarted;
@@ -22,7 +24,7 @@ public class PuzzleDoor : Interactable
         {
             if (correctLocker)
             {
-                Debug.Log("Acertou");
+                // Debug.Log("Acertou");
                 opened = true;
                 animator.SetBool("Open", true);
 
@@ -32,7 +34,8 @@ public class PuzzleDoor : Interactable
 
             else
             {
-                Debug.Log("Morreu");
+                respawnManager.RespawnVestiario();
+                Debug.Log("errou");
             }
 
         }

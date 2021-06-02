@@ -6,8 +6,12 @@ public class VestiarioPuzzle : Interactable
 {
     [SerializeField]
     bool puzzleCanStart;
+    public bool puzzleSetup;
     [SerializeField]
     private PuzzleDoor[] vestiarioDoor;
+
+    [SerializeField]
+    private DesafiosFinaisManager desafiosManager;
 
     
 
@@ -17,24 +21,29 @@ public class VestiarioPuzzle : Interactable
 
     public override void Interact()
     {
-
-        for (int i = 0; i < vestiarioDoor.Length; i++)
+        if (puzzleCanStart)
         {
-            puzzleCanStart = false;
-            vestiarioDoor[i].puzzleStarted = true;
-            vestiarioDoor[i].animator.SetBool("GoCrazy", false);
-            vestiarioDoor[i].animator.speed = 1f;
-            
-        }
+            for (int i = 0; i < vestiarioDoor.Length; i++)
+            {
+                puzzleCanStart = false;
+                vestiarioDoor[i].puzzleStarted = true;
+                vestiarioDoor[i].animator.SetBool("GoCrazy", false);
+                vestiarioDoor[i].animator.speed = 1f;
 
-        RandomizeNewLocker();
+            }
+            
+            RandomizeNewLocker();
+            puzzleCanStart = false;
+        }
+       
+
 
 
 
     }
     private void Update()
     {
-        if (puzzleCanStart)
+        if (puzzleSetup)
         {
             for (int i = 0; i < vestiarioDoor.Length; i++)
             {
@@ -42,7 +51,8 @@ public class VestiarioPuzzle : Interactable
                 animator.SetBool("GoCrazy", true);
                 animator.speed = Random.Range(1f, 2.5f);
             }
-            puzzleCanStart = false;
+            puzzleSetup = false;
+            puzzleCanStart = true;
         }
 
 
@@ -74,7 +84,7 @@ public class VestiarioPuzzle : Interactable
             }
         }
 
-        
+        desafiosManager.progressao += 1;
         return true;
     }
      

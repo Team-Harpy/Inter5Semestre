@@ -86,6 +86,7 @@ public class NumberLockController : MonoBehaviour
         animationInteractScript = doorToOpen.GetComponent<AnimationInteract>();
         animationInteractScript.animator = doorToOpen.GetComponent<Animator>();
         animationInteractScript.boolAnimationName = boolName;
+        doorToOpen.GetComponent<BoxCollider>().enabled = true;
         Destroy(cadeado);
     }
 }
