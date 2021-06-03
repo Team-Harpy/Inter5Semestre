@@ -26,6 +26,7 @@ public class VestiarioPuzzle : Interactable
     {
         if (puzzleCanStart)
         {
+            Debug.Log("Chamou");
             for (int i = 0; i < vestiarioDoor.Length; i++)
             {
                 puzzleCanStart = false;

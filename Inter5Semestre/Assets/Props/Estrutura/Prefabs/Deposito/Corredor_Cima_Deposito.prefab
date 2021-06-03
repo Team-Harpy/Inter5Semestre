@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7069991640607719793}
   - component: {fileID: 3238851860925518091}
   - component: {fileID: 1520383452468225759}
+  - component: {fileID: 8070043441444167244}
   m_Layer: 0
   m_Name: Corredor_Cima_Deposito
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d3959f8ae851e9b41bc9568e618a6ba9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,3 +138,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.1179523, y: 0.46621418, z: 5.005945}
   m_Center: {x: -1.557899, y: 8.680899, z: 2.5029726}
+--- !u!114 &8070043441444167244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2254957985120092598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273ef7c0577c1844c9bd97f8becab5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mundoReal: {fileID: 2100000, guid: d3959f8ae851e9b41bc9568e618a6ba9, type: 2}
+  alucinacao: {fileID: 2100000, guid: da21b61947a035847bd0787651fc7332, type: 2}

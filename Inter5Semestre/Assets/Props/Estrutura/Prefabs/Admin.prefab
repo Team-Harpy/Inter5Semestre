@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8720694383365521234}
   - component: {fileID: 6837262615235660696}
   - component: {fileID: 7499511224247305814}
+  - component: {fileID: 1852927861781349611}
   m_Layer: 0
   m_Name: Admin
   m_TagString: Untagged
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7bbe98cfe21289f419b8c2c9a0fd52f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,3 +97,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: e7fbde5d8a0cd524ea4036097481bbb8, type: 3}
+--- !u!114 &1852927861781349611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5035633992796318285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273ef7c0577c1844c9bd97f8becab5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mundoReal: {fileID: 2100000, guid: 7bbe98cfe21289f419b8c2c9a0fd52f7, type: 2}
+  alucinacao: {fileID: 2100000, guid: 60361f013ca9c2d48b7d8d3bfb4d2d0f, type: 2}

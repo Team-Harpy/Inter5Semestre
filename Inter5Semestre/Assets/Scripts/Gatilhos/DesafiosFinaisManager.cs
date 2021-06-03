@@ -21,6 +21,7 @@ public class DesafiosFinaisManager : MonoBehaviour
 
     [Header("Desafio Depósito")]
     public GameObject gatilhoDeposito;
+    public GameObject caixasLabirinto;
     private bool iniciouD = false;
 
     [Header("Desafio Refeitório")]
@@ -59,6 +60,7 @@ public class DesafiosFinaisManager : MonoBehaviour
             if (!iniciouD)
             {
                 gatilhoDeposito.SetActive(true);
+                caixasLabirinto.SetActive(false);
                 iniciouD = true;
             }
 
@@ -72,6 +74,7 @@ public class DesafiosFinaisManager : MonoBehaviour
             {
                 vestiarioPuzzle.puzzleSetup = true;
                 vestiarioPuzzle.GetComponent<BoxCollider>().enabled = true;
+                iniciouV = true;
             }
 
             objeto1.enabled = true;
