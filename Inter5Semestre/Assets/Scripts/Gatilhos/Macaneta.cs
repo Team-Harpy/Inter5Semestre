@@ -50,7 +50,7 @@ public class Macaneta : Interactable
         gatilhoADM.SetActive(false);
         documentosLucidos1.SetActive(true);
         documentosLucidos2.SetActive(true);
-        documentosLucidos3.SetActive(true);
+        //documentosLucidos3.SetActive(true);
         chaveDeposito.SetActive(true);
         bc.enabled = false;
         lookAtHandle.Priority = 2;
