@@ -137,6 +137,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Hold""
+                },
+                {
+                    ""name"": ""Cheat"",
+                    ""type"": ""Button"",
+                    ""id"": ""6b77116b-fb8b-4a95-8e23-698d3fb93e49"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
                 }
             ],
             ""bindings"": [
@@ -436,6 +444,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""PullBox"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""379982ea-56b7-4234-a266-2d4a2aa7af48"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cheat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -459,6 +478,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_ExitLock = m_Player.FindAction("ExitLock", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_MovingObject = m_Player.FindAction("MovingObject", throwIfNotFound: true);
+        m_Player_Cheat = m_Player.FindAction("Cheat", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -523,6 +543,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ExitLock;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_MovingObject;
+    private readonly InputAction m_Player_Cheat;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -542,6 +563,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ExitLock => m_Wrapper.m_Player_ExitLock;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @MovingObject => m_Wrapper.m_Player_MovingObject;
+        public InputAction @Cheat => m_Wrapper.m_Player_Cheat;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -596,6 +618,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MovingObject.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovingObject;
                 @MovingObject.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovingObject;
                 @MovingObject.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovingObject;
+                @Cheat.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheat;
+                @Cheat.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheat;
+                @Cheat.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCheat;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -645,6 +670,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MovingObject.started += instance.OnMovingObject;
                 @MovingObject.performed += instance.OnMovingObject;
                 @MovingObject.canceled += instance.OnMovingObject;
+                @Cheat.started += instance.OnCheat;
+                @Cheat.performed += instance.OnCheat;
+                @Cheat.canceled += instance.OnCheat;
             }
         }
     }
@@ -666,5 +694,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnExitLock(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnMovingObject(InputAction.CallbackContext context);
+        void OnCheat(InputAction.CallbackContext context);
     }
 }

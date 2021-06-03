@@ -48,6 +48,8 @@ public class DesafiosFinaisManager : MonoBehaviour
     public DialogueBase dialogo3;
     public DialogueBase dialogo4;
 
+    private bool canCheat = false;
+
     private void Start()
     {
         som = telefone2.GetComponent<AudioSource>();
@@ -80,6 +82,8 @@ public class DesafiosFinaisManager : MonoBehaviour
             objeto1.enabled = true;
             objeto2.enabled = true;
             objeto3.enabled = true;
+
+            canCheat = true;
         }
 
         if(progressao == 1)
@@ -114,6 +118,11 @@ public class DesafiosFinaisManager : MonoBehaviour
                 StartCoroutine("Telefone");
                 finalizou4 = true;
             }
+        }
+
+        if(canCheat && InputManager.Instance.Cheat())
+        {
+            progressao++;
         }
     }
 

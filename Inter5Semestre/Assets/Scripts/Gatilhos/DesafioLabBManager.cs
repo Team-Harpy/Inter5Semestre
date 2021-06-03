@@ -19,6 +19,7 @@ public class DesafioLabBManager : MonoBehaviour
     public Diario diary;
     public GameObject atualizacaoDesafioLabB;
     private bool rodouDialogo = false;
+    public GameObject sombrasParede;
 
     private void Update()
     {
@@ -47,6 +48,7 @@ public class DesafioLabBManager : MonoBehaviour
         {
             desafioFinal.progressao++;
             diary.FillPage(atualizacaoDesafioLabB);
+            sombrasParede.SetActive(true);
             fim = true;
         }
     }

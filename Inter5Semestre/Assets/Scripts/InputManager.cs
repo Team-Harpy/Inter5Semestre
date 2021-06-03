@@ -115,6 +115,9 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Pause.triggered;
     }
 
-
+    public bool Cheat()
+    {
+        return playerControls.Player.Cheat.triggered;
+    }
 }
 
