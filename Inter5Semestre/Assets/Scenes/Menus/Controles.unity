@@ -272,6 +272,7 @@ MonoBehaviour:
   cenaACarregar: 0
   loadingScreen: {fileID: 0}
   slider: {fileID: 0}
+  carregandoText: {fileID: 0}
 --- !u!1 &376590483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,8 +1264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -24, y: -450}
-  m_SizeDelta: {x: 400, y: 82}
+  m_AnchoredPosition: {x: 100, y: -450}
+  m_SizeDelta: {x: 658.9, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821602430
 MonoBehaviour:
@@ -1299,7 +1300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: P -> PAUSE
+  m_Text: P -> PAUSE ( CONTROLE DE BRILHO )
 --- !u!222 &1821602431
 CanvasRenderer:
   m_ObjectHideFlags: 0
