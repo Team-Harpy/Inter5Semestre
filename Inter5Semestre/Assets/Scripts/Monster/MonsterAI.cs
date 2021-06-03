@@ -7,11 +7,30 @@ public class MonsterAI : MonoBehaviour
 {
     [SerializeField]
     private NavMeshAgent agent;
+    public float velocidade1;
+    public float velocidade2;
+    private Transform player;
+    public float distanceToChange;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
 
 
     private void Update()
     {
         agent.SetDestination(FindObjectOfType<PlayerController>().transform.position);
-        if(agent.speed <= 5)agent.speed += 0.2f * Time.deltaTime;
+
+        float distance = Vector3.Distance(transform.position, player.position);
+
+        if (distance > distanceToChange)
+        {
+            agent.speed = velocidade2;
+        }
+        else if (distance <= distanceToChange)
+        {
+            agent.speed = velocidade1;
+        }
     }
 }

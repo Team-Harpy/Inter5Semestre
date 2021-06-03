@@ -43,7 +43,7 @@ public class MonstroDeposito : MonoBehaviour
 
         distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance <= distanceToDie + 0.2f) weightValue = 1;
+        /*if (distance <= distanceToDie + 0.2f) weightValue = 1;
         else if (distance <= 2.5f) weightValue = 0.75f;
         else if (distance <= 5) weightValue = 0.5f;
         else if (distance <= 7.5f) weightValue = 0.25f;
@@ -58,7 +58,7 @@ public class MonstroDeposito : MonoBehaviour
         {
             stress.weight += velocidadeStress * Time.deltaTime;
             if (stress.weight > weightValue) stress.weight = weightValue;
-        }
+        }*/
 
         if (distance <= distanceToDie)
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PuzzleDepositoManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PuzzleDepositoManager : MonoBehaviour
     public bool go;
 
     public GameObject[] objetivos;
+    public Volume stress;
 
     //sorteios
     private int sorteio;
@@ -88,6 +90,7 @@ public class PuzzleDepositoManager : MonoBehaviour
     private void Fim()
     {
         //volume.TransicaoOut(velocidadeTransicao);
+        stress.weight = 0;
         monstroOlho.SetActive(false);
         diary.FillPage(atualizacaoDesafioDeposito);
         if (portaDeposito)

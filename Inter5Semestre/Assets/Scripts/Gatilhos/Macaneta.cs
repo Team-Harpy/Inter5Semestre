@@ -8,6 +8,7 @@ public class Macaneta : Interactable
 {
     public CinemachineVirtualCamera lookAtHandle;
     public GameObject monstro;
+    public GameObject gatilhoADM;
     public DialogueBase dialogo;
     private BoxCollider bc;
     private PlayerController player;
@@ -46,6 +47,7 @@ public class Macaneta : Interactable
         player.interacting = true;
         falasFuga.SetActive(false);
         obstaculos.SetActive(false);
+        gatilhoADM.SetActive(false);
         documentosLucidos1.SetActive(true);
         documentosLucidos2.SetActive(true);
         documentosLucidos3.SetActive(true);

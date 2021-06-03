@@ -80,7 +80,7 @@ public class RespawnManager : MonoBehaviour
         obstaculos.SetActive(false);
         doc.startCoroutine = true;
         stress.weight = 0;
-        volume.TransicaoOut(1);
+        //volume.TransicaoOut(1);
     }
 
     public void RespawnVestiario()
