@@ -18,6 +18,7 @@ public class DesafioLabBManager : MonoBehaviour
     public DialogueBase dialogo;
     public Diario diary;
     public GameObject atualizacaoDesafioLabB;
+    private bool rodouDialogo = false;
 
     private void Update()
     {
@@ -33,10 +34,18 @@ public class DesafioLabBManager : MonoBehaviour
         if (lanterna.lanternaDown) lanternaON = true;
         else if (!lanterna.lanternaDown) lanternaON = false;
 
+        if(caixa1ON || caixa2ON || caixa3ON)
+        {
+            if (!rodouDialogo)
+            {
+                DialogueManager.instance.EnqueueDialogue(dialogo);
+                rodouDialogo = true;
+            }
+        }
+
         if(lanternaON && caixa1ON && caixa2ON && caixa3ON && !fim)
         {
             desafioFinal.progressao++;
-            DialogueManager.instance.EnqueueDialogue(dialogo);
             diary.FillPage(atualizacaoDesafioLabB);
             fim = true;
         }
