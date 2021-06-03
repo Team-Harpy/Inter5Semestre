@@ -29,6 +29,9 @@ public class SegundoTelefonema : Interactable
     public DialogueBase falaMonstro5;
     public DialogueBase falaMonstro6;
     public GameObject correntes;
+    public GameObject portaRecep;
+    private Animator portaRecepAnim;
+    public GameObject portaRecepAbrePorTras;
 
     private void Start()
     {
@@ -37,6 +40,8 @@ public class SegundoTelefonema : Interactable
         som = GetComponent<AudioSource>();
 
         sombraNav = sombra.GetComponent<MonsterAI>();
+
+        portaRecepAnim = portaRecep.GetComponent<Animator>();
     }
 
     private void Update()
@@ -58,6 +63,12 @@ public class SegundoTelefonema : Interactable
         som.Stop();
         bc.enabled = false;
         DialogueManager.instance.EnqueueDialogue(dialogo);
+
+        Destroy(portaRecep.GetComponent<DialogueInteract>());
+        portaRecep.AddComponent<AnimationInteract>();
+        portaRecep.GetComponent<AnimationInteract>().animator = portaRecepAnim;
+        portaRecep.GetComponent<AnimationInteract>().boolAnimationName = "Open";
+        portaRecepAbrePorTras.SetActive(false);
 
         while (dialogoNumeracao < dialogoPause1)
         {

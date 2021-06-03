@@ -4893,6 +4893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 3566503235805721969}
+  velocidade1: 3
+  velocidade2: 5
+  distanceToChange: 10
 --- !u!82 &-3201233256462293815
 AudioSource:
   m_ObjectHideFlags: 0
