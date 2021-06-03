@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool groundedPlayer;
     private Transform cameraTransform;
+    public GameObject caixasInstrucoes;
 
     [SerializeField]
     private CinemachineVirtualCamera normalCamera;
@@ -250,6 +251,7 @@ public class PlayerController : MonoBehaviour
             }
 
             interactText.SetActive(false);
+            caixasInstrucoes.SetActive(false);
         }
 
         if (newSelection)
@@ -291,6 +293,7 @@ public class PlayerController : MonoBehaviour
             {
                 newBox.Puxa();
             }
+            caixasInstrucoes.SetActive(true);
         }
 
         //Debug.Log(selected);
