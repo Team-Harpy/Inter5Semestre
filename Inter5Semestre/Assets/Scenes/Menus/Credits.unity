@@ -173,14 +173,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2eeec97adc5bcb240bd53c5dec7a0bd2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d2ac88293d3980d4da4089af47f43ea4, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -492,7 +492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.105000004, y: 0.23777778}
   m_AnchorMax: {x: 0.105000004, y: 0.23777778}
-  m_AnchoredPosition: {x: 105.94566, y: -1.0000305}
+  m_AnchoredPosition: {x: 45, y: -73}
   m_SizeDelta: {x: 94.496, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090989159
@@ -508,6 +508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cenaACarregar: 0
+  loadingScreen: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!114 &1090989160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,7 +556,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1090989159}
         m_TargetAssemblyTypeName: ButtonMenu, Assembly-CSharp
-        m_MethodName: CarregaCena
+        m_MethodName: CarregarCena
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -660,7 +662,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d2ac88293d3980d4da4089af47f43ea4, type: 3}
     m_FontSize: 23
     m_FontStyle: 0
     m_BestFit: 0
@@ -676,7 +678,7 @@ MonoBehaviour:
     \u2013 RA: 21295060\r\nEvandro Bustamante Figueira - RA: 21328115\r\nGabriella
     Cristina Fernandes Cardoso \u2013 RA: 21012010\r\nMatheus Leonardo Gon\xE7alves
     Vilela - RA: 21282188\r\nNat\xE1lia Capati Martins \u2013 RA: 21289455\r\nRenan
-    Juknevicius Lemos - RA: 21289458\r\nVinicius Shoji \u2013 RA: 21218119\r"
+    Juknevicius Lemos - RA: 21289458\r\nVinicius Shoji Asato \u2013 RA: 21218119\r"
 --- !u!222 &1129942448
 CanvasRenderer:
   m_ObjectHideFlags: 0
