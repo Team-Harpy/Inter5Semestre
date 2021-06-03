@@ -12,10 +12,12 @@ public class AdminDoorEvent : MonoBehaviour
 
     private VolumeManager volume;
     public float velocidadeTransicao;
+    private BoxCollider bc;
 
     private void Start()
     {
         volume = GameObject.FindGameObjectWithTag("VolumeManager").GetComponent<VolumeManager>();
+        bc = GetComponent<BoxCollider>();
     }
 
 
@@ -30,5 +32,6 @@ public class AdminDoorEvent : MonoBehaviour
     {
         lockCamera.UnlockPlayerMovement();
         vcamLookAdmin.Priority = 0;
+        bc.enabled = false;
     }
 }
