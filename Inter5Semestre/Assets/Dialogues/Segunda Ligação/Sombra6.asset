@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInfo:
   - profile: {fileID: 11400000, guid: c4ea0e15c2bc58f4f8f61c33c2d82ac6, type: 2}
-    myText: "ESSE SEU LIVRO DE MERDA \xC9 UMA TENTATIVA FALHA E EGO\xCDSTA DE LIMPAR
+    myText: "ESSE SEU LIVRO DE MERDA \xC9 UMA TENTATIVA FALHA E EGOISTA DE LIMPAR
       A SUA BARRA"
     myEvent:
       m_PersistentCalls:
