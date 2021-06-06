@@ -13,8 +13,8 @@ public class VestiarioPuzzle : Interactable
     [SerializeField]
     private DesafiosFinaisManager desafiosManager;
 
-
-
+    [SerializeField]
+    private GameObject efeitoInteragivel;
 
 
     private void Start()
@@ -88,6 +88,7 @@ public class VestiarioPuzzle : Interactable
             }
         }
 
+        efeitoInteragivel.SetActive(false);
         desafiosManager.progressao += 1;
         return true;
     }

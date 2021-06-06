@@ -29,9 +29,9 @@ public class DesafiosFinaisManager : MonoBehaviour
     private bool iniciouR = false;
 
     [Header("Desafio Vestiário")]
-    private bool iniciouV = false;
     public VestiarioPuzzle vestiarioPuzzle;
-
+    public GameObject efeitoInteragivel;
+    private bool iniciouV = false;
 
     [Header("Desafio Lab B")]
     public Caixa objeto1;
@@ -76,6 +76,7 @@ public class DesafiosFinaisManager : MonoBehaviour
             {
                 vestiarioPuzzle.puzzleSetup = true;
                 vestiarioPuzzle.GetComponent<BoxCollider>().enabled = true;
+                efeitoInteragivel.SetActive(true);
                 iniciouV = true;
             }
 
