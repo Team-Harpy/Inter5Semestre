@@ -422,7 +422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CTRL -> CORRER
+  m_Text: CTRL -> AGACHAR
 --- !u!222 &398419630
 CanvasRenderer:
   m_ObjectHideFlags: 0
