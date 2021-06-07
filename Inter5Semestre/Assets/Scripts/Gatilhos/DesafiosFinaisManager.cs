@@ -40,6 +40,10 @@ public class DesafiosFinaisManager : MonoBehaviour
     public Caixa objeto1;
     public Caixa objeto2;
     public Caixa objeto3;
+    public GameObject trigger1;
+    public GameObject trigger2;
+    public GameObject trigger3;
+    private bool iniciouL = false;
 
     [Header("Telefonema")]
     public DialogueBase dialogo1;
@@ -83,9 +87,18 @@ public class DesafiosFinaisManager : MonoBehaviour
                 iniciouV = true;
             }
 
-            objeto1.enabled = true;
-            objeto2.enabled = true;
-            objeto3.enabled = true;
+            if (!iniciouL)
+            {
+                objeto1.enabled = true;
+                objeto2.enabled = true;
+                objeto3.enabled = true;
+
+                trigger1.SetActive(true);
+                trigger2.SetActive(true);
+                trigger3.SetActive(true);
+
+                iniciouL = true;
+            }
 
             canCheat = true;
         }
