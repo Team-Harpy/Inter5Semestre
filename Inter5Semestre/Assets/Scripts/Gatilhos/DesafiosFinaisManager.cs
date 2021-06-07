@@ -19,6 +19,9 @@ public class DesafiosFinaisManager : MonoBehaviour
     private bool finalizou4 = false;
     public CinemachineVirtualCamera cameraCadeados;
 
+
+    public GameObject lanterna;
+
     [Header("Desafio Depósito")]
     public GameObject gatilhoDeposito;
     public GameObject caixasLabirinto;
@@ -129,6 +132,7 @@ public class DesafiosFinaisManager : MonoBehaviour
 
     IEnumerator DerrubaCadeado(Animator anim)
     {
+        lanterna.SetActive(false);
         cameraCadeados.Priority = 2;
         yield return new WaitForSeconds(1f);
 
@@ -136,6 +140,7 @@ public class DesafiosFinaisManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         cameraCadeados.Priority = 0;
+        lanterna.SetActive(true);
     }
 
     IEnumerator Telefone()
