@@ -32,9 +32,22 @@ public class GatilhoRefeitorio : Interactable
             if (objetoFinal) objetoFinal.SetActive(true);
             gameObject.SetActive(false);
         }
-        else if (final)
+        /*else if (final)
         {
             //volume.TransicaoOut(velocidadeTransicao);
+            diary.FillPage(atualizacaoDesafioRefeitorio);
+            desafioFinal.progressao++;
+            sombras.SetActive(false);
+            grades.SetActive(false);
+            gas.SetActive(false);
+            gameObject.SetActive(false);
+        }*/
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
             diary.FillPage(atualizacaoDesafioRefeitorio);
             desafioFinal.progressao++;
             sombras.SetActive(false);
