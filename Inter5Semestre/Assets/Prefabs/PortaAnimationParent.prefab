@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5221604604629724228}
   m_Layer: 0
   m_Name: Portas
-  m_TagString: Untagged
+  m_TagString: Porta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 7674506504533717582}
   m_Layer: 0
   m_Name: PortaAnimationParent
-  m_TagString: Untagged
+  m_TagString: Porta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

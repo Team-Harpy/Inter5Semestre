@@ -16,6 +16,7 @@ TagManager:
   - RespawnManager
   - DepositoManager
   - LockCamera
+  - Porta
   layers:
   - Default
   - TransparentFX

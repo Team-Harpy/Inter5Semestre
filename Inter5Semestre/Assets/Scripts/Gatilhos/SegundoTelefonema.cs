@@ -32,6 +32,7 @@ public class SegundoTelefonema : Interactable
     public GameObject portaRecep;
     private Animator portaRecepAnim;
     public GameObject portaRecepAbrePorTras;
+    public BoxCollider destrancaPortaLabB;
 
     private void Start()
     {
@@ -69,6 +70,8 @@ public class SegundoTelefonema : Interactable
         portaRecep.GetComponent<AnimationInteract>().animator = portaRecepAnim;
         portaRecep.GetComponent<AnimationInteract>().boolAnimationName = "Open";
         portaRecepAbrePorTras.SetActive(false);
+
+        destrancaPortaLabB.enabled = true;
 
         while (dialogoNumeracao < dialogoPause1)
         {

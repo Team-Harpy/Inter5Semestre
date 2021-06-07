@@ -25,6 +25,7 @@ public class Macaneta : Interactable
     public GameObject documentosLucidos2;
     public GameObject documentosLucidos3;
     public GameObject chaveDeposito;
+    public GameObject efeitoMacaneta;
 
     [Header("Textos")]
     public GameObject textosBox;
@@ -46,6 +47,7 @@ public class Macaneta : Interactable
     {
         player.interacting = true;
         falasFuga.SetActive(false);
+        efeitoMacaneta.SetActive(false);
         obstaculos.SetActive(false);
         gatilhoADM.SetActive(false);
         documentosLucidos1.SetActive(true);

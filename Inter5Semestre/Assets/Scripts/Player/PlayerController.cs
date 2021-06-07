@@ -54,7 +54,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool groundedPlayer;
     private Transform cameraTransform;
+    public GameObject interagivelInstrucoes;
     public GameObject caixasInstrucoes;
+    public GameObject portaInstrucoes;
 
     [SerializeField]
     private CinemachineVirtualCamera normalCamera;
@@ -252,6 +254,8 @@ public class PlayerController : MonoBehaviour
 
             interactText.SetActive(false);
             caixasInstrucoes.SetActive(false);
+            portaInstrucoes.SetActive(false);
+            interagivelInstrucoes.SetActive(false);
         }
 
         if (newSelection)
@@ -267,6 +271,9 @@ public class PlayerController : MonoBehaviour
             {
                 outline.enabled = true;
             }
+
+            if (newSelection.CompareTag("Porta")) portaInstrucoes.SetActive(true);
+            if (!newSelection.CompareTag("Porta") && !newSelection.CompareTag("Caixa")) interagivelInstrucoes.SetActive(true);
 
             selected = newSelection;
             interactText.SetActive(true);
