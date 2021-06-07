@@ -11,6 +11,8 @@ public class PuzzleDoor : Interactable
     [SerializeField]
     private AudioSource audioSource;
     [SerializeField]
+    private AudioSource acertoAudio;
+    [SerializeField]
     private RespawnManager respawnManager;
     
 
@@ -27,6 +29,7 @@ public class PuzzleDoor : Interactable
                 // Debug.Log("Acertou");
                 opened = true;
                 animator.SetBool("Open", true);
+                acertoAudio.Play();
 
                 if (!vestiarioPuzzle.AllLockersOpened()) vestiarioPuzzle.RandomizeNewLocker();
                 correctLocker = false;
