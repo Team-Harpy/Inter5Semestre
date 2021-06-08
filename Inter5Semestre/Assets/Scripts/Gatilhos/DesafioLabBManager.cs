@@ -9,6 +9,13 @@ public class DesafioLabBManager : MonoBehaviour
     private bool caixa2ON = false;
     private bool caixa3ON = false;
 
+    [SerializeField]
+    private Caixa objeto1;
+    [SerializeField]
+    private Caixa objeto2;
+    [SerializeField]
+    private Caixa objeto3;
+
     public DeixaLanterna lanterna;
     public TriggerCaixasLabB[] triggers;
     public DesafiosFinaisManager desafioFinal;
@@ -49,6 +56,9 @@ public class DesafioLabBManager : MonoBehaviour
             desafioFinal.progressao++;
             diary.FillPage(atualizacaoDesafioLabB);
             sombrasParede.SetActive(true);
+            objeto1.enabled = false;
+            objeto2.enabled = false;
+            objeto3.enabled = false;
             fim = true;
         }
     }
