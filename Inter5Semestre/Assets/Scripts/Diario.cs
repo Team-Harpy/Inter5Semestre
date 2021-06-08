@@ -64,7 +64,7 @@ public class Diario : MonoBehaviour
         novoObjetivoAdicionado.SetActive(false);
         novaAnotacaoAdicionada.SetActive(false);
         audiosource = GetComponent<AudioSource>();
-        FillPage(anotacaoNeta);
+        FillPageNoSound(anotacaoNeta);
         PreviousPage();
     }
 
@@ -148,6 +148,41 @@ public class Diario : MonoBehaviour
         
 
 
+    }
+
+    void FillPageNoSound(GameObject atualizacao)
+    {
+        if (bothPagesFilled)
+        {
+            pages[currentPage].SetActive(false);
+            currentPage = pages.Count;
+            bothPagesFilled = false;
+            leftPageFilled = false;
+            firstPage = false;
+
+
+        }
+
+        if (!leftPageFilled)
+        {
+            newPageSet = new GameObject("Page" + currentPage);
+            newPageSet.transform.parent = this.gameObject.transform;
+            pages.Add(newPageSet);
+            atualizacao.transform.position = leftPosition.position;
+            atualizacao.transform.parent = newPageSet.transform;
+            leftPageFilled = true;
+
+        }
+        else
+        {
+            atualizacao.transform.parent = newPageSet.transform;
+            atualizacao.transform.position = rightPosition.position;
+            bothPagesFilled = true;
+        }
+        if (lastUpdate != null) lastUpdate2 = lastUpdate;
+
+        lastUpdate = atualizacao;
+       
     }
 
 
