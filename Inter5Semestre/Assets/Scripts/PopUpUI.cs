@@ -26,6 +26,7 @@ public class PopUpUI : MonoBehaviour
     private LockCamera lockCamera;
 
     private PlayerController player;
+    public bool lockDiary = false;
 
     private void Start()
     {
@@ -39,47 +40,43 @@ public class PopUpUI : MonoBehaviour
 
     private void Update()
     {
-    
-
-
-        if(diaryOpened == false && mapOpened == false)
+        if (!lockDiary)
         {
-            if (inputManager.DiaryUp() && hasDiary)
+            if (diaryOpened == false && mapOpened == false)
             {
-                player.interacting = true;
-                diaryAnim.SetTrigger("popUp");
-                diaryOpened = true;
-                lockCamera.LockPlayerCamera();
-                OpenDiarySound();
+                if (inputManager.DiaryUp() && hasDiary)
+                {
+                    OpenDiary();
+                }
+
+                if (inputManager.OpenMap() && hasMap)
+                {
+                    player.interacting = true;
+                    mapAnim.SetTrigger("popUp");
+                    mapOpened = true;
+                }
             }
 
-            if (inputManager.OpenMap() && hasMap)
+            else if (diaryOpened == true && mapOpened == false)
             {
-                player.interacting = true;
-                mapAnim.SetTrigger("popUp");
-                mapOpened = true;
+                if (inputManager.DiaryUp() && hasDiary)
+                {
+                    player.interacting = false;
+                    diaryAnim.SetTrigger("popUp");
+                    diaryOpened = false;
+                    lockCamera.UnlockPlayerCamera();
+                    ClosedDiarySound();
+                }
             }
-        }
 
-        else if (diaryOpened == true && mapOpened == false)
-        {
-            if (inputManager.DiaryUp() && hasDiary)
+            else if (diaryOpened == false && mapOpened == true)
             {
-                player.interacting = false;
-                diaryAnim.SetTrigger("popUp");
-                diaryOpened = false;
-                lockCamera.UnlockPlayerCamera();
-                ClosedDiarySound();
-            }
-        }
-
-        else if (diaryOpened == false && mapOpened == true)
-        {
-            if (inputManager.OpenMap()&& hasMap)
-            {
-                player.interacting = false;
-                mapAnim.SetTrigger("popUp");
-                mapOpened = false;
+                if (inputManager.OpenMap() && hasMap)
+                {
+                    player.interacting = false;
+                    mapAnim.SetTrigger("popUp");
+                    mapOpened = false;
+                }
             }
         }
     }
@@ -111,5 +108,14 @@ public class PopUpUI : MonoBehaviour
     {
         audiosource.clip = fechaDiario;
         audiosource.Play();
+    }
+
+    public void OpenDiary()
+    {
+        player.interacting = true;
+        diaryAnim.SetTrigger("popUp");
+        diaryOpened = true;
+        lockCamera.LockPlayerCamera();
+        OpenDiarySound();
     }
 }

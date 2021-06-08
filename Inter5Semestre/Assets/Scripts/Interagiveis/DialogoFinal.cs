@@ -23,6 +23,7 @@ public class DialogoFinal : Interactable
         if (dialogoNumeracao > numeroFalas)
         {
             botao.enabled = true;
+            this.enabled = false;
         }
     }
 
