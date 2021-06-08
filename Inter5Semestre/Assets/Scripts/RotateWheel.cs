@@ -9,6 +9,9 @@ public class RotateWheel : Interactable
     [SerializeField]
     private int numberShown;
 
+    [SerializeField]
+    bool dipak;
+
     public string wheelnumber;
 
     
@@ -17,6 +20,7 @@ public class RotateWheel : Interactable
     {
         coroutineAllowed = true;
         numberShown = 0;
+        if (dipak) numberShown = 8;
     }
 
     public override void Interact()
@@ -39,11 +43,23 @@ public class RotateWheel : Interactable
         //}
         coroutineAllowed = true;
         numberShown += 1;
-        if(numberShown > 7)
+        if (dipak)
         {
-            numberShown = 0;
+            if (numberShown > 8)
+            {
+                numberShown = 1;
+            }
         }
-
-        GetComponentInParent<NumberLockController>().CheckCombination(wheelnumber, numberShown);
+        else
+        {
+            if (numberShown > 7)
+            {
+                numberShown = 0;
+            }
+        } 
+       
+        if(GetComponentInParent<NumberLockController>()) GetComponentInParent<NumberLockController>().CheckCombination(wheelnumber, numberShown);
+       
+        else if (GetComponentInParent<NumberLockDipak>()) GetComponentInParent<NumberLockDipak>().CheckCombination(wheelnumber, numberShown);
     }
 }

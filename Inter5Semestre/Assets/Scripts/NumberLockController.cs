@@ -25,7 +25,7 @@ public class NumberLockController : MonoBehaviour
     private int[] currentCode, correctCombination;
 
     [SerializeField]
-    [Range(0,7)]
+    [Range(1,7)]
     private int firstNumber, secondNumber, thirdNumber;
 
     private void Start()
@@ -66,6 +66,8 @@ public class NumberLockController : MonoBehaviour
             UnlockDoor();
         }
     }
+
+    
 
     void ExitLock()
     {

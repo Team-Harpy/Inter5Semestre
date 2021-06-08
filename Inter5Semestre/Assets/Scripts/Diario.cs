@@ -71,6 +71,13 @@ public class Diario : MonoBehaviour
 
     public void AddPrimaryObjective(string nomeObjetivo)
     {
+        for (int i = 0; i < objetivosPrimarios.Length; i++)
+        {
+            if (nomeObjetivo == objetivosPrimarios[i].text)
+            {            
+                return;
+            }
+        }
         objetivosPrimarios[objetivoPrimarioIndex].text = nomeObjetivo;
         objetivoPrimarioIndex += 1;
         novoObjetivoAdicionado.SetActive(true);
