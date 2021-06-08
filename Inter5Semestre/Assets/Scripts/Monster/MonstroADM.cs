@@ -47,11 +47,11 @@ public class MonstroADM : MonoBehaviour
         {
             if (adm)
             {
-                respawnManager.RespawnADM();
+                respawnManager.StartCoroutine("Transicao", RespawnManager.Estados.ADM);
             }
             else
             {
-                respawnManager.RespawnSegundaFuga();
+                respawnManager.StartCoroutine("Transicao", RespawnManager.Estados.SEGUNDA);
             }
         }
     }

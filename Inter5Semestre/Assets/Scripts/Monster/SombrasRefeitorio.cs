@@ -34,7 +34,7 @@ public class SombrasRefeitorio : MonoBehaviour
 
         if(distance <= 0.5)
         {
-            respawn.RespawnRefeitorio();
+            respawn.StartCoroutine("Transicao", RespawnManager.Estados.REFEITORIO);
         }
 
         sr.color = new Color(1, 1, 1, alphaValue);
