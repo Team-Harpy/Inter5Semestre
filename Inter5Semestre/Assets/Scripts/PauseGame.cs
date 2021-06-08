@@ -13,6 +13,10 @@ public class PauseGame : MonoBehaviour
     [SerializeField]
     private LockCamera lockCamera_;
 
+    [SerializeField]
+    private CursorLockMode anteriorModo;
+
+
 
     private void Start()
     {
@@ -43,16 +47,28 @@ public class PauseGame : MonoBehaviour
 
     void Resume()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        lockCamera_.UnlockPlayerCamera();
-        pauseUI.SetActive(false);
-        Time.timeScale = 1f;
-        pausado = false;
+        
+        if(anteriorModo == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            lockCamera_.UnlockPlayerCamera();
+            pauseUI.SetActive(false);
+            Time.timeScale = 1f;
+            pausado = false;
+        }
+
+        else
+        {
+            pauseUI.SetActive(false);
+            Time.timeScale = 1f;
+            pausado = false;
+        }
     }
 
     void Pause()
     {
+        anteriorModo = Cursor.lockState;
         lockCamera_.LockPlayerCamera();
         pauseUI.SetActive(true);
         Time.timeScale = 0f;

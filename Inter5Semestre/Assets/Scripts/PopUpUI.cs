@@ -44,12 +44,12 @@ public class PopUpUI : MonoBehaviour
         {
             if (diaryOpened == false && mapOpened == false)
             {
-                if (inputManager.DiaryUp() && hasDiary)
+                if (inputManager.DiaryUp() && hasDiary && !player.interacting)
                 {
                     OpenDiary();
                 }
 
-                if (inputManager.OpenMap() && hasMap)
+                if (inputManager.OpenMap() && hasMap && !player.interacting)
                 {
                     player.interacting = true;
                     mapAnim.SetTrigger("popUp");
@@ -85,6 +85,7 @@ public class PopUpUI : MonoBehaviour
 
     public void OpenDiaryStart()
     {
+        player.interacting = true;
         diaryAnim.SetTrigger("popUp");
         diaryOpened = true;
         lockCamera.LockPlayerCamera();
