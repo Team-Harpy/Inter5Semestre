@@ -15,11 +15,19 @@ public class VestiarioPuzzle : Interactable
 
     [SerializeField]
     private GameObject efeitoInteragivel;
+    [SerializeField]
+    private Diario diary;
+    [SerializeField]
+    private DialogueBase dialogo;
+    [SerializeField]
+    private GameObject atualizacao;
+   
 
 
     private void Start()
     {
         GetComponent<BoxCollider>().enabled = false;
+       
     }
 
     public override void Interact()
@@ -37,6 +45,8 @@ public class VestiarioPuzzle : Interactable
             }
             
             RandomizeNewLocker();
+            DialogueManager.instance.EnqueueDialogue(dialogo);
+            diary.FillPage(atualizacao);
             puzzleCanStart = false;
         }
        
