@@ -13,6 +13,10 @@ public class PuzzleDoor : Interactable
     [SerializeField]
     private AudioSource acertoAudio;
     [SerializeField]
+    private AudioClip acerto;
+    [SerializeField]
+    private AudioClip erro;
+    [SerializeField]
     private RespawnManager respawnManager;
 
     public Animator maozinha;
@@ -31,6 +35,7 @@ public class PuzzleDoor : Interactable
                 // Debug.Log("Acertou");
                 opened = true;
                 animator.SetBool("Open", true);
+                acertoAudio.clip = acerto;
                 acertoAudio.Play();
 
                 if (!vestiarioPuzzle.AllLockersOpened()) vestiarioPuzzle.RandomizeNewLocker();
@@ -39,6 +44,9 @@ public class PuzzleDoor : Interactable
 
             else
             {
+                animator.SetBool("Open", true);
+                acertoAudio.clip = erro;
+                acertoAudio.Play();
                 respawnManager.StartCoroutine("Transicao", RespawnManager.Estados.VESTIARIO);
                 maozinha.SetTrigger("pula");
                 Debug.Log("errou");
