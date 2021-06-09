@@ -18,6 +18,15 @@ public class DesafiosFinaisManager : MonoBehaviour
     public Animator cadeado4;
     private bool finalizou4 = false;
     public CinemachineVirtualCamera cameraCadeados;
+    [SerializeField]
+    private AudioClip whisper;
+    [SerializeField]
+    private AudioClip weeping;
+    [SerializeField]
+    private AudioSource wwAudio;
+    [SerializeField]
+    private AudioSource screamAudio;
+
 
 
     public GameObject lanterna;
@@ -107,7 +116,7 @@ public class DesafiosFinaisManager : MonoBehaviour
         {
             if (!finalizou1)
             {
-                StartCoroutine("DerrubaCadeado", cadeado1);
+                StartCoroutine("DerrubaCadeado", cadeado1);             
                 finalizou1 = true;
             }
         }
@@ -115,7 +124,9 @@ public class DesafiosFinaisManager : MonoBehaviour
         {
             if (!finalizou2)
             {
-                StartCoroutine("DerrubaCadeado", cadeado2);
+                StartCoroutine("DerrubaCadeado", cadeado2);               
+                wwAudio.clip = whisper;
+                wwAudio.Play();
                 finalizou2 = true;
             }
         }
@@ -124,6 +135,7 @@ public class DesafiosFinaisManager : MonoBehaviour
             if (!finalizou3)
             {
                 StartCoroutine("DerrubaCadeado", cadeado3);
+                screamAudio.Play();
                 finalizou3 = true;
             }
         }
@@ -132,6 +144,9 @@ public class DesafiosFinaisManager : MonoBehaviour
             if (!finalizou4)
             {
                 StartCoroutine("DerrubaCadeado", cadeado4);
+                screamAudio.Play();
+                wwAudio.clip = weeping;
+                wwAudio.Play();
                 StartCoroutine("Telefone");
                 finalizou4 = true;
             }
