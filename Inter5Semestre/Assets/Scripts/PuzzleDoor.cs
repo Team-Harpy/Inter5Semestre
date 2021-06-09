@@ -14,12 +14,14 @@ public class PuzzleDoor : Interactable
     private AudioSource acertoAudio;
     [SerializeField]
     private RespawnManager respawnManager;
-    
+
+    public Animator maozinha;
 
     public bool puzzleStarted;
 
     public bool correctLocker;
     public bool opened;
+
     public override void Interact()
     {
         if (puzzleStarted)
@@ -37,7 +39,8 @@ public class PuzzleDoor : Interactable
 
             else
             {
-                respawnManager.RespawnVestiario();
+                respawnManager.StartCoroutine("Transicao", RespawnManager.Estados.VESTIARIO);
+                maozinha.SetTrigger("pula");
                 Debug.Log("errou");
             }
 
