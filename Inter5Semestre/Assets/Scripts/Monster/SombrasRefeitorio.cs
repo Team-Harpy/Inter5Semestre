@@ -34,6 +34,7 @@ public class SombrasRefeitorio : MonoBehaviour
 
         if(distance <= 0.5)
         {
+            respawn.StopAllCoroutines();
             respawn.StartCoroutine("Transicao", RespawnManager.Estados.REFEITORIO);
         }
 

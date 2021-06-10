@@ -38,6 +38,7 @@ public class BotaoFinal : Interactable
         if (transiciona)
         {
             stress.weight += velocidadeTransicao * Time.deltaTime;
+            if (stress.weight >= 0.95f) stress.weight = 0.95f;
         }
     }
 
@@ -48,7 +49,7 @@ public class BotaoFinal : Interactable
 
     IEnumerator Final()
     {
-        while(stress.weight < 1)
+        while(stress.weight < 0.95f)
         {
             yield return null;
         }

@@ -10,10 +10,12 @@ public class DialogoFinal : Interactable
     public int numeroFalas;
     private BoxCollider bc;
     public BoxCollider botao;
+    private RespawnManager respawn;
 
     private void Start()
     {
         bc = GetComponent<BoxCollider>();
+        respawn = GameObject.FindGameObjectWithTag("RespawnManager").GetComponent<RespawnManager>();
     }
 
     private void Update()
@@ -29,6 +31,7 @@ public class DialogoFinal : Interactable
 
     public override void Interact()
     {
+        respawn.StopAllCoroutines();
         conta = true;
         bc.enabled = false;
         DialogueManager.instance.EnqueueDialogue(dialogoFinal);

@@ -47,6 +47,7 @@ public class PuzzleDoor : Interactable
                 animator.SetBool("Open", true);
                 acertoAudio.clip = erro;
                 acertoAudio.Play();
+                respawnManager.StopAllCoroutines();
                 respawnManager.StartCoroutine("Transicao", RespawnManager.Estados.VESTIARIO);
                 maozinha.SetTrigger("pula");
                 Debug.Log("errou");
