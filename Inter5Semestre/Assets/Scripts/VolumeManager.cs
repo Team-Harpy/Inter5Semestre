@@ -13,6 +13,7 @@ public class VolumeManager : MonoBehaviour
     private DialogueBase dialogo;
     public GameObject objetosFlutuantes;
     public GameObject objetosEstaticos;
+    public GameObject gosma;
     [SerializeField]
     private AudioSource backgroundSound;
     [SerializeField]
@@ -68,6 +69,7 @@ public class VolumeManager : MonoBehaviour
     {
         objetosEstaticos.SetActive(false);
         objetosFlutuantes.SetActive(true);
+        gosma.SetActive(true);
         player.flashlightCanFail = true;
         emAlucinacao = true;
         alucinacao.weight = 0;
@@ -81,6 +83,7 @@ public class VolumeManager : MonoBehaviour
     {
         objetosEstaticos.SetActive(false);
         objetosFlutuantes.SetActive(true);
+        gosma.SetActive(true);
         player.flashlightCanFail = true;
         emAlucinacao = true;
         dialogo = dialogo2;
@@ -96,6 +99,7 @@ public class VolumeManager : MonoBehaviour
     {
         objetosEstaticos.SetActive(true);
         objetosFlutuantes.SetActive(false);
+        gosma.SetActive(false);
         player.flashlightCanFail = false;
         emAlucinacao = false;
         real.weight = 0;

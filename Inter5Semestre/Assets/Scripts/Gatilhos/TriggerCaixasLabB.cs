@@ -8,11 +8,16 @@ public class TriggerCaixasLabB : MonoBehaviour
     public bool caixaON;
     public Material errado;
     public Material certo;
+    public ParticleSystem particula;
+    public Color vermelho;
+    public Color verde;
     private Renderer render;
 
     private void Start()
     {
         render = GetComponent<Renderer>();
+        var main = particula.main;
+        main.startColor = vermelho;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,6 +26,8 @@ public class TriggerCaixasLabB : MonoBehaviour
         {
             caixaON = true;
             render.sharedMaterial = certo;
+            var main = particula.main;
+            main.startColor = verde;
         }
     }
 
@@ -30,6 +37,8 @@ public class TriggerCaixasLabB : MonoBehaviour
         {
             caixaON = false;
             render.sharedMaterial = errado;
+            var main = particula.main;
+            main.startColor = vermelho;
         }
     }
 }
